@@ -1,22 +1,20 @@
 package com.coffee.covidtrace;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuCompat;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.coffee.covidtrace.bottomNavigation.HistoryFragment;
-import com.coffee.covidtrace.bottomNavigation.HomeFragment;
-import com.coffee.covidtrace.bottomNavigation.ProfileFragment;
-import com.coffee.covidtrace.bottomNavigation.RecordFragment;
-import com.coffee.covidtrace.bottomNavigation.StatisticFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarMenu;
-import com.google.android.material.navigation.NavigationBarView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,45 +28,56 @@ public class MainActivity extends AppCompatActivity {
         navigationBarMenu = findViewById(R.id.bottomNavigationView);
         navigationBarMenu.setSelectedItemId(R.id.homeFragment);
 
-        navigationBarMenu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            HomeFragment homeFragment = new HomeFragment();
-            StatisticFragment statisticFragment = new StatisticFragment();
-            RecordFragment recordFragment = new RecordFragment();
-            HistoryFragment historyFragment = new HistoryFragment();
-            ProfileFragment profileFragment = new ProfileFragment();
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.homeFragment:
-                        getSupportFragmentManager().beginTransaction().replace(
-                                R.id.fragmentContainerView, homeFragment).commit();
-                        return true;
-                    case R.id.statisticFragment:
-                        getSupportFragmentManager().beginTransaction().replace(
-                                R.id.fragmentContainerView, statisticFragment
-                        ).commit();
-                        return true;
-                    case R.id.recordFragment:
-                        getSupportFragmentManager().beginTransaction().replace(
-                                R.id.fragmentContainerView, recordFragment
-                        ).commit();
-                        return true;
-                    case R.id.historyFragment:
-                        getSupportFragmentManager().beginTransaction().replace(
-                                R.id.fragmentContainerView, historyFragment
-                        ).commit();
-                        return true;
-                    case R.id.profileFragment:
-                        getSupportFragmentManager().beginTransaction().replace(
-                                R.id.fragmentContainerView, profileFragment
-                        ).commit();
-                        return true;
-                }
-                return false;
-            }
-        });
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder
+                (
+                        R.id.homeFragment,
+                        R.id.statisticFragment,
+                        R.id.recordFragment,
+                        R.id.historyFragment,
+                        R.id.profileFragment
+                ).build();
+
+        NavController navController = Navigation.findNavController(this, R.id.fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(navigationBarMenu, navController);
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.bottom_menu, menu);
+        MenuCompat.setGroupDividerEnabled(menu, true);
+        return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        NavController navController = Navigation.findNavController(this, R.id.fragment);
+
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.homeFragment:
+                navController.navigate(R.id.homeFragment);
+                return true;
+            case R.id.statisticFragment:
+                navController.navigate(R.id.statisticFragment);
+                return true;
+            case R.id.recordFragment:
+                navController.navigate(R.id.recordFragment);
+                return true;
+            case R.id.historyFragment:
+                navController.navigate(R.id.historyFragment);
+                return true;
+            case R.id.profileFragment:
+                navController.navigate(R.id.profileFragment);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
