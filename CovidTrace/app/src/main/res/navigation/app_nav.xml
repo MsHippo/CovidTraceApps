@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.coffee.covidtrace.bottomNavigation.HomeFragment"
+        android:name="com.coffee.covidtrace.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/statisticFragment"
-        android:name="com.coffee.covidtrace.bottomNavigation.StatisticFragment"
+        android:name="com.coffee.covidtrace.ui.dashboard.StatisticFragment"
         android:label="fragment_statistic"
         tools:layout="@layout/fragment_statistic" />
     <fragment
         android:id="@+id/recordFragment"
-        android:name="com.coffee.covidtrace.bottomNavigation.RecordFragment"
+        android:name="com.coffee.covidtrace.ui.record.RecordFragment"
         android:label="fragment_record"
         tools:layout="@layout/fragment_record" />
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.coffee.covidtrace.bottomNavigation.HistoryFragment"
+        android:name="com.coffee.covidtrace.ui.history.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.coffee.covidtrace.bottomNavigation.ProfileFragment"
+        android:name="com.coffee.covidtrace.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
