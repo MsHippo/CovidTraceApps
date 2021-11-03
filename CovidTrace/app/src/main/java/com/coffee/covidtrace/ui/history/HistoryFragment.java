@@ -36,6 +36,7 @@ public class HistoryFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
         // TODO: Use the ViewModel
+        //set the title of the app bar
         Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.history_title);
 
     }
