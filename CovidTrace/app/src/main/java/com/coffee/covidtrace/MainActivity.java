@@ -1,5 +1,7 @@
 package com.coffee.covidtrace;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuCompat;
 import androidx.navigation.NavController;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         navigationBarMenu.setSelectedItemId(R.id.homeFragment);
 
 
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                         R.id.profileFragment
                 ).build();
 
+
+        //bottom navigation
         NavController navController = Navigation.findNavController(this, R.id.fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navigationBarMenu, navController);
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         NavController navController = Navigation.findNavController(this, R.id.fragment);
 
@@ -75,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.profileFragment:
                 navController.navigate(R.id.profileFragment);
                 return true;
-
+            case android.R.id.home:
+                this.finish();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

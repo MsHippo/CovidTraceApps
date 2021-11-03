@@ -7,4 +7,16 @@
     <string name="record_title"> Record </string>
     <string name="history_title"> History </string>
     <string name="profile_title"> Profile </string>
+    <string name="covid_19_vaccination">COVID-19 Vaccination</string>
+    <string name="white_bg">white bg</string>
+    <string name="faqs_of_health">FAQs of Health</string>
+    <string name="faqs_brief">Check how to prevent infection and to slow transmission of COVID-19</string>
+    <string name="faqs_image">faqs image</string>
+    <string name="symptom_image">Symptom image</string>
+    <string name="symptoms_brief">The COVID-19 virus affects different people in different ways.</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="dependency">Dependency</string>
+    <string name="covid_hotspot">Covid Hotspot</string>
+    <string name="covid_19_status">Personal COVID-19 Status</string>
+    <string name="report_rule_breaking_case">Report Rule-Breaking Case</string>
 </resources>
