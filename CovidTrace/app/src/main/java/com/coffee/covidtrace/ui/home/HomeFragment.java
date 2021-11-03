@@ -1,5 +1,6 @@
 package com.coffee.covidtrace.ui.home;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
 
 import com.coffee.covidtrace.R;
 
+import java.util.Objects;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel mViewModel;
@@ -26,6 +29,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.home_fragment, container, false);
+
     }
 
     @Override
@@ -33,6 +37,7 @@ public class HomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         // TODO: Use the ViewModel
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.home_title);
     }
 
 }

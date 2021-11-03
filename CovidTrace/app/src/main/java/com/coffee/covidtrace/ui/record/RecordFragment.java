@@ -1,5 +1,6 @@
 package com.coffee.covidtrace.ui.record;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coffee.covidtrace.R;
+
+import java.util.Objects;
 
 public class RecordFragment extends Fragment {
 
@@ -33,6 +36,7 @@ public class RecordFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(RecordViewModel.class);
         // TODO: Use the ViewModel
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.record_title);
     }
 
 }
