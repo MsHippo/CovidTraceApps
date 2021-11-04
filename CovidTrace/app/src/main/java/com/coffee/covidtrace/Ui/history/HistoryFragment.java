@@ -1,4 +1,4 @@
-package com.coffee.covidtrace.ui.profile;
+package com.coffee.covidtrace.Ui.history;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,27 +17,27 @@ import com.coffee.covidtrace.R;
 
 import java.util.Objects;
 
-public class ProfileFragment extends Fragment {
+public class HistoryFragment extends Fragment {
 
-    private ProfileViewModel mViewModel;
+    private HistoryViewModel mViewModel;
 
-    public static ProfileFragment newInstance() {
-        return new ProfileFragment();
+    public static HistoryFragment newInstance() {
+        return new HistoryFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.profile_fragment, container, false);
+        return inflater.inflate(R.layout.history_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
         // TODO: Use the ViewModel
         //set the title of the app bar
-        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.profile_title);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.history_title);
 
     }
 

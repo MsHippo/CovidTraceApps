@@ -1,4 +1,4 @@
-package com.coffee.covidtrace.ui.home;
+package com.coffee.covidtrace.Ui.home;
 
 import androidx.lifecycle.ViewModel;
 

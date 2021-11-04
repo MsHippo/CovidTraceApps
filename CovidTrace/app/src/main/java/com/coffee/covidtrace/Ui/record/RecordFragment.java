@@ -1,4 +1,4 @@
-package com.coffee.covidtrace.ui.dashboard;
+package com.coffee.covidtrace.Ui.record;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,28 +17,27 @@ import com.coffee.covidtrace.R;
 
 import java.util.Objects;
 
-public class StatisticFragment extends Fragment {
+public class RecordFragment extends Fragment {
 
-    private StatisticViewModel mViewModel;
+    private RecordViewModel mViewModel;
 
-    public static StatisticFragment newInstance() {
-        return new StatisticFragment();
+    public static RecordFragment newInstance() {
+        return new RecordFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.statistic_fragment, container, false);
+        return inflater.inflate(R.layout.record_fragment, container, false);
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(StatisticViewModel.class);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mViewModel = new ViewModelProvider(this).get(RecordViewModel.class);
         // TODO: Use the ViewModel
         //set the title of the app bar
-        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.dashboard_title);
-
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.record_title);
     }
 
 }
