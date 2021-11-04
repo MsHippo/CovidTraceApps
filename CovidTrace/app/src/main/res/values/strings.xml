@@ -19,4 +19,8 @@
     <string name="covid_hotspot">Covid Hotspot</string>
     <string name="covid_19_status">Personal COVID-19 Status</string>
     <string name="report_rule_breaking_case">Report Rule-Breaking Case</string>
+    <string name="demo_context">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et felis vitae diam venenatis fringilla. Phasellus iaculis pretium lectus, eget convallis sapien pretium et. Ut at lectus pellentesque, maximus justo a, cursus libero. Donec pharetra varius lectus sed malesuada. Ut nibh mauris, rhoncus id sem sed, rhoncus sagittis quam. Nulla.</string>
+    <string name="eg_auth_name">CPRC KKM</string>
+    <string name="eg_date">01 January 1999</string>
+    <string name="eg_time">00:00 AM</string>
 </resources>

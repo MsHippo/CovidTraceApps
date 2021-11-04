@@ -7,17 +7,23 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.coffee.covidtrace.Adapter.NotesAdapter;
 import com.coffee.covidtrace.R;
+
+import java.util.SplittableRandom;
 
 public class ImpNotesFragment extends Fragment {
 
     private ImpNotesViewModel mViewModel;
 
+    String[] names = {"kkm", "pkm", "lalala"};
     public static ImpNotesFragment newInstance() {
         return new ImpNotesFragment();
     }
@@ -25,7 +31,11 @@ public class ImpNotesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.imp_notes_fragment, container, false);
+        View view = inflater.inflate(R.layout.imp_notes_fragment, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.notes_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        recyclerView.setAdapter(new NotesAdapter(names));
+        return view;
     }
 
     @Override
