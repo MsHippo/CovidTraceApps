@@ -9,25 +9,25 @@
         android:id="@+id/homeFragment"
         android:name="com.coffee.covidtrace.Ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/statisticFragment"
         android:name="com.coffee.covidtrace.Ui.dashboard.StatisticFragment"
         android:label="fragment_statistic"
-        tools:layout="@layout/fragment_statistic" />
+        tools:layout="@layout/statistic_fragment" />
     <fragment
         android:id="@+id/recordFragment"
         android:name="com.coffee.covidtrace.Ui.record.RecordFragment"
         android:label="fragment_record"
-        tools:layout="@layout/fragment_record" />
+        tools:layout="@layout/record_fragment" />
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.coffee.covidtrace.Ui.history.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/history_fragment" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.coffee.covidtrace.Ui.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/profile_fragment" />
 </navigation>
