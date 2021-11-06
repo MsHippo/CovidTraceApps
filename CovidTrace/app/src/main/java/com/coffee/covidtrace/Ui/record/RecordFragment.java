@@ -37,7 +37,7 @@ public class RecordFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(RecordViewModel.class);
         // TODO: Use the ViewModel
         //set the title of the app bar
-        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.record_title);
+        //Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.record_title);
     }
 
 }

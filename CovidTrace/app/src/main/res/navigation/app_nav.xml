@@ -8,26 +8,26 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.coffee.covidtrace.Ui.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/statisticFragment"
         android:name="com.coffee.covidtrace.Ui.dashboard.StatisticFragment"
-        android:label="fragment_statistic"
+        android:label="Dashboard"
         tools:layout="@layout/statistic_fragment" />
     <fragment
         android:id="@+id/recordFragment"
         android:name="com.coffee.covidtrace.Ui.record.RecordFragment"
-        android:label="fragment_record"
+        android:label="Record"
         tools:layout="@layout/record_fragment" />
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.coffee.covidtrace.Ui.history.HistoryFragment"
-        android:label="fragment_history"
+        android:label="History"
         tools:layout="@layout/history_fragment" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.coffee.covidtrace.Ui.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Profile"
         tools:layout="@layout/profile_fragment" />
 </navigation>

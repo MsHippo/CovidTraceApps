@@ -23,4 +23,7 @@
     <string name="eg_auth_name">CPRC KKM</string>
     <string name="eg_date">01 January 1999</string>
     <string name="eg_time">00:00 AM</string>
+    <string name="nav_header_title">User name</string>
+    <string name="nav_header_subtitle">User email</string>
+    <string name="nav_header_desc">Navigation header</string>
 </resources>
