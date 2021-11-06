@@ -23,7 +23,7 @@ public class ImpNotesFragment extends Fragment {
 
     private ImpNotesViewModel mViewModel;
 
-    String[] names = {"kkm", "pkm", "lalala"};
+    String[] names = {"kkm", "pkm", "myHealth"};
     public static ImpNotesFragment newInstance() {
         return new ImpNotesFragment();
     }
