@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/side_navigate">
         <item
             android:id="@+id/homeFragment"
             android:title="@string/home_title"
@@ -24,5 +25,17 @@
             android:id="@+id/profileFragment"
             android:title="@string/profile_title"
             android:icon="@drawable/ic_profile"/>
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@id/start">
+    <item
+        android:id="@+id/getStartedFragment"
+        android:title="@string/get_started"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/logoutFragment"
+        android:title="@string/logout"
+        android:icon="@drawable/logout_line"/>
     </group>
 </menu>

@@ -26,4 +26,6 @@
     <string name="nav_header_title">User name</string>
     <string name="nav_header_subtitle">User email</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="get_started">Get Started</string>
+    <string name="logout">Logout</string>
 </resources>
