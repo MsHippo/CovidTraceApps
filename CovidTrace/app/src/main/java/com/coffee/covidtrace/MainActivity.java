@@ -11,12 +11,15 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.coffee.covidtrace.Ui.VaccinationActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.coffee.covidtrace.databinding.ActivityMainBinding;
@@ -115,5 +118,14 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.fragment);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public void vaccine_registration(View view) {
+        switch (view.getId()){
+            case R.id.covid_vaccination:
+                Intent intent = new Intent(this, VaccinationActivity.class);
+                startActivity(intent);
+        }
     }
 }
