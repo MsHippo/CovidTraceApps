@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         // TODO: Use the ViewModel
         //set the title of the app bar
-        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.home_title);
+        //Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.home_title);
 
         viewPager2 = view.findViewById(R.id.view_pager);
         viewPager2.setAdapter(new HomeSelectionPageAdapter(requireActivity()));
