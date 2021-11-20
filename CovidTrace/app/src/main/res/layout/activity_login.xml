@@ -13,13 +13,13 @@
         android:layout_marginTop="50dp"
         android:text="Hello,"
         android:textColor="#012260"
-        android:textSize="30dp"></TextView>
+        android:textSize="30dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Welcome"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#012260"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="90dp">
@@ -29,17 +29,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Back"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#012260"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="130dp">
     </TextView>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/Ellipse"
-        android:layout_marginLeft="330dp"
+        android:src="@drawable/ellipse_circle"
+        android:layout_marginStart="330dp"
         android:rotation="180"
         android:scaleX="2"
         android:scaleY="2">
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:alpha="0.08"
-            android:background="#212121"></View>
+            android:background="#212121" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
             android:src="@drawable/user"
             android:scaleX="1.5"
             android:scaleY="1.5"
-            android:padding="15dp"></ImageView>
+            android:padding="15dp" />
 
         <EditText
             android:background="@null"
@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="#212121"
-            android:alpha="0.08"></View>
+            android:alpha="0.08" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
             android:padding="18dp"
             android:scaleX="1.5"
             android:scaleY="1.5"
-            android:src="@drawable/password"></ImageView>
+            android:src="@drawable/password" />
 
         <EditText
             android:inputType="textPassword"
@@ -153,22 +153,22 @@
         android:layout_height="2dp"
         android:background="#012260"
         android:layout_marginTop="522dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="210dp"/>
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="210dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="230dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="485dp"
         android:text="Do not have an account?"
         android:textColor="#000000"
-        android:textSize="15dp" />
+        android:textSize="15sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="230dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="510dp"
         android:text="Sign Up"
         android:textColor="#012260"
@@ -193,7 +193,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/Ellipse"
+        android:src="@drawable/ellipse_circle"
         android:layout_marginTop="720dp"
         android:scaleX="5"
         android:scaleY="5"
@@ -202,7 +202,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/Ellipse"
+        android:src="@drawable/ellipse_circle"
         android:layout_marginTop="580dp"
         android:scaleX="0.8"
         android:scaleY="0.8"
@@ -211,7 +211,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/Ellipse"
+        android:src="@drawable/ellipse_circle"
         android:layout_marginTop="550dp"
         android:scaleX="0.4"
         android:scaleY="0.4"
@@ -220,7 +220,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/Ellipse"
+        android:src="@drawable/ellipse_circle"
         android:layout_marginTop="530dp"
         android:scaleX="0.3"
         android:scaleY="0.3"

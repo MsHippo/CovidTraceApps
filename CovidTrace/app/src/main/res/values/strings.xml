@@ -28,4 +28,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="get_started">Get Started</string>
     <string name="logout">Logout</string>
+    <string name="vaccine_for">Vaccine for ali abu akao amin ali abu akao amin</string>
+    <string name="information_of_vaccine">Information of COVID-19 Vaccine</string>
 </resources>

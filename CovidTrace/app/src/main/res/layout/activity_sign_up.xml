@@ -19,7 +19,7 @@
         android:layout_marginTop="50dp"
         android:text="Hello,"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"></TextView>
+        android:textSize="30dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"></View>
+                android:background="#FFFFFF" />
 
             <EditText
                 android:background="@null"
