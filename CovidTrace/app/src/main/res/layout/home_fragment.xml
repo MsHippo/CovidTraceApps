@@ -194,7 +194,7 @@
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="10dp"
-                        android:onClick="vaccine_registration"
+                        android:onClick="main_features"
                         tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -230,7 +230,9 @@
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        android:onClick="main_features"
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -261,7 +263,9 @@
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        android:onClick="main_features"
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -291,8 +295,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
+                        android:onClick="main_features"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -323,7 +329,9 @@
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        android:onClick="main_features"
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"

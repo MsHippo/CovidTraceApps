@@ -1,10 +1,7 @@
 package com.coffee.covidtrace;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.MenuCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -14,12 +11,9 @@ import androidx.navigation.ui.NavigationUI;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 
-import com.coffee.covidtrace.Ui.VaccinationActivity;
+import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.coffee.covidtrace.databinding.ActivityMainBinding;
@@ -29,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView navigationBarMenu;
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+//    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("NonConstantResourceId")
-    public void vaccine_registration(View view) {
+    public void main_features(View view) {
         switch (view.getId()){
             case R.id.covid_vaccination:
                 Intent intent = new Intent(this, VaccinationActivity.class);

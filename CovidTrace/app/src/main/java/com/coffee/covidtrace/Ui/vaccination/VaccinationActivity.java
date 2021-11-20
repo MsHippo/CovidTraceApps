@@ -1,10 +1,12 @@
-package com.coffee.covidtrace.Ui;
+package com.coffee.covidtrace.Ui.vaccination;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.coffee.covidtrace.R;
 
@@ -29,4 +31,19 @@ public class VaccinationActivity extends AppCompatActivity {
         assert ab != null;
         ab.setDisplayHomeAsUpEnabled(true);
     }
+
+    public void vaccine_related(View view) {
+        Intent intent;
+        switch (view.getId()){
+            case R.id.vaccine_register:
+                intent = new Intent(this, VaccinationRegisterActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.vaccine_info:
+                intent = new Intent(this, VaccinationInfoActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
+
 }
