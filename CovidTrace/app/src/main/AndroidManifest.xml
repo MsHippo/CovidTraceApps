@@ -10,13 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
+            android:name=".Ui.vaccination.VaccineRegistrationActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.vaccination.VaccinationRegStatusActivity"/>
+        <activity
             android:name=".Ui.vaccination.VaccinationInfoActivity"
             android:exported="true"
-            android:parentActivityName=".Ui.vaccination.VaccinationActivity"/>
+            android:parentActivityName=".Ui.vaccination.VaccinationActivity" />
         <activity
             android:name=".Ui.vaccination.VaccinationRegStatusActivity"
             android:exported="true"
-            android:parentActivityName=".Ui.vaccination.VaccinationActivity"/>
+            android:parentActivityName=".Ui.vaccination.VaccinationActivity" />
         <activity
             android:name=".Ui.vaccination.VaccinationActivity"
             android:exported="true"

@@ -194,7 +194,7 @@
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="10dp"
-                        android:onClick="main_features"
+                        android:onClick="MainFeatures"
                         tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat

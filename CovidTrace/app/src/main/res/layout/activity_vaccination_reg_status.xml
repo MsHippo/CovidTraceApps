@@ -82,7 +82,9 @@
                         android:layout_marginStart="30dp"
                         android:paddingLeft="95dp"
                         android:paddingRight="95dp"
-                        android:text="@string/btn_register" />
+                        android:onClick="VaccineRegistration"
+                        android:text="@string/btn_register"
+                        tools:ignore="OnClick" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <ImageView

@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("NonConstantResourceId")
-    public void main_features(View view) {
+    public void MainFeatures(View view) {
         switch (view.getId()) {
             case R.id.covid_vaccination:
                 Intent intent = new Intent(this, VaccinationActivity.class);

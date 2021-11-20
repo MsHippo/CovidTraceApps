@@ -3,23 +3,25 @@ package com.coffee.covidtrace.Ui.vaccination;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.coffee.covidtrace.R;
 
-public class VaccinationRegStatusActivity extends AppCompatActivity {
+public class VaccineRegistrationActivity extends AppCompatActivity {
 
+//    CardView cardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vaccination_reg_status);
+        setContentView(R.layout.activity_vaccine_registration);
+//        cardView = findViewById(R.id.cv_details);
+//        cardView.setBackgroundResource(R.drawable.bg_gradient);
 
         // the toolbar is defined in the layout file
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Vaccination");
+        toolbar.setTitle("Register");
         setSupportActionBar(toolbar);
 
         // Get a support ActionBar corresponding to this toolbar
@@ -28,11 +30,5 @@ public class VaccinationRegStatusActivity extends AppCompatActivity {
         // Enable the Up button
         assert ab != null;
         ab.setDisplayHomeAsUpEnabled(true);
-    }
-
-
-    public void VaccineRegistration(View view) {
-        Intent intent = new Intent(VaccinationRegStatusActivity.this, VaccineRegistrationActivity.class);
-        startActivity(intent);
     }
 }
