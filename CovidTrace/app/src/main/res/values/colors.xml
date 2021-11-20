@@ -10,4 +10,6 @@
     <color name="secondaryTextColor">#000000</color>
     <color name="grey">#E0E0E0</color>
     <color name="red177">#B13F3D</color>
+    <color name="greenTick">#5C9E31</color>
+    <color name="skyBlue">#0563C1</color>
 </resources>

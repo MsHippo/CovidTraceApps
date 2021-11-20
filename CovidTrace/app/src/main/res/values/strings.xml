@@ -34,4 +34,16 @@
     <string name="description_notifications">Show the notifications of apps</string>
     <string name="refresh">Refresh</string>
     <string name="description_refresh">refresh the apps</string>
+    <string name="title_name">Name:</string>
+    <string name="avatar_name">Aaida binti Abdul Quddoos</string>
+    <string name="title_nric_passport_no">NRIC/Passport No.</string>
+    <string name="nric_passport_no">950511143333</string>
+    <string name="btn_register">Register</string>
+    <string name="notification_register">Register Successfully</string>
+    <string name="description_register">Please wait for appointment calling. It might takes 3 – 4 working days. Confirm the appointment if you receive the notification.</string>
+    <string name="desciption_register_success">Please reach the vaccination center on time</string>
+    <string name="first_dose">First Dose Complete</string>
+    <string name="description_first_dose">Waiting for Second Dose</string>
+    <string name="confirm_appointment">Confirm Appointment</string>
+    <string name="second_dose">Second Dose Complete</string>
 </resources>
