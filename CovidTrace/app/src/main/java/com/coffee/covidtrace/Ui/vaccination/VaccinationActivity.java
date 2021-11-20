@@ -10,8 +10,6 @@ import android.view.View;
 
 import com.coffee.covidtrace.R;
 
-import java.util.Objects;
-
 public class VaccinationActivity extends AppCompatActivity {
 
     @Override
@@ -36,7 +34,7 @@ public class VaccinationActivity extends AppCompatActivity {
         Intent intent;
         switch (view.getId()){
             case R.id.vaccine_register:
-                intent = new Intent(this, VaccinationRegisterActivity.class);
+                intent = new Intent(this, VaccinationRegStatusActivity.class);
                 startActivity(intent);
                 break;
             case R.id.vaccine_info:

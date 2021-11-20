@@ -14,7 +14,7 @@
             android:exported="true"
             android:parentActivityName=".Ui.vaccination.VaccinationActivity"/>
         <activity
-            android:name=".Ui.vaccination.VaccinationRegisterActivity"
+            android:name=".Ui.vaccination.VaccinationRegStatusActivity"
             android:exported="true"
             android:parentActivityName=".Ui.vaccination.VaccinationActivity"/>
         <activity

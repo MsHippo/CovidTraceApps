@@ -1,5 +1,6 @@
 package com.coffee.covidtrace;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -11,7 +12,10 @@ import androidx.navigation.ui.NavigationUI;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -69,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationBarMenu, navController);
 
     }
-//    @Override
+    //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        MenuInflater inflater = getMenuInflater();
 //        inflater.inflate(R.menu.bottom_menu, menu);
@@ -116,10 +120,30 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     public void main_features(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.covid_vaccination:
                 Intent intent = new Intent(this, VaccinationActivity.class);
                 startActivity(intent);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                Toast.makeText(this, "Refresh Clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.notifications:
+                Toast.makeText(this, "Notifications Clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

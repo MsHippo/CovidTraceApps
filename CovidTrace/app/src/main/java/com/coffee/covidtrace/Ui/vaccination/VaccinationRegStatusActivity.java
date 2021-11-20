@@ -8,12 +8,12 @@ import android.os.Bundle;
 
 import com.coffee.covidtrace.R;
 
-public class VaccinationRegisterActivity extends AppCompatActivity {
+public class VaccinationRegStatusActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vaccination_register);
+        setContentView(R.layout.activity_vaccination_reg_status);
 
         // my_child_toolbar is defined in the layout file
         Toolbar toolbar =

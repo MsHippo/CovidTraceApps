@@ -30,4 +30,8 @@
     <string name="logout">Logout</string>
     <string name="vaccine_for">Vaccine for ali abu akao amin ali abu akao amin</string>
     <string name="information_of_vaccine">Information of COVID-19 Vaccine</string>
+    <string name="notifications">Notifications</string>
+    <string name="description_notifications">Show the notifications of apps</string>
+    <string name="refresh">Refresh</string>
+    <string name="description_refresh">refresh the apps</string>
 </resources>
