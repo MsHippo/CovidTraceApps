@@ -100,15 +100,21 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn_edit_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
-                    android:text="@string/edit" />
+                    android:onClick="edit_confirm_activity"
+                    android:text="@string/edit"
+                    tools:ignore="UsingOnClickInXml" />
 
                 <Button
+                    android:id="@+id/btn_confirm_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/confirm" />
+                    android:onClick="edit_confirm_activity"
+                    android:text="@string/confirm"
+                    tools:ignore="UsingOnClickInXml" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

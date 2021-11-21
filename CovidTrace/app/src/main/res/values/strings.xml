@@ -54,4 +54,8 @@
     <string name="confirm">Confirm</string>
     <string name="long_awareness">Please ensure your name and NRIC/Passport Number is as per your government issued documents(e.g. inclusive of Bin, Binti, A/P, A/L, as required)</string>
     <string name="verify_notice">Related Health Authorities will verify the information before vaccination</string>
+    <string name="reg_location">Where are you current place of residence?</string>
+    <string name="reg_location_bm">Di manakah tempat tinggal semasa anda?</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
 </resources>

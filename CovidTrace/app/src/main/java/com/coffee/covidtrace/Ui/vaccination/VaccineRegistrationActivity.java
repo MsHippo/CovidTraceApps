@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.coffee.covidtrace.R;
+import com.coffee.covidtrace.Ui.profile.ProfileFragment;
 
 public class VaccineRegistrationActivity extends AppCompatActivity {
 
@@ -30,5 +34,22 @@ public class VaccineRegistrationActivity extends AppCompatActivity {
         // Enable the Up button
         assert ab != null;
         ab.setDisplayHomeAsUpEnabled(true);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public void edit_confirm_activity(View view) {
+        Intent intent;
+        switch (view.getId()){
+            case R.id.btn_edit_detail:
+                //edit the user information
+//                intent = new Intent(this, ProfileFragment.class);
+//                startActivity(intent);
+                break;
+            case R.id.btn_confirm_detail:
+                intent = new Intent(this, VaccineDetermineLocationActivity.class);
+                startActivity(intent);
+                break;
+        }
+
     }
 }
