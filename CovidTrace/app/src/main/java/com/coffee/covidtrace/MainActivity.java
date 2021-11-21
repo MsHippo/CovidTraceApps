@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.coffee.covidtrace.Ui.ReportCaseActivity;
 import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -120,10 +121,16 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     public void MainFeatures(View view) {
+        Intent intent;
         switch (view.getId()) {
-            case R.id.covid_vaccination:
-                Intent intent = new Intent(this, VaccinationActivity.class);
+            case R.id.btn_covid_vaccination:
+                intent = new Intent(this, VaccinationActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_report_case:
+                intent = new Intent(this, ReportCaseActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
@@ -133,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

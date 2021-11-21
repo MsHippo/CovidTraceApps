@@ -59,4 +59,8 @@
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
     <string name="logo_name">Logo Name</string>
+    <string name="title">Title</string>
+    <string name="case_happening_date">Case Happening Date</string>
+    <string name="upload">Upload</string>
+    <string name="evidence">Evidence (photos/doc/pdf)</string>
 </resources>

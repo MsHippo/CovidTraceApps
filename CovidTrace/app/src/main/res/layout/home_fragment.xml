@@ -188,7 +188,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/covid_vaccination"
+                        android:id="@+id/btn_covid_vaccination"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
@@ -226,11 +226,12 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_hotspot"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        android:onClick="main_features"
+                        android:onClick="MainFeatures"
                         app:cardCornerRadius="10dp"
                         tools:ignore="UsingOnClickInXml">
 
@@ -259,11 +260,12 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_dependency"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        android:onClick="main_features"
+                        android:onClick="MainFeatures"
                         app:cardCornerRadius="10dp"
                         tools:ignore="UsingOnClickInXml">
 
@@ -292,10 +294,11 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_user_status"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
-                        android:onClick="main_features"
+                        android:onClick="MainFeatures"
                         android:background="@android:color/white"
                         app:cardCornerRadius="10dp"
                         tools:ignore="UsingOnClickInXml">
@@ -325,11 +328,12 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_report_case"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        android:onClick="main_features"
+                        android:onClick="MainFeatures"
                         app:cardCornerRadius="10dp"
                         tools:ignore="UsingOnClickInXml">
 
