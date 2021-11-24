@@ -63,4 +63,6 @@
     <string name="case_happening_date">Case Happening Date</string>
     <string name="upload">Upload</string>
     <string name="evidence">Evidence (photos/doc/pdf)</string>
+    <string name="th_to_do_desc">Changed location?</string>
+    <string name="go">Go</string>
 </resources>

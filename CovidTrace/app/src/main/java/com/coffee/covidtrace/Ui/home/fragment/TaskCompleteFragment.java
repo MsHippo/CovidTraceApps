@@ -7,16 +7,21 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.coffee.covidtrace.Adapter.ThingsAdapter;
 import com.coffee.covidtrace.R;
 
 public class TaskCompleteFragment extends Fragment {
 
     private TaskCompleteViewModel mViewModel;
+
+    String[] contents = {"Changed Location?", "After Vaccination", "How you feeling?"};
 
     public static TaskCompleteFragment newInstance() {
         return new TaskCompleteFragment();
@@ -25,8 +30,11 @@ public class TaskCompleteFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.task_complete_fragment, container, false);
-    }
+        View view = inflater.inflate(R.layout.task_complete_fragment, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.th_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        recyclerView.setAdapter(new ThingsAdapter(contents));
+        return view;    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
