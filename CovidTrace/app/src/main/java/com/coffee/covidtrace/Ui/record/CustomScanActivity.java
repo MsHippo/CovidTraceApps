@@ -1,4 +1,4 @@
-package com.coffee.covidtrace;
+package com.coffee.covidtrace.Ui.record;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.coffee.covidtrace.R;
 import com.google.zxing.multi.qrcode.QRCodeMultiReader;
 import com.google.zxing.qrcode.encoder.QRCode;
 import com.journeyapps.barcodescanner.CaptureManager;
