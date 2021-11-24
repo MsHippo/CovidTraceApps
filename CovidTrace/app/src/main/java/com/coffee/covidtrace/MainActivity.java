@@ -144,7 +144,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        NavController navController = Navigation.findNavController(this, R.id.fragment);
+
         switch (item.getItemId()) {
+            case R.id.homeFragment:
+                navController.navigate(R.id.homeFragment);
+                break;
+            case R.id.statisticFragment:
+                navController.navigate(R.id.statisticFragment);
+                break;
+            case R.id.recordFragment:
+                navController.navigate(R.id.recordFragment);
+                break;
+            case R.id.historyFragment:
+                navController.navigate(R.id.historyFragment);
+                break;
+            case R.id.profileFragment:
+                navController.navigate(R.id.profileFragment);
+                break;
+            case android.R.id.home:
+                this.finish();
+                break;
             case R.id.refresh:
                 Toast.makeText(this, "Refresh Clicked", Toast.LENGTH_SHORT).show();
                 break;

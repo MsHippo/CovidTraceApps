@@ -74,4 +74,6 @@
     <string name="fully_vaccinated">Fully Vaccinated</string>
     <string name="title_risk_status">COVID-19 Risk Status</string>
     <string name="no_symptom_low_risk">No Symptom, Low Risk</string>
+    <string name="turn_on_flashlight">Turn on Flashlight</string>
+    <string name="turn_off_flashlight">Turn off Flashlight</string>
 </resources>

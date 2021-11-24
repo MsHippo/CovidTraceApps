@@ -193,8 +193,8 @@
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp"
                         android:onClick="MainFeatures"
+                        app:cardCornerRadius="10dp"
                         tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat

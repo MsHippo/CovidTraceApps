@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.coffee.covidtrace"
-        minSdk 19
+        minSdk 24
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -78,4 +78,8 @@ dependencies {
 
     // optional - Test helpers for LiveData
     testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+    //For ZXing barcode library
+    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 }
