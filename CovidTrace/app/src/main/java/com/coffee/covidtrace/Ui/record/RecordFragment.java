@@ -63,7 +63,7 @@ public class RecordFragment extends Fragment {
                 integrator.setBarcodeImageEnabled(false);
                 integrator.setOrientationLocked(true);
                 integrator.initiateScan();
-                scanCustomScanner(view);
+//                scanCustomScanner(view);
 
             }
         });
@@ -71,9 +71,9 @@ public class RecordFragment extends Fragment {
         return recordFragment;
     }
 
-    public void scanFromFragment() {
-        fragmentLauncher.launch(new ScanOptions());
-    }
+//    public void scanFromFragment() {
+//        fragmentLauncher.launch(new ScanOptions());
+//    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -98,10 +98,12 @@ public class RecordFragment extends Fragment {
             if (result.getContents() == null) {
                 Log.e("Scan*******", "Cancelled scan");
             } else {
-                Log.e("Scan", "Scanned");
-
+                Toast.makeText(getContext(), "Scanned this!!!!!", Toast.LENGTH_LONG).show();
 //                textViewScanResult.setText(result.getContents());
             }
+            Intent intent = new Intent(getActivity(), SuccessCheckInActivity.class);
+            intent.putExtra("SCAN_RESULTS", String.valueOf(result));
+            startActivity(intent);
         }
     }
 

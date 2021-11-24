@@ -40,37 +40,39 @@
             android:maxLines="3"
             android:scrollbars="vertical"/>
     </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/cl_date_picker"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tf_title"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
-        android:layout_below="@+id/tf_title"
         android:orientation="horizontal">
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tf_date_picker"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:hint="@string/case_happening_date">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_date_picker"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/case_happening_date">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tx_show_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:strokeWidth="3dp"
-                app:icon="@drawable/ic_calendar"/>
-    </com.google.android.material.textfield.TextInputLayout>
+                app:icon="@drawable/ic_calendar"
+                app:strokeWidth="3dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_pick_date"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/ic_calendar"
             android:layout_gravity="center"
+            android:background="@drawable/ic_calendar"
             tools:ignore="SpeakableTextPresentCheck" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -84,13 +86,36 @@
         android:textSize="10sp"
         android:text="@string/evidence"
         tools:ignore="SmallSp" />
+
     <Button
         android:id="@+id/btn_upload_img_pdf"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/upload"
-        android:layout_marginStart="16dp"
         android:layout_below="@+id/tv_to_upload"
-        style="?attr/materialButtonOutlinedStyle"
-        />
+        android:layout_marginStart="16dp"
+        android:text="@string/upload" />
+
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:gravity="end">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:backgroundTint="@color/primaryTextColor"
+                android:textColor="@color/secondaryTextColor"
+                android:layout_marginEnd="15dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:text="@string/submit"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 </RelativeLayout>

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
+            android:name=".Ui.record.SuccessCheckInActivity"
+            android:exported="true" />
+        <activity
             android:name=".Ui.record.CustomScanActivity"
             android:exported="true" />
         <activity

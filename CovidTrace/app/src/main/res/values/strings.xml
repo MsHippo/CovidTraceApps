@@ -76,4 +76,11 @@
     <string name="no_symptom_low_risk">No Symptom, Low Risk</string>
     <string name="turn_on_flashlight">Turn on Flashlight</string>
     <string name="turn_off_flashlight">Turn off Flashlight</string>
+    <string name="check_in_successfully">Check-in Successfully</string>
+    <string name="show_instruction">Please show this ticket if it is required to.</string>
+    <string name="location_title">Location</string>
+    <string name="date_title">Date</string>
+    <string name="risk_status_title">Risk Status</string>
+    <string name="risk_status">Low</string>
+    <string name="done">Done</string>
 </resources>
