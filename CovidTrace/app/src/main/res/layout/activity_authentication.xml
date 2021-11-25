@@ -56,45 +56,40 @@
         android:layout_marginTop="250dp"
         android:layout_marginRight="40dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/email" />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="20dp"
-            android:hint="E-mail"
-            android:textColor="#012260"
-            android:textColorHint="#012260" />
+            android:layout_height="60dp"
+            app:startIconDrawable="@drawable/email" />
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="-10dp"
+            android:hint="E-mail" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginLeft="210dp"
+            android:layout_marginLeft="230dp"
             android:layout_marginTop="-5dp"
             android:text="Send"/>
 
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="80dp"
-            android:scaleX="1.2"
-            android:src="@drawable/authentication" />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginRight="20dp"
-            android:hint="Verification code"
-            android:textColor="#012260"
-            android:textColorHint="#012260" />
+            android:layout_height="60dp"
+            android:layout_marginTop="70dp"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/authentication" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="50dp"
+            android:hint="password"
+            android:inputType="textPassword" />
 
     </RelativeLayout>
 

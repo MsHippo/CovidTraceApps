@@ -10,9 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GettingStartActivity"
+            android:exported="false" />
+        <activity
             android:name=".Ui.VaccinationActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AuthenticationActivity"
             android:exported="false" />

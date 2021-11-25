@@ -43,51 +43,73 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/photo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/add_photo"
-        android:layout_marginTop="160dp"
-        android:layout_marginLeft="250dp"/>
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
-        android:textSize="25dp"
-        android:text="Aalda binti Abdul Quddoos"
-        android:textColor="#012260"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"
-        android:gravity="center"/>
+        android:layout_marginTop="50dp">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/Rectangle_yellow"
-        android:layout_marginTop="300dp"
-        android:layout_centerHorizontal="true"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Medium Risk No Syntom"
-        android:layout_marginTop="305dp"
-        android:textSize="20dp"
-        android:textColor="#012260"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/photo" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_photo"
+                android:layout_marginTop="-50dp"
+                android:layout_marginLeft="250dp"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="25dp"
+                android:text="Aalda binti Abdul Quddoos"
+                android:textColor="#012260"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:gravity="center"/>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rectangle_yellow"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-35dp"
+                android:gravity="center"
+                android:text="Medium Risk No Syntom"
+                android:textColor="#012260"
+                android:textSize="20dp" />
 
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/profile_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/square_transp_bg"
+                tools:layout_editor_absoluteX="0">
+            </com.google.android.material.tabs.TabLayout>
 
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/profile_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+            </androidx.viewpager2.widget.ViewPager2>
+        </LinearLayout>
 
+    </ScrollView>
 </RelativeLayout>

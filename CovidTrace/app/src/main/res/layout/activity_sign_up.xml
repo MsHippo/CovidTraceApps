@@ -9,8 +9,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background"
-        android:scaleX="1.5"/>
+        android:scaleX="1.5"
+        android:src="@drawable/background" />
 
     <TextView
         android:layout_width="match_parent"
@@ -52,21 +52,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"></View>
-
-            <EditText
-                android:background="@null"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="50dp"
-                android:hint="Username (Email)"
+                android:hint="Username"
                 android:textColorHint="#000000"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 
@@ -75,21 +75,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"></View>
-
-            <EditText
-                android:background="@null"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="50dp"
                 android:hint="Name (Same as NRIC/Passport)"
                 android:textColorHint="#000000"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 
@@ -98,21 +98,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"></View>
-
-            <EditText
-                android:background="@null"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="50dp"
                 android:hint="NRIC / Passport No.(without dash)"
                 android:textColorHint="#000000"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 
@@ -121,21 +121,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="180dp">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"></View>
-
-            <EditText
-                android:background="@null"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="50dp"
                 android:hint="Phone No"
                 android:textColorHint="#000000"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 
@@ -144,28 +144,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="240dp">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"></View>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="50dp"
-                android:background="@null"
                 android:hint="Password"
                 android:textColorHint="#000000"
-                android:textSize="15dp" />
+                app:endIconMode="password_toggle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="7dp"
-                android:src="@drawable/eye" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 
@@ -174,28 +169,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="300dp">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"></View>
-
-            <EditText
-                android:background="@null"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="50dp"
                 android:hint="re-Password"
                 android:textColorHint="#000000"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
+                app:endIconMode="password_toggle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="7dp"
-                android:src="@drawable/eye" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 
