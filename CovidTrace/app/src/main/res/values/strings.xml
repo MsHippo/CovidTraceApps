@@ -68,7 +68,7 @@
     <string name="check_in">Check-in</string>
     <string name="last_check_in">Last Check-in</string>
     <string name="example_place_name">Ali\'s Kopitian Taman Rajang</string>
-    <string name="example_time">Jan 1, 2021; 00:00:00am</string>
+    <string name="example_date_time">Jan 1, 2021; 00:00:00am</string>
     <string name="check_out">Check-out</string>
     <string name="covid_vaccine_status">Covid-19 Vaccination Status</string>
     <string name="fully_vaccinated">Fully Vaccinated</string>
@@ -83,4 +83,5 @@
     <string name="risk_status_title">Risk Status</string>
     <string name="risk_status">Low</string>
     <string name="done">Done</string>
+    <string name="checked_in">Checked-in:</string>
 </resources>

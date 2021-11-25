@@ -238,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginBottom="4dp"
-                        android:text="@string/example_time"
+                        android:text="@string/example_date_time"
                         app:layout_constraintBottom_toTopOf="@+id/btn_user_check_out"
                         app:layout_constraintStart_toStartOf="parent" />
 
