@@ -87,4 +87,12 @@
     <string name="instruction_loc_permission">Remember to open the Location permission to use this function.</string>
     <string name="instruction_search_box">Kindly use the Search box to view the map.</string>
     <string name="search_location_here">Search Location Here</string>
+    <string name="instruction">Instruction</string>
+    <string name="status_update_instruction">Kindly update your health status by answering the health question assessment</string>
+    <string name="status_instruc_ques">Are you started exhibiting COVID-19 symptoms?</string>
+    <string name="status_quest_content">Are you <ul><li>travelled overseas</li><li>had contact with a positive COVID-19 patient</li><li>or attended any mass gathering</li></ul> \nin the past 14 days?</string>
+    <string name="start">Start</string>
+    <string name="sample_question">1. Are you exhibiting 2 or more symptoms as listed below? / Adakah anda mengalami 2 atau lebih gejala berikut?</string>
+    <string name="label_1">Yes/Ya</string>
+    <string name="label_2">No/Tidak</string>
 </resources>

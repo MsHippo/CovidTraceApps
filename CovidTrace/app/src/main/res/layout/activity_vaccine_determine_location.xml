@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,7 +25,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_ques1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -33,11 +33,11 @@
         android:textSize="15sp"
         android:text="@string/reg_location"
         android:textAlignment="textStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        android:layout_below="@+id/appBarLayout"
+        />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_ques2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -45,43 +45,76 @@
         android:textSize="15sp"
         android:text="@string/reg_location_bm"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        android:layout_below="@+id/tv_ques1"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
+        android:layout_below="@+id/tv_ques2"
         app:cardCornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+                android:id="@+id/area_searching"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp">
+                android:orientation="horizontal">
+                <!--                <EditText-->
+                <!--                    android:id="@+id/editText"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_weight="4"-->
+                <!--                    android:hint="@string/search_location_here"-->
+                <!--                    android:autofillHints="" />-->
+                <!--                <Button-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:onClick="onMapSearch"-->
+                <!--                    android:background="@drawable/ic_search"/>-->
 
-                <SearchView
-                    android:id="@+id/search_location"
+                <!--                <SearchView-->
+                <!--                    android:id="@+id/search_location"-->
+                <!--                    android:layout_width="280dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:iconifiedByDefault="false"-->
+                <!--                    android:queryHint="Search Here" />-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlined_tf_location"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:iconifiedByDefault="false"
-                    android:queryHint="Search Here" />
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/search_location_here"
+                    android:onClick=""
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:startIconDrawable="@drawable/ic_search"
+                    tools:ignore="OnClick">
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    android:src="@drawable/ic_my_location"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tf_location_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ic_my_location"
                     tools:ignore="SpeakableTextPresentCheck" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -94,40 +127,71 @@
             <!--                tools:context=".MapsActivity" />-->
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/area_location"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
+                android:layout_below="@+id/area_searching"
                 app:cardElevation="@null">
+
+                <!--                <fragment xmlns:map="http://schemas.android.com/apk/res-auto"-->
+                <!--                    android:id="@+id/map"-->
+                <!--                    android:name="com.google.android.gms.maps.SupportMapFragment"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:layout_margin="20dp"/>-->
                 <View
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/map"
+                    android:layout_gravity="center"
                     android:layout_margin="40dp"
-                    android:layout_gravity="center"/>
+                    android:background="@drawable/map" />
+                <!--                <com.google.android.gms.maps.MapView xmlns:map="http://schemas.android.com/apk/res-auto"-->
+                <!--                    android:id="@+id/map"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:layout_marginStart="20dp"-->
+                <!--                    android:layout_marginEnd="20dp" />-->
+                <!--
+                map:mapType="0" Specifies a change to the initial map type
+                map:zOrderOnTop="true"  Control whether the map view's surface is placed on top of its window
+                map:useVieLifecycle="true" When using a MapFragment, this flag specifies whether the lifecycle of the map should be tied to the fragment's view or the fragment itself
+                map:uiCompass="true" Enables or disables the compass
+                map:uiRotateGestures="true" Sets the preference for whether rotate gestures should be enabled or disabled
+                map:uiScrollGestures="true" Sets the preference for whether scroll gestures should be enabled or disabled
+                map:uiTiltGestures="true" Sets the preference for whether tilt gestures should be enabled or disabled
+                map:uiZoomGestures="true" Sets the preference for whether zoom gestures should be enabled or disabled
+                map:uiZoomControls="true" Enables or disables the zoom controls
+                map:liteMode="true" Specifies whether the map should be created in lite mode
+                map:uiMapToolbar="true" Specifies whether the mapToolbar should be enabled
+                map:ambientEnabled="true" Specifies whether ambient-mode styling should be enabled
+                map:cameraMinZoomPreference="0.0" Specifies a preferred lower bound for camera zoom
+                map:cameraMaxZoomPreference="1.0" Specifies a preferred upper bound for camera zoom -->
+
             </androidx.cardview.widget.CardView>
+
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/area_instruction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginEnd="15dp"
-                android:layout_gravity="end">
-                <Button
+                android:layout_below="@+id/area_location"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instruction_loc_permission" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cancel"
-                    android:backgroundTint="@color/primaryTextColor"
-                    android:textColor="@color/secondaryTextColor"
-                    android:layout_marginEnd="15dp"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/submit"/>
+                    android:text="@string/instruction_search_box" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
