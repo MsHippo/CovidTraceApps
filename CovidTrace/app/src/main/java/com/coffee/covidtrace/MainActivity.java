@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.coffee.covidtrace.Ui.Dependency.DependencyAddingActivity;
 import com.coffee.covidtrace.Ui.healthAssessment.HealthStartActivity;
 import com.coffee.covidtrace.Ui.hotspot.HotspotActivity;
 import com.coffee.covidtrace.Ui.ReportCaseActivity;
@@ -138,6 +139,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_user_status:
                 intent = new Intent(this, HealthStartActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_dependency:
+                intent = new Intent(this, DependencyAddingActivity.class);
                 startActivity(intent);
                 break;
         }

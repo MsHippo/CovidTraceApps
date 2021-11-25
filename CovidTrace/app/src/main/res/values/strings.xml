@@ -95,4 +95,40 @@
     <string name="sample_question">1. Are you exhibiting 2 or more symptoms as listed below? / Adakah anda mengalami 2 atau lebih gejala berikut?</string>
     <string name="label_1">Yes/Ya</string>
     <string name="label_2">No/Tidak</string>
+    <string name="my_dependents">My Dependents</string>
+    <string name="dependents_desc">Add the non-smartphone dependents.</string>
+    <string name="add">Add</string>
+    <string name="fields_are_mandatory">* Fields are mandatory</string>
+    <string name="full_name_in_pric_passport">* Full Name in PRIC/Passport</string>
+    <string name="nric_passport_no_title">NRIC/Passport No</string>
+    <string name="age_title">Age</string>
+    <string name="relationship_title">Relationship</string>
+    <string name="current_address">Current Address</string>
+    <string name="state_title">State</string>
+    <string name="postcode_title">Postcode</string>
+    <string name="add_another"><b><u>Add Another</u></b></string>
+    <string-array name="Relationship">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Relative</item>
+        <item>Guardian</item>
+    </string-array>
+    <string-array name="State">
+        <item>Johor</item>>
+        <item>Kedah</item>
+        <item>Kelantan</item>
+        <item>Melaka</item>
+        <item>Negeri Sembilan</item>
+        <item>Pahang</item>
+        <item>Perak</item>
+        <item>Perlis</item>
+        <item>Pulau Pinang</item>
+        <item>Sabah</item>
+        <item>Sarawak</item>
+        <item>Selangor</item>
+        <item>Terengganu</item>
+        <item>W.P. Kuala Lumpur</item>
+        <item>W.P. Labuan</item>
+        <item>W.P. Putrajaya</item>
+    </string-array>
 </resources>

@@ -17,4 +17,11 @@
     <style name="Theme.DrawerApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.DrawerApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+<!--    <style name="spinnerTheme" parent= "Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">-->
+<!--        <item name="strokeColor">@color/primaryColor</item>-->
+<!--    </style>-->
+    <style name="spinnerTheme" parent= "Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="strokeColor">@color/primaryColor</item>
+    </style>
 </resources>

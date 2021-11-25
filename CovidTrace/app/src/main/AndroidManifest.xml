@@ -17,9 +17,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
+            android:name=".Ui.Dependency.AddDependencyDetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.Dependency.DependencyAddingActivity"/>
+        <activity
+            android:name=".Ui.Dependency.DependencyAddingActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".Ui.healthAssessment.QuestionActivity"
             android:exported="true"
-            android:parentActivityName=".Ui.healthAssessment.HealthStartActivity"/>
+            android:parentActivityName=".Ui.healthAssessment.HealthStartActivity" />
         <activity
             android:name=".Ui.healthAssessment.HealthStartActivity"
             android:exported="true"
