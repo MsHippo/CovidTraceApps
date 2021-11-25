@@ -107,6 +107,8 @@
     <string name="state_title">State</string>
     <string name="postcode_title">Postcode</string>
     <string name="add_another"><b><u>Add Another</u></b></string>
+    <string name="number_case_warning">In the past 14 days, within a 1km radius from your searched area, there are 50 reported case(s) of COVID-19.</string>
+    <string name="color_of_zone_area">Red Zone Area</string>
     <string-array name="Relationship">
         <item>Father</item>
         <item>Mother</item>

@@ -4,10 +4,13 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 
 import com.coffee.covidtrace.R;
+import com.coffee.covidtrace.Ui.record.SuccessCheckInActivity;
 
 
 public class HotspotActivity extends AppCompatActivity {
@@ -31,4 +34,9 @@ public class HotspotActivity extends AppCompatActivity {
 
     }
 
+    public void searchHotspotArea(View view) {
+        Intent intent = new Intent(this, HotSpotResultActivity.class);
+//        intent.putExtra("LOCATION_RESULTS", String.valueOf(location));
+        startActivity(intent);
+    }
 }

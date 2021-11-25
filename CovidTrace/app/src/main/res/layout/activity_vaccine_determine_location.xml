@@ -48,6 +48,7 @@
         android:layout_below="@+id/tv_ques1"/>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_register_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_ques2"
@@ -57,6 +58,7 @@
         android:layout_marginEnd="20dp">
 
         <RelativeLayout
+            android:id="@+id/rl_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -89,10 +91,11 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/outlined_tf_location"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="280dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginEnd="120dp"
                     android:hint="@string/search_location_here"
                     android:onClick=""
                     app:boxCornerRadiusBottomEnd="10dp"
@@ -111,9 +114,18 @@
                 <Button
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="-110dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
+                    android:background="@drawable/ic_search"
+                    android:gravity="center"
+                    tools:ignore="OnClick,SpeakableTextPresentCheck" />
+
+                <Button
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/ic_my_location"
                     tools:ignore="SpeakableTextPresentCheck" />
 
@@ -191,7 +203,23 @@
 
         </RelativeLayout>
 
+
     </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cv_register_location"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardElevation="0dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/submit"/>
+    </androidx.cardview.widget.CardView>
+
 
 
 </RelativeLayout>
