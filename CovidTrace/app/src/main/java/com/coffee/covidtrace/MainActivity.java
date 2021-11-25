@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.coffee.covidtrace.Ui.HotspotActivity;
 import com.coffee.covidtrace.Ui.ReportCaseActivity;
 import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -129,6 +130,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_report_case:
                 intent = new Intent(this, ReportCaseActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_hotspot:
+                intent = new Intent(this, HotspotActivity.class);
                 startActivity(intent);
                 break;
         }

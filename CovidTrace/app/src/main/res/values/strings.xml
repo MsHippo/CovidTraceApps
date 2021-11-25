@@ -84,4 +84,7 @@
     <string name="risk_status">Low</string>
     <string name="done">Done</string>
     <string name="checked_in">Checked-in:</string>
+    <string name="instruction_loc_permission">Remember to open the Location permission to use this function.</string>
+    <string name="instruction_search_box">Kindly use the Search box to view the map.</string>
+    <string name="search_location_here">Search Location Here</string>
 </resources>
