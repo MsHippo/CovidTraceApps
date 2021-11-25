@@ -17,12 +17,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.coffee.covidtrace.Ui.HotspotActivity;
+import com.coffee.covidtrace.Ui.hotspot.HotspotActivity;
 import com.coffee.covidtrace.Ui.ReportCaseActivity;
 import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.coffee.covidtrace.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {

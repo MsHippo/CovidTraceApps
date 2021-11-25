@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
-            android:name=".Ui.HotspotActivity"
+            android:name=".Ui.hotspot.HotspotActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity"/>
         <activity
