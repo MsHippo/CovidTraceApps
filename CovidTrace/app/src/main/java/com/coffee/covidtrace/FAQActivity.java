@@ -24,7 +24,7 @@ public class FAQActivity extends AppCompatActivity {
 
         // toolbar is defined in the layout file
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("COVID-19 Hotspot Tracker");
+        toolbar.setTitle("COVID-19 FAQs");
         setSupportActionBar(toolbar);
 
         // Get a support ActionBar corresponding to this toolbar

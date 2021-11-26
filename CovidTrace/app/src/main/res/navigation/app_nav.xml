@@ -30,4 +30,15 @@
         android:name="com.coffee.covidtrace.Ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <activity
+        android:id="@+id/getStartedActivity"
+        android:name="com.coffee.covidtrace.GettingStartActivity"
+        android:label="Getting Started"
+        tools:layout="@layout/activity_getting_start" />
+
+    <activity
+        android:id="@+id/logoutActivity"
+        android:name="com.coffee.covidtrace.LoginActivity"
+        tools:layout="@layout/activity_login" />
 </navigation>

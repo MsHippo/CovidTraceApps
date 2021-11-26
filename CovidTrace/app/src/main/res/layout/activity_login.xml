@@ -7,9 +7,9 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:text="Hello,"
         android:textColor="#012260"
@@ -19,11 +19,11 @@
         android:id="@+id/tv_welcome"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="90dp"
         android:text="Welcome Back"
-        android:textSize="30sp"
         android:textColor="#012260"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"/>
+        android:textSize="30sp" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,8 +38,8 @@
         android:id="@+id/ly_user_log_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:layout_below="@+id/tv_welcome">

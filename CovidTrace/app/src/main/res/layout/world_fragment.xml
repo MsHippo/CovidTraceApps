@@ -5,10 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
             android:layout_height="310dp"
@@ -19,7 +15,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="150dp"
                 android:layout_height="140dp"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:background="@android:color/white"
                 app:cardCornerRadius="10dp"
                 tools:ignore="UsingOnClickInXml">
@@ -31,7 +27,7 @@
                     android:gravity="center"
                     android:text="1000"
                     android:textColor="#B13F3D"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="120dp"
@@ -41,14 +37,14 @@
                     android:gravity="center"
                     android:text="Confirmed Case Daily"
                     android:textColor="#B13F3D"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="5dp"
                 android:layout_width="150dp"
                 android:layout_height="140dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:background="@android:color/white"
                 app:cardCornerRadius="10dp"
                 tools:ignore="UsingOnClickInXml">
@@ -60,7 +56,7 @@
                     android:gravity="center"
                     android:text="3000,000"
                     android:textColor="#5C9E31"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="120dp"
@@ -70,7 +66,7 @@
                     android:gravity="center"
                     android:text="Recovered Case"
                     android:textColor="#5C9E31"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -89,7 +85,7 @@
                     android:gravity="center"
                     android:text="1500,000"
                     android:textColor="#000000"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="120dp"
@@ -99,13 +95,13 @@
                     android:gravity="center"
                     android:text="Death Case Daily"
                     android:textColor="#000000"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
                 android:layout_height="140dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@android:color/white"
                 app:cardCornerRadius="10dp"
@@ -118,7 +114,7 @@
                     android:gravity="center"
                     android:text="Click for More Ranking"
                     android:textColor="#012260"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </androidx.cardview.widget.CardView>
         </androidx.gridlayout.widget.GridLayout>
@@ -128,35 +124,35 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="320dp"
             android:text="Updated at "
-            android:layout_marginLeft="80dp"/>
+            android:layout_marginStart="80dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="320dp"
             android:text="20 October 2021"
-            android:layout_marginLeft="155dp"/>
+            android:layout_marginStart="155dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="320dp"
             android:text=","
-            android:layout_marginLeft="260dp"/>
+            android:layout_marginStart="260dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="320dp"
             android:text="12:00pm"
-            android:layout_marginLeft="270dp"/>
+            android:layout_marginStart="270dp"/>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="350dp"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
             android:src="@drawable/pic3" />
-
-    </RelativeLayout>
 
 </RelativeLayout>

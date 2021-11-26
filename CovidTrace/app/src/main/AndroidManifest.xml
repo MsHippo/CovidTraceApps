@@ -34,7 +34,8 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".GettingStartActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Ui.hotspot.HotSpotResultActivity"
             android:exported="true"
