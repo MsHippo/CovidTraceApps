@@ -17,11 +17,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.coffee.covidtrace.Ui.Dependency.DependencyAddingActivity;
+import com.coffee.covidtrace.Ui.dependency.DependencyAddingActivity;
 import com.coffee.covidtrace.Ui.SymptomActivity;
 import com.coffee.covidtrace.Ui.healthAssessment.HealthStartActivity;
 import com.coffee.covidtrace.Ui.hotspot.HotspotActivity;
 import com.coffee.covidtrace.Ui.ReportCaseActivity;
+import com.coffee.covidtrace.Ui.notification.NotificationActivity;
 import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -171,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
         NavController navController = Navigation.findNavController(this, R.id.fragment);
 
+        Intent intent;
         switch (item.getItemId()) {
 //            case R.id.homeFragment:
 //                navController.navigate(R.id.homeFragment);
@@ -194,7 +196,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Refresh Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.notifications:
-                Toast.makeText(this, "Notifications Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Notifications Clicked", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, NotificationActivity.class);
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);

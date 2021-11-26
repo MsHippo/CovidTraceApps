@@ -21,11 +21,13 @@
             android:exported="true"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".NotificationDetailActivity"
-            android:exported="false" />
+            android:name=".Ui.notification.NotificationDetailActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.notification.NotificationActivity"/>
         <activity
-            android:name=".NotificationActivity"
-            android:exported="false" />
+            android:name=".Ui.notification.NotificationActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".FAQActivity"
             android:exported="true"
@@ -38,11 +40,11 @@
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Ui.Dependency.AddDependencyDetailsActivity"
+            android:name=".Ui.dependency.AddDependencyDetailsActivity"
             android:exported="true"
-            android:parentActivityName=".Ui.Dependency.DependencyAddingActivity" />
+            android:parentActivityName=".Ui.dependency.DependencyAddingActivity" />
         <activity
-            android:name=".Ui.Dependency.DependencyAddingActivity"
+            android:name=".Ui.dependency.DependencyAddingActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity

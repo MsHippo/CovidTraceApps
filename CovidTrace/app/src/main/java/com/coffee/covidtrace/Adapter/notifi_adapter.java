@@ -11,10 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.coffee.covidtrace.NotificationActivity;
-import com.coffee.covidtrace.NotificationDetailActivity;
+import com.coffee.covidtrace.Ui.notification.NotificationDetailActivity;
 import com.coffee.covidtrace.R;
-import com.coffee.covidtrace.faqs;
 import com.coffee.covidtrace.notifications;
 
 import java.util.List;

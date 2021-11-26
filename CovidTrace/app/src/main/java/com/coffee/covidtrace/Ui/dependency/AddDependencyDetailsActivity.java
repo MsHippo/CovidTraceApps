@@ -1,4 +1,4 @@
-package com.coffee.covidtrace.Ui.Dependency;
+package com.coffee.covidtrace.Ui.dependency;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
