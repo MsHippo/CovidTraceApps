@@ -1,25 +1,24 @@
-package com.coffee.covidtrace.Ui;
+package com.coffee.covidtrace.Ui.vaccination;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.coffee.covidtrace.R;
 
-import java.util.Objects;
-
-public class VaccinationActivity extends AppCompatActivity {
+public class VaccineDetermineLocationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vaccination);
+        setContentView(R.layout.activity_vaccine_determine_location);
 
-        // my_child_toolbar is defined in the layout file
-        Toolbar toolbar =
-                (Toolbar) findViewById(R.id.toolbar);
+        // the toolbar is defined in the layout file
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Register");
         setSupportActionBar(toolbar);
 
         // Get a support ActionBar corresponding to this toolbar
@@ -28,5 +27,8 @@ public class VaccinationActivity extends AppCompatActivity {
         // Enable the Up button
         assert ab != null;
         ab.setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void searchHotspotArea(View view) {
     }
 }

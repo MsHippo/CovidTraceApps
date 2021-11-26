@@ -8,5 +8,15 @@
     <color name="secondaryDarkColor">#ac9255</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
+    <color name="grey">#E0E0E0</color>
+    <color name="darkGrey">#979797</color>
     <color name="red177">#B13F3D</color>
+    <color name="greenTick">#5C9E31</color>
+    <color name="skyBlue">#0563C1</color>
+    <color name="grassGreen">#249260</color>
+
+<!--    <color name="zxing_result_view">#b0000000</color>-->
+<!--    <color name="zxing_status_text">#ffffffff</color>-->
+<!--    <color name="zxing_transparent">#00000000</color>-->
+<!--    <color name="zxing_viewfinder_mask">#60000000</color>-->
 </resources>

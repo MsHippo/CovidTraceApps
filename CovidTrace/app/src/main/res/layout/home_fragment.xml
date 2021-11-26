@@ -12,7 +12,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="15dp"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -188,13 +188,13 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/covid_vaccination"
+                        android:id="@+id/btn_covid_vaccination"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
+                        android:onClick="MainFeatures"
                         app:cardCornerRadius="10dp"
-                        android:onClick="vaccine_registration"
                         tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -226,11 +226,14 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_hotspot"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        android:onClick="MainFeatures"
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -257,11 +260,14 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_dependency"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        android:onClick="MainFeatures"
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -288,11 +294,14 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_user_status"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
+                        android:onClick="MainFeatures"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -319,11 +328,14 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_report_case"
                         android:layout_width="wrap_content"
                         android:layout_height="102dp"
                         android:layout_margin="10dp"
                         android:background="@android:color/white"
-                        app:cardCornerRadius="10dp">
+                        android:onClick="MainFeatures"
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="UsingOnClickInXml">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -341,7 +353,8 @@
                             <TextView
                                 android:layout_width="80dp"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
                                 android:text="@string/report_rule_breaking_case"
                                 android:textAlignment="center"
                                 android:textSize="10sp"

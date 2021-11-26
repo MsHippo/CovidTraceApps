@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".Ui.home.fragment.TaskCompleteFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/th_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_marginBottom="50dp"/>
 
 </FrameLayout>

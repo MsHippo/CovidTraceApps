@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.coffee.covidtrace">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +26,62 @@
             android:name=".GettingStartActivity"
             android:exported="false" />
         <activity
-            android:name=".Ui.VaccinationActivity"
+            android:name=".Ui.hotspot.HotSpotResultActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Ui.Dependency.AddDependencyDetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.Dependency.DependencyAddingActivity" />
+        <activity
+            android:name=".Ui.Dependency.DependencyAddingActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Ui.healthAssessment.QuestionActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.healthAssessment.HealthStartActivity" />
+        <activity
+            android:name=".Ui.healthAssessment.HealthStartActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Ui.hotspot.HotspotActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Ui.record.SuccessCheckInActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Ui.record.CustomScanActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/zxing_CaptureTheme"
+            tools:replace="screenOrientation" />
+        <activity
+            android:name=".Ui.ReportCaseActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Ui.vaccination.VaccineDetermineLocationActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.vaccination.VaccineRegistrationActivity" />
+        <activity
+            android:name=".Ui.vaccination.VaccineRegistrationActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.vaccination.VaccinationRegStatusActivity" />
+        <activity
+            android:name=".Ui.vaccination.VaccinationInfoActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.vaccination.VaccinationActivity" />
+        <activity
+            android:name=".Ui.vaccination.VaccinationRegStatusActivity"
+            android:exported="true"
+            android:parentActivityName=".Ui.vaccination.VaccinationActivity" />
+        <activity
+            android:name=".Ui.vaccination.VaccinationActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity

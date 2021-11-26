@@ -28,4 +28,109 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="get_started">Get Started</string>
     <string name="logout">Logout</string>
+    <string name="vaccine_for">Vaccine for ali abu akao amin ali abu akao amin</string>
+    <string name="information_of_vaccine">Information of COVID-19 Vaccine</string>
+    <string name="notifications">Notifications</string>
+    <string name="description_notifications">Show the notifications of apps</string>
+    <string name="refresh">Refresh</string>
+    <string name="description_refresh">refresh the apps</string>
+    <string name="title_name">Name</string>
+    <string name="avatar_name">Aaida binti Abdul Quddoos</string>
+    <string name="title_nric_passport_no">NRIC/Passport No.</string>
+    <string name="nric_passport_no">950511143333</string>
+    <string name="btn_register">Register</string>
+    <string name="notification_register">Register Successfully</string>
+    <string name="description_register">Please wait for appointment calling. It might takes 3 – 4 working days. Confirm the appointment if you receive the notification.</string>
+    <string name="desciption_register_success">Please reach the vaccination center on time</string>
+    <string name="first_dose">First Dose Complete</string>
+    <string name="description_first_dose">Waiting for Second Dose</string>
+    <string name="confirm_appointment">Confirm Appointment</string>
+    <string name="second_dose">Second Dose Complete</string>
+    <string name="my_details">My Details</string>
+    <string name="title_app_id">ContactTrace ID</string>
+    <string name="avatar_id">aaida@gmail.com</string>
+    <string name="short_alert">Verify your information listed is accurate.</string>
+    <string name="edit">Edit</string>
+    <string name="confirm">Confirm</string>
+    <string name="long_awareness">Please ensure your name and NRIC/Passport Number is as per your government issued documents(e.g. inclusive of Bin, Binti, A/P, A/L, as required)</string>
+    <string name="verify_notice">Related Health Authorities will verify the information before vaccination</string>
+    <string name="reg_location">Where are you current place of residence?</string>
+    <string name="reg_location_bm">Di manakah tempat tinggal semasa anda?</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="logo_name">Logo Name</string>
+    <string name="title">Title</string>
+    <string name="case_happening_date">Case Happening Date</string>
+    <string name="upload">Upload</string>
+    <string name="evidence">Evidence (photos/doc/pdf)</string>
+    <string name="th_to_do_desc">Changed location?</string>
+    <string name="go">Go</string>
+    <string name="check_in">Check-in</string>
+    <string name="last_check_in">Last Check-in</string>
+    <string name="example_place_name">Ali\'s Kopitian Taman Rajang</string>
+    <string name="example_date_time">Jan 1, 2021; 00:00:00am</string>
+    <string name="check_out">Check-out</string>
+    <string name="covid_vaccine_status">Covid-19 Vaccination Status</string>
+    <string name="fully_vaccinated">Fully Vaccinated</string>
+    <string name="title_risk_status">COVID-19 Risk Status</string>
+    <string name="no_symptom_low_risk">No Symptom, Low Risk</string>
+    <string name="turn_on_flashlight">Turn on Flashlight</string>
+    <string name="turn_off_flashlight">Turn off Flashlight</string>
+    <string name="check_in_successfully">Check-in Successfully</string>
+    <string name="show_instruction">Please show this ticket if it is required to.</string>
+    <string name="location_title">Location</string>
+    <string name="date_title">Date</string>
+    <string name="risk_status_title">Risk Status</string>
+    <string name="risk_status">Low</string>
+    <string name="done">Done</string>
+    <string name="checked_in">Checked-in:</string>
+    <string name="instruction_loc_permission">Remember to open the Location permission to use this function.</string>
+    <string name="instruction_search_box">Kindly use the Search box to view the map.</string>
+    <string name="search_location_here">Search Location Here</string>
+    <string name="instruction">Instruction</string>
+    <string name="status_update_instruction">Kindly update your health status by answering the health question assessment</string>
+    <string name="status_instruc_ques">Are you started exhibiting COVID-19 symptoms?</string>
+    <string name="status_quest_content">Are you <ul><li>travelled overseas</li><li>had contact with a positive COVID-19 patient</li><li>or attended any mass gathering</li></ul> \nin the past 14 days?</string>
+    <string name="start">Start</string>
+    <string name="sample_question">1. Are you exhibiting 2 or more symptoms as listed below? / Adakah anda mengalami 2 atau lebih gejala berikut?</string>
+    <string name="label_1">Yes/Ya</string>
+    <string name="label_2">No/Tidak</string>
+    <string name="my_dependents">My Dependents</string>
+    <string name="dependents_desc">Add the non-smartphone dependents.</string>
+    <string name="add">Add</string>
+    <string name="fields_are_mandatory">* Fields are mandatory</string>
+    <string name="full_name_in_pric_passport">* Full Name in PRIC/Passport</string>
+    <string name="nric_passport_no_title">NRIC/Passport No</string>
+    <string name="age_title">Age</string>
+    <string name="relationship_title">Relationship</string>
+    <string name="current_address">Current Address</string>
+    <string name="state_title">State</string>
+    <string name="postcode_title">Postcode</string>
+    <string name="add_another"><b><u>Add Another</u></b></string>
+    <string name="number_case_warning">In the past 14 days, within a 1km radius from your searched area, there are 50 reported case(s) of COVID-19.</string>
+    <string name="color_of_zone_area">Red Zone Area</string>
+    <string-array name="Relationship">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Relative</item>
+        <item>Guardian</item>
+    </string-array>
+    <string-array name="State">
+        <item>Johor</item>>
+        <item>Kedah</item>
+        <item>Kelantan</item>
+        <item>Melaka</item>
+        <item>Negeri Sembilan</item>
+        <item>Pahang</item>
+        <item>Perak</item>
+        <item>Perlis</item>
+        <item>Pulau Pinang</item>
+        <item>Sabah</item>
+        <item>Sarawak</item>
+        <item>Selangor</item>
+        <item>Terengganu</item>
+        <item>W.P. Kuala Lumpur</item>
+        <item>W.P. Labuan</item>
+        <item>W.P. Putrajaya</item>
+    </string-array>
 </resources>
