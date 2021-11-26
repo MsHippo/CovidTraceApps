@@ -29,5 +29,5 @@
         android:id="@+id/profileFragment"
         android:name="com.coffee.covidtrace.Ui.profile.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/profile_fragment" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>
