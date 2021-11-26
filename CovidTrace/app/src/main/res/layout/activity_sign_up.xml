@@ -47,7 +47,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/username_title"
-                android:textColorHint="#000000"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -76,7 +75,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="NRIC / Passport No.(without dash)"
-                android:textColorHint="#000000"
                 android:layout_marginTop="5dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
@@ -124,7 +122,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="re-Password"
+                android:hint="Re-Password"
                 android:layout_marginTop="5dp"
                 app:endIconMode="password_toggle">
 
