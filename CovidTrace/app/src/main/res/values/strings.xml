@@ -115,6 +115,7 @@
     <string name="forget_password"><u>Forget Password?</u></string>
     <string name="sign_up_underline"><u>Sign Up</u></string>
     <string name="vaccination_digital_certificate">Vaccination Digital Certificate</string>
+    <string name="to_be_continued">To be continued</string>
     <string-array name="Relationship">
         <item>Father</item>
         <item>Mother</item>

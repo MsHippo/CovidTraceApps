@@ -17,19 +17,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
+            android:name=".Ui.SymptomActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".NotificationActivity"
             android:exported="false" />
         <activity
             android:name=".FAQActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".GettingStartActivity"
             android:exported="false" />
         <activity
             android:name=".Ui.hotspot.HotSpotResultActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Ui.Dependency.AddDependencyDetailsActivity"
             android:exported="true"
@@ -88,18 +92,17 @@
         <activity
             android:name=".AuthenticationActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity"/>
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".ChangePasswordActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity"/>
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
-        android:name=".MainActivity"
-        android:exported="true"/>
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -109,7 +112,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

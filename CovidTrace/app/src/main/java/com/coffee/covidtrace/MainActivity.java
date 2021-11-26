@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.coffee.covidtrace.Ui.Dependency.DependencyAddingActivity;
+import com.coffee.covidtrace.Ui.SymptomActivity;
 import com.coffee.covidtrace.Ui.healthAssessment.HealthStartActivity;
 import com.coffee.covidtrace.Ui.hotspot.HotspotActivity;
 import com.coffee.covidtrace.Ui.ReportCaseActivity;
@@ -148,6 +149,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.faqs_card:
                 intent = new Intent(this, FAQActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.symptoms_card:
+                intent = new Intent(this, SymptomActivity.class);
+                startActivity(intent);
+                break;
+            default:
                 break;
         }
     }
