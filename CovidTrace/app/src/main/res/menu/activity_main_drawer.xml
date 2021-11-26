@@ -30,11 +30,11 @@
     <group android:checkableBehavior="single"
         android:id="@id/start">
     <item
-        android:id="@+id/getStartedFragment"
+        android:id="@+id/getStartedActivity"
         android:title="@string/get_started"
         android:icon="@drawable/ic_home"/>
     <item
-        android:id="@+id/logoutFragment"
+        android:id="@+id/logoutActivity"
         android:title="@string/logout"
         android:icon="@drawable/logout_line"/>
     </group>
