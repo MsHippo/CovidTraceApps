@@ -1,6 +1,8 @@
 package com.coffee.covidtrace;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -19,6 +21,19 @@ public class FAQActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faqactivity);
+
+        // toolbar is defined in the layout file
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("COVID-19 Hotspot Tracker");
+        setSupportActionBar(toolbar);
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+
+        // Enable the Up button
+        assert ab != null;
+        ab.setDisplayHomeAsUpEnabled(true);
+
 
         recyclerView = findViewById(R.id.recycle);
 

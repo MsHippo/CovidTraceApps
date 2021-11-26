@@ -59,8 +59,8 @@
             android:layout_marginTop="10dp"
             android:text="@string/status_instruc_ques"
             android:textColor="@color/secondaryTextColor"
-            android:textStyle="bold"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="280dp"
@@ -68,13 +68,14 @@
             android:layout_marginTop="10dp"
             android:text="@string/status_quest_content"
             android:textColor="@color/secondaryTextColor"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/btn_start_health_assessment"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:text="@string/start"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:text="@string/start" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>

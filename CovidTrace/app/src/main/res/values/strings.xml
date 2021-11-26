@@ -109,6 +109,12 @@
     <string name="add_another"><b><u>Add Another</u></b></string>
     <string name="number_case_warning">In the past 14 days, within a 1km radius from your searched area, there are 50 reported case(s) of COVID-19.</string>
     <string name="color_of_zone_area">Red Zone Area</string>
+    <string name="username_title">Username</string>
+    <string name="sign_up_to_get_started">Sign Up to get started</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forget_password"><u>Forget Password?</u></string>
+    <string name="sign_up_underline"><u>Sign Up</u></string>
+    <string name="vaccination_digital_certificate">Vaccination Digital Certificate</string>
     <string-array name="Relationship">
         <item>Father</item>
         <item>Mother</item>

@@ -145,6 +145,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, DependencyAddingActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.faqs_card:
+                intent = new Intent(this, FAQActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
