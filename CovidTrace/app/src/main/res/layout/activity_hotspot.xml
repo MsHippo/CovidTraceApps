@@ -121,6 +121,8 @@
                 android:id="@+id/area_location"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:layout_below="@+id/area_searching"
                 app:cardElevation="@null">
 
@@ -130,18 +132,18 @@
                 <!--                    android:layout_width="match_parent"-->
                 <!--                    android:layout_height="match_parent"-->
                 <!--                    android:layout_margin="20dp"/>-->
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="40dp"
-                    android:background="@drawable/map" />
-                <!--                <com.google.android.gms.maps.MapView xmlns:map="http://schemas.android.com/apk/res-auto"-->
-                <!--                    android:id="@+id/map"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="match_parent"-->
-                <!--                    android:layout_marginStart="20dp"-->
-                <!--                    android:layout_marginEnd="20dp" />-->
+                <!--                <View-->
+                <!--                    android:layout_width="100dp"-->
+                <!--                    android:layout_height="100dp"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:layout_margin="40dp"-->
+                <!--                    android:background="@drawable/map" />-->
+                <com.google.android.gms.maps.MapView
+                        xmlns:map="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
                 <!--
                 map:mapType="0" Specifies a change to the initial map type
                 map:zOrderOnTop="true"  Control whether the map view's surface is placed on top of its window
