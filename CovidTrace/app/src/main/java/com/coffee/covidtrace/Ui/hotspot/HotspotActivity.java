@@ -10,16 +10,23 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationRequest;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.coffee.covidtrace.R;
 import com.coffee.covidtrace.Ui.record.SuccessCheckInActivity;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -27,9 +34,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 
 public class HotspotActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -37,8 +47,13 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
     //widget
     private MapView mMapView;
     private SearchView searchView;
-    GoogleMap googleMap;
+    private GoogleMap googleMap;
+    private Button btn_auto_focus;
+    private FusedLocationProviderClient mlocationClient;
+    Location currentLocation;
+    private static final int REQUEST_CODE = 101;
 
+    @SuppressLint("VisibleForTests")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +63,7 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
         Toolbar toolbar = findViewById(R.id.toolbar);
         mMapView = findViewById(R.id.map);
         searchView = findViewById(R.id.search_location);
+        btn_auto_focus = findViewById(R.id.btn_auto_focus);
 
 
         toolbar.setTitle("COVID-19 Hotspot Tracker");
@@ -62,26 +78,36 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
 
         initGoogleMap(savedInstanceState);
 
+        mlocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        btn_auto_focus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getCurrentLoc();
+            }
+        });
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                String location  = searchView.getQuery().toString();
+                String location = searchView.getQuery().toString();
                 List<Address> addressList = null;
 
-                if (location!=null || !location.equals("")){
+                if (location != null || !location.equals("")) {
                     Geocoder geocoder = new Geocoder(HotspotActivity.this);
                     try {
-                        addressList = geocoder.getFromLocationName(location,1);
+                        addressList = geocoder.getFromLocationName(location, 1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     assert addressList != null;
                     Address address = addressList.get(0);
-                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-                    googleMap.addMarker(new MarkerOptions()
-                            .position(latLng).title(location)
-                            .draggable(false).visible(true));
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                    goToLocation(address.getLatitude(), address.getLongitude(), location);
+//                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+//                    googleMap.addMarker(new MarkerOptions()
+//                            .position(latLng).title(location)
+//                            .draggable(false).visible(true));
+//                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                 }
                 return false;
             }
@@ -92,6 +118,47 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
             }
         });
 
+    }
+
+    private void getCurrentLoc() {
+
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]
+                    { Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+            return;
+        }
+        Task<Location> task = mlocationClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location!=null){
+                    currentLocation = location;
+                    Toast.makeText(getApplicationContext(), currentLocation.getLatitude()
+                            + "" + currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
+
+                    goToLocation(location.getLatitude(), location.getLongitude(),location.toString());
+                }
+            }
+        });
+
+//        mlocationClient.getLastLocation().addOnCompleteListener(task -> {
+//            if (task.isSuccessful()) {
+//                Location location = task.getResult();
+//                goToLocation(location.getLatitude(), location.getLongitude(),location.toString());
+////                goToLocation(location.getLatitude(), location.getLongitude());
+//            }
+//        });
+    }
+
+    private void goToLocation(double latitude, double longitude, String location) {
+        LatLng latLng = new LatLng(latitude, longitude);
+        googleMap.addMarker(new MarkerOptions()
+                .position(latLng).title(location)
+                .draggable(false).visible(true));
+//        googleMap.addMarker(new MarkerOptions());
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
 
     private void initGoogleMap(Bundle savedInstanceState){
@@ -165,6 +232,9 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
         }
 
         map.setMyLocationEnabled(true);
+
+
+
     }
 
     @Override

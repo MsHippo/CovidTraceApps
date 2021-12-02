@@ -105,6 +105,7 @@
                 <!--                    tools:ignore="OnClick,SpeakableTextPresentCheck" />-->
 
                 <Button
+                    android:id="@+id/btn_auto_focus"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_gravity="center"
