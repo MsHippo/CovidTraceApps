@@ -7,16 +7,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.coffee.covidtrace.Data.UserDao;
+import com.coffee.covidtrace.Data.UserDatabase;
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.Ui.healthAssessment.HealthStartActivity;
 import com.coffee.covidtrace.Ui.healthAssessment.QuestionActivity;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
+
+    TextInputEditText username, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        username = findViewById(R.id.login_username);
+        password = findViewById(R.id.login_password);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -24,9 +34,34 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent;
         switch (view.getId()) {
             case R.id.btn_sign_in:
-                intent = new Intent(this, MainActivity.class);
-//                intent.putExtra();
-                startActivity(intent);
+
+                String usernameText = username.getText().toString();
+                String passwordText = password.getText().toString();
+                if (usernameText.isEmpty() || passwordText.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
+                }else{
+                    //query
+                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                    UserDao userDao = userDatabase.userDao();
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            UserEntity userEntity = userDao.login(usernameText, passwordText);
+                            if (userEntity == null){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getApplicationContext(), "Invalid Credentials!", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }else{
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                              intent.putExtra();
+                                startActivity(intent);
+                            }
+                        }
+                    }).start();
+                }
                 break;
             case R.id.btn_to_sign_up:
                 intent = new Intent(this, SignUpActivity.class);
