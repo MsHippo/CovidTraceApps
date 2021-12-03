@@ -175,6 +175,32 @@
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/primaryColor"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_title_location"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryColor"
+                    android:text="@string/your_location"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/txt_user_current_location"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondaryTextColor"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone" />
+
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
