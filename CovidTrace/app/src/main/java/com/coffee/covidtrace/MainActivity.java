@@ -15,8 +15,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.Ui.dependency.DependencyAddingActivity;
 import com.coffee.covidtrace.Ui.SymptomActivity;
 import com.coffee.covidtrace.Ui.healthAssessment.HealthStartActivity;
@@ -33,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navigationBarMenu;
     private AppBarConfiguration appBarConfiguration;
 //    private ActivityMainBinding binding;
+    UserEntity userEntity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        java.text.DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -53,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.profileFragment)
                 .setOpenableLayout(drawer)
                 .build();
+
 
         NavController sideNavController = Navigation.findNavController(this, R.id.fragment);
         NavigationUI.setupActionBarWithNavController(this, sideNavController, appBarConfiguration);
@@ -73,7 +79,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         //bottom navigation
-        NavController navController = Navigation.findNavController(this, R.id.fragment);
+        Bundle bundle = new Bundle();
+        bundle.putString("user", String.valueOf(userEntity));
+
+        final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) this
+                .findViewById(android.R.id.content)).getChildAt(0);
+
+        NavController navController = Navigation.findNavController (this, R.id.fragment);
+//        Navigation.findNavController(viewGroup).navigate(R.id.fragment,bundle);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navigationBarMenu, navController);
 

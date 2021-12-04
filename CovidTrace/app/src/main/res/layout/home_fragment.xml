@@ -22,6 +22,16 @@
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             android:orientation="vertical">
+            <TextView
+                android:id="@+id/tx_hello_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username_title"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/primaryTextColor"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

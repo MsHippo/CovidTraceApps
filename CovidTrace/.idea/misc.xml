@@ -6,7 +6,7 @@
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_authentication.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_change_password.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_sign_up.xml" value="0.2153846153846154" />
+        <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_sign_up.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/fragment_home.xml" value="0.1296875" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/fragment_record.xml" value="0.1296875" />
@@ -15,12 +15,12 @@
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/home_fragment.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/imp_notes_fragment.xml" value="0.1296875" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/notes_list.xml" value="0.1296875" />
-        <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/personal_detail_fragment.xml" value="0.25" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/profile_fragment.xml" value="0.1296875" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/record_fragment.xml" value="0.1296875" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/statistic_fragment.xml" value="0.24818840579710144" />
         <entry key="..\:/AndroidDevelopment/SWE401/CovidTraceApps/CovidTrace/app/src/main/res/layout/task_complete_fragment.xml" value="0.24818840579710144" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/drawable/bg_gradient.xml" value="0.275" />
+        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/drawable/bg_search.xml" value="0.275" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/drawable/card_bg.xml" value="0.26296296296296295" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/drawable/check_in_lower.xml" value="0.26296296296296295" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/drawable/check_in_upper.xml" value="0.26296296296296295" />
@@ -49,7 +49,7 @@
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_notification_detail.xml" value="0.17889492753623187" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_question.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_report_case.xml" value="0.264" />
-        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_success_check_in.xml" value="0.264" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_symptom.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_vaccination.xml" value="0.264" />
@@ -96,7 +96,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

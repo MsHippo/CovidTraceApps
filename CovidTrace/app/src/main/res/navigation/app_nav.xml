@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.coffee.covidtrace.Ui.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <argument
+            android:name="current_user"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/statisticFragment"
         android:name="com.coffee.covidtrace.Ui.dashboard.StatisticFragment"
@@ -29,7 +33,11 @@
         android:id="@+id/profileFragment"
         android:name="com.coffee.covidtrace.Ui.profile.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="Argument"
+            android:defaultValue="value"/>
+    </fragment>
 
     <activity
         android:id="@+id/getStartedActivity"

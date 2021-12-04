@@ -12,11 +12,15 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.coffee.covidtrace.Adapter.ProfileSelectionPageAdapter;
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+
+import org.w3c.dom.Text;
 
 import java.util.Objects;
 
@@ -27,6 +31,8 @@ public class ProfileFragment extends Fragment {
     View profileFragement;
     TabLayout tabLayout;
     ViewPager2 viewPager2;
+    TextView txt_user_name;
+    UserEntity userEntity;
 
     public static ProfileFragment newInstance() {
         return new ProfileFragment();
@@ -48,7 +54,10 @@ public class ProfileFragment extends Fragment {
         //Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.profile_title);
 
         viewPager2 = view.findViewById(R.id.profile_viewpager);
+        txt_user_name = view.findViewById(R.id.tx_user_name);
+
         viewPager2.setAdapter(new ProfileSelectionPageAdapter(requireActivity()));
+
 
         tabLayout = view.findViewById(R.id.profile_tablayout);
         new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
@@ -58,6 +67,8 @@ public class ProfileFragment extends Fragment {
                 tab.setText(((ProfileSelectionPageAdapter) (Objects.requireNonNull(viewPager2.getAdapter()))).titles[position]);
             }
         }).attach();
+
+        txt_user_name.setText(userEntity.getName());
 
     }
 

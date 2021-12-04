@@ -5,20 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.UserDao;
-import com.coffee.covidtrace.Data.UserDatabase;
+import com.coffee.covidtrace.Data.Database;
 import com.coffee.covidtrace.Data.UserEntity;
-import com.coffee.covidtrace.Ui.healthAssessment.HealthStartActivity;
-import com.coffee.covidtrace.Ui.healthAssessment.QuestionActivity;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.io.Serializable;
 
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText username, password;
+    Database database;
+    UserEntity currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
                 }else{
                     //query
-                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
-                    UserDao userDao = userDatabase.userDao();
+                    database = Database.getUserDatabase(getApplicationContext());
+                    UserDao userDao = database.userDao();
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -55,8 +57,9 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 });
                             }else{
+                                currentUser = userEntity;
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                              intent.putExtra();
+                                intent.putExtra("current user", currentUser);
                                 startActivity(intent);
                             }
                         }
@@ -65,7 +68,6 @@ public class LoginActivity extends AppCompatActivity {
                 break;
             case R.id.btn_to_sign_up:
                 intent = new Intent(this, SignUpActivity.class);
-//                intent.putExtra();
                 startActivity(intent);
                 break;
             case R.id.btn_forget_pass:

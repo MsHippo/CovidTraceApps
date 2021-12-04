@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.UserDao;
-import com.coffee.covidtrace.Data.UserDatabase;
+import com.coffee.covidtrace.Data.Database;
 import com.coffee.covidtrace.Data.UserEntity;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -44,10 +46,10 @@ public class SignUpActivity extends AppCompatActivity {
                 userEntity.setPhone(phone.getText().toString());
                 userEntity.setPassword(password.getText().toString());
                 if (validateInput(userEntity)){
-                    if (password.getText().toString() == repass.getText().toString()){
+                    if (password.getText().toString().equals(Objects.requireNonNull(repass.getText()).toString())){
                         //insert
-                        UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
-                        final UserDao userDao = userDatabase.userDao();
+                        Database database = Database.getUserDatabase(getApplicationContext());
+                        final UserDao userDao = database.userDao();
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
