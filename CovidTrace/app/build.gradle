@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation 'androidx.room:room-common:2.3.0'
+    implementation "androidx.fragment:fragment:1.4.0"
     implementation 'com.google.ar.sceneform:filament-android:1.17.1'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

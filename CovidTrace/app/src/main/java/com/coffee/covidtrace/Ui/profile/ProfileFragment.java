@@ -68,7 +68,7 @@ public class ProfileFragment extends Fragment {
             }
         }).attach();
 
-        txt_user_name.setText(userEntity.getName());
+//        txt_user_name.setText(userEntity.getName());
 
     }
 

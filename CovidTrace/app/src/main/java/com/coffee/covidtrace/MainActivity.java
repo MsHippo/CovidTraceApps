@@ -6,12 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navigationBarMenu;
     private AppBarConfiguration appBarConfiguration;
 //    private ActivityMainBinding binding;
+    Intent intent = getIntent();
     UserEntity userEntity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        java.text.DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
+//        java.text.DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
 
         setContentView(R.layout.activity_main);
 
@@ -60,7 +63,13 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
 
-        NavController sideNavController = Navigation.findNavController(this, R.id.fragment);
+        NavHostFragment navHostFragment =
+                (NavHostFragment) getSupportFragmentManager()
+                        .findFragmentById(R.id.fragment);
+        assert navHostFragment != null;
+        NavController sideNavController = navHostFragment.getNavController();
+
+//        sideNavController = Navigation.findNavController(this, R.id.fragment);
         NavigationUI.setupActionBarWithNavController(this, sideNavController, appBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, sideNavController);
 
@@ -80,13 +89,26 @@ public class MainActivity extends AppCompatActivity {
 
         //bottom navigation
         Bundle bundle = new Bundle();
-        bundle.putString("user", String.valueOf(userEntity));
+        bundle.putParcelable("user", userEntity);
 
         final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) this
                 .findViewById(android.R.id.content)).getChildAt(0);
 
-        NavController navController = Navigation.findNavController (this, R.id.fragment);
-//        Navigation.findNavController(viewGroup).navigate(R.id.fragment,bundle);
+//        getParentFragmentManager().setFragmentResultListener("requestKey", this, new FragmentResultListener() {
+//            @Override
+//            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
+//                // We use a String here, but any type that can be put in a Bundle is supported
+//                String result = bundle.getString("bundleKey");
+//                // Do something with the result
+//            }
+//        });
+
+//        NavController navController = navHostFragment.getNavController();
+        NavController navController = navHostFragment.getNavController();
+        navController.setGraph(R.navigation.app_nav, getIntent().getExtras());
+//        NavController navController = Navigation.findNavController (this, R.id.fragment);
+//        navController.navigate(R.id.fragment,bundle);
+//        Navigation.findNavController(this, R.id.fragment).navigate(R.id.fragment,bundle);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navigationBarMenu, navController);
 

@@ -1,5 +1,8 @@
 package com.coffee.covidtrace.Data;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,7 +10,7 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity(tableName = "users")
-public class UserEntity implements Serializable {
+public class UserEntity implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     Integer id;
@@ -26,6 +29,44 @@ public class UserEntity implements Serializable {
 
     @ColumnInfo(name = "password")
     String password;
+
+    public UserEntity(Integer id, String email, String name,  String nric, String phone,  String password) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.nric = nric;
+        this.phone = phone;
+        this.password = password;
+    }
+
+    public UserEntity(){
+
+    }
+
+    protected UserEntity(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
+        email = in.readString();
+        name = in.readString();
+        nric = in.readString();
+        phone = in.readString();
+        password = in.readString();
+    }
+
+    public static final Creator<UserEntity> CREATOR = new Creator<UserEntity>() {
+        @Override
+        public UserEntity createFromParcel(Parcel in) {
+            return new UserEntity(in);
+        }
+
+        @Override
+        public UserEntity[] newArray(int size) {
+            return new UserEntity[size];
+        }
+    };
 
     public Integer getId() {
         return id;
@@ -73,5 +114,25 @@ public class UserEntity implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (id == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(id);
+        }
+        dest.writeString(email);
+        dest.writeString(name);
+        dest.writeString(nric);
+        dest.writeString(phone);
+        dest.writeString(password);
     }
 }

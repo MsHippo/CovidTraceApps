@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 
 import com.coffee.covidtrace.Adapter.HomeSelectionPageAdapter;
 import com.coffee.covidtrace.Data.UserEntity;
+import com.coffee.covidtrace.MainActivity;
 import com.coffee.covidtrace.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -68,8 +70,8 @@ public class HomeFragment extends Fragment {
             }
         }).attach();
 
-        assert getArguments() != null;
-        tx_hello_user.setText("Hello, " + getArguments().getString("current user"));
+//        HomeFragmentArgs.fromBundle();
+//        tx_hello_user.setText("Hello, " + userEntity.getName());
     }
 
 }
