@@ -47,7 +47,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         homeFragement = inflater.inflate(R.layout.home_fragment, container, false);
-        getActivity().getIntent().getBundleExtra("user");
         Bundle bundle =  getArguments();
         assert bundle != null;
         currentUser = (UserEntity) bundle.getSerializable("user");

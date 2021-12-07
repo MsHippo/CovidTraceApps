@@ -26,6 +26,7 @@ import android.widget.TextView;
 import com.coffee.covidtrace.Adapter.ProfileSelectionPageAdapter;
 import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
+import com.coffee.covidtrace.ViewModel.SharedViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -43,20 +44,9 @@ public class ProfileFragment extends Fragment {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     TextView txt_user_name;
-//    UserEntity currentUser;
-
-    BottomNavigationView navigationBarMenu;
-    private AppBarConfiguration appBarConfiguration;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-    private NavArgument userArg;
-
-    DrawerLayout drawer;
-    NavigationView navigationView;
-
-    //    private ActivityMainBinding binding;
     UserEntity currentUser;
-    Bundle bundle = new Bundle();
-    NavController sideNavController;
+    private SharedViewModel sharedViewModel;
+
 
     public static ProfileFragment newInstance() {
         return new ProfileFragment();
@@ -100,6 +90,14 @@ public class ProfileFragment extends Fragment {
 
         if (currentUser!=null){
             Log.d("Profile fragment", String.valueOf(currentUser));
+        }
+
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
+        if (sharedViewModel.getCurrent_user().getValue()!=null){
+            UserEntity userEntity = sharedViewModel.getCurrent_user().getValue();
+            Log.d("shared view model, Profile fragment", userEntity.getName());
+            txt_user_name.setText(userEntity.getName());
         }
 
 //        if (getArguments()!=null){
