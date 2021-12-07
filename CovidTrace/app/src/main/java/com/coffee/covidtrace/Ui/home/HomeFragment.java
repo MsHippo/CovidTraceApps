@@ -3,12 +3,12 @@ package com.coffee.covidtrace.Ui.home;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.util.Log;
@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.coffee.covidtrace.Adapter.HomeSelectionPageAdapter;
 import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
-import com.coffee.covidtrace.ViewModel.MainViewModel;
+import com.coffee.covidtrace.ViewModel.SharedViewModel;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment {
     ViewPager2 viewPager2;
     UserEntity currentUser;
     TextView tx_hello_user;
-    private MainViewModel mainViewModel;
+    private SharedViewModel sharedViewModel;
     public static HomeFragment newInstance() {
         return new HomeFragment();
     }
@@ -66,6 +66,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 //        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         // TODO: Use the ViewModel
         //set the title of the app bar
         //Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.home_title);
@@ -92,6 +93,12 @@ public class HomeFragment extends Fragment {
         if (currentUser!=null){
             Log.d("home fragment", currentUser.getName());
             tx_hello_user.setText("Hello, " + currentUser.getName());
+        }
+
+        if (sharedViewModel.getCurrent_user().getValue()!=null){
+            UserEntity userEntity = sharedViewModel.getCurrent_user().getValue();
+            Log.d("shared view model, fragment", userEntity.getName());
+            tx_hello_user.setText("Hello, " + userEntity.getName());
         }
 
 //        mainViewModel.getLogInUser().observe(getViewLifecycleOwner(), item->{

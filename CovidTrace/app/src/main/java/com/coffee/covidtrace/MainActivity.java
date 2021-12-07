@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavArgument;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
@@ -42,6 +43,7 @@ import com.coffee.covidtrace.Ui.notification.NotificationActivity;
 import com.coffee.covidtrace.Ui.profile.ProfileFragment;
 import com.coffee.covidtrace.Ui.record.RecordFragment;
 import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
+import com.coffee.covidtrace.ViewModel.SharedViewModel;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -63,6 +65,8 @@ public class MainActivity extends AppCompatActivity{
     UserEntity currentUser;
     Bundle bundle = new Bundle();
     NavController sideNavController;
+    private SharedViewModel sharedViewModel;
+
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +80,11 @@ public class MainActivity extends AppCompatActivity{
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         navigationBarMenu = findViewById(R.id.bottomNavigationView);
+
+
+        //view model
+        sharedViewModel = new ViewModelProvider(this)
+                .get(SharedViewModel.class);
 
         //new method
 //        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer, R.string.start, R.string.close);
@@ -105,7 +114,7 @@ public class MainActivity extends AppCompatActivity{
 //
         currentUser = (UserEntity) getIntent().getSerializableExtra("user");
         bundle.putSerializable("user",currentUser);
-
+        sharedViewModel.setCurrent_user(currentUser);
 //
 //        assert navHostFragment != null;
 //        NavController sideNavController = navHostFragment.getNavController();
@@ -232,6 +241,7 @@ public class MainActivity extends AppCompatActivity{
 
 //        navController.setGraph(R.navigation.app_nav, bundle);
 
+        sharedViewModel.setCurrent_user(currentUser);
         sideNavController = Navigation.findNavController(this, R.id.fragment);
 //        sideNavController = Navigation.findNavController(navigationView)
 //                .setGraph(R.navigation.app_nav, intent.extras);
