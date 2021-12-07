@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -56,10 +57,14 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Invalid Credentials!", Toast.LENGTH_SHORT).show();
                                     }
                                 });
+
                             }else{
                                 currentUser = userEntity;
+                                Log.d("login", String.valueOf(currentUser.getName()));
+                                Log.d("login", String.valueOf(currentUser.getId()));
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                intent.putExtra("current user", currentUser);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                intent.putExtra("user", currentUser);
                                 startActivity(intent);
                             }
                         }

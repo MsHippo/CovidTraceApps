@@ -10,41 +10,83 @@
         android:name="com.coffee.covidtrace.Ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/home_fragment" >
-        <argument android:name="name"
-            app:argType="string"/>
+        <argument android:name="user"
+            app:argType="com.coffee.covidtrace.Data.UserEntity"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_statisticFragment2"
+            app:destination="@id/statisticFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recordFragment2"
+            app:destination="@id/recordFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment3"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment2"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/statisticFragment"
         android:name="com.coffee.covidtrace.Ui.dashboard.StatisticFragment"
         android:label="Dashboard"
         tools:layout="@layout/statistic_fragment" >
+        <argument android:name="user"
+            app:argType="com.coffee.covidtrace.Data.UserEntity"/>
+        <action
+            android:id="@+id/action_statisticFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordFragment"
         android:name="com.coffee.covidtrace.Ui.record.RecordFragment"
         android:label="Record"
         tools:layout="@layout/record_fragment" >
+        <argument android:name="user"
+            app:argType="com.coffee.covidtrace.Data.UserEntity"/>
+        <action
+            android:id="@+id/recordFragment2"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.coffee.covidtrace.Ui.history.HistoryFragment"
         android:label="History"
-        tools:layout="@layout/history_fragment" />
+        tools:layout="@layout/history_fragment">
+        <argument android:name="user"
+            app:argType="com.coffee.covidtrace.Data.UserEntity"/>
+        <action
+            android:id="@+id/action_historyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.coffee.covidtrace.Ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile">
+        <argument android:name="user"
+            app:argType="com.coffee.covidtrace.Data.UserEntity"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <activity
         android:id="@+id/getStartedActivity"
         android:name="com.coffee.covidtrace.GettingStartActivity"
         android:label="Getting Started"
-        tools:layout="@layout/activity_getting_start" />
+        tools:layout="@layout/activity_getting_start">
+        <argument android:name="user"
+            app:argType="com.coffee.covidtrace.Data.UserEntity"/>
+    </activity>
 
     <activity
         android:id="@+id/logoutActivity"
         android:name="com.coffee.covidtrace.LoginActivity"
-        tools:layout="@layout/activity_login" />
+        tools:layout="@layout/activity_login">
+        <argument android:name="user"
+            app:argType="com.coffee.covidtrace.Data.UserEntity"/>
+    </activity>
 </navigation>

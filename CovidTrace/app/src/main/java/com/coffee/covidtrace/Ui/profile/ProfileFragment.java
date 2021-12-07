@@ -1,5 +1,7 @@
 package com.coffee.covidtrace.Ui.profile;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -7,8 +9,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavArgument;
+import androidx.navigation.NavController;
+import androidx.navigation.NavGraph;
+import androidx.navigation.NavInflater;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +26,8 @@ import android.widget.TextView;
 import com.coffee.covidtrace.Adapter.ProfileSelectionPageAdapter;
 import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -32,7 +43,20 @@ public class ProfileFragment extends Fragment {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     TextView txt_user_name;
-    UserEntity userEntity;
+//    UserEntity currentUser;
+
+    BottomNavigationView navigationBarMenu;
+    private AppBarConfiguration appBarConfiguration;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+    private NavArgument userArg;
+
+    DrawerLayout drawer;
+    NavigationView navigationView;
+
+    //    private ActivityMainBinding binding;
+    UserEntity currentUser;
+    Bundle bundle = new Bundle();
+    NavController sideNavController;
 
     public static ProfileFragment newInstance() {
         return new ProfileFragment();
@@ -68,7 +92,29 @@ public class ProfileFragment extends Fragment {
             }
         }).attach();
 
-//        txt_user_name.setText(userEntity.getName());
+
+        Bundle bundle = getArguments();
+        assert bundle != null;
+//        currentUser = ProfileFragmentArgs.fromBundle(getArguments()).getUser();
+        currentUser = (UserEntity) bundle.getSerializable("user");
+
+        if (currentUser!=null){
+            Log.d("Profile fragment", String.valueOf(currentUser));
+        }
+
+//        if (getArguments()!=null){
+//            ProfileFragmentArgs profileFragmentArgs = ProfileFragmentArgs.fromBundle(getArguments());
+//            currentUser = profileFragmentArgs.getUser();
+//            Log.d("Profile fragment", String.valueOf(currentUser));
+//        }
+//        userArg = new NavArgument.Builder().setDefaultValue(currentUser).build();
+
+//        sideNavController = Navigation.findNavController(this, R.id.fragment);
+//        NavInflater navInflater = sideNavController.getNavInflater();
+//        NavGraph navGraph = navInflater.inflate(R.navigation.app_nav);
+//        navGraph.addArgument("user", userArg);
+//        sideNavController.setGraph(navGraph);
+
 
     }
 

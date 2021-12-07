@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity(tableName = "users")
-public class UserEntity implements Parcelable {
+public class UserEntity implements Serializable{
 
     @PrimaryKey(autoGenerate = true)
     Integer id;
@@ -56,17 +56,17 @@ public class UserEntity implements Parcelable {
         password = in.readString();
     }
 
-    public static final Creator<UserEntity> CREATOR = new Creator<UserEntity>() {
-        @Override
-        public UserEntity createFromParcel(Parcel in) {
-            return new UserEntity(in);
-        }
-
-        @Override
-        public UserEntity[] newArray(int size) {
-            return new UserEntity[size];
-        }
-    };
+//    public static final Creator<UserEntity> CREATOR = new Creator<UserEntity>() {
+//        @Override
+//        public UserEntity createFromParcel(Parcel in) {
+//            return new UserEntity(in);
+//        }
+//
+//        @Override
+//        public UserEntity[] newArray(int size) {
+//            return new UserEntity[size];
+//        }
+//    };
 
     public Integer getId() {
         return id;
@@ -116,23 +116,23 @@ public class UserEntity implements Parcelable {
         this.password = password;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        if (id == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(id);
-        }
-        dest.writeString(email);
-        dest.writeString(name);
-        dest.writeString(nric);
-        dest.writeString(phone);
-        dest.writeString(password);
-    }
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        if (id == null) {
+//            dest.writeByte((byte) 0);
+//        } else {
+//            dest.writeByte((byte) 1);
+//            dest.writeInt(id);
+//        }
+//        dest.writeString(email);
+//        dest.writeString(name);
+//        dest.writeString(nric);
+//        dest.writeString(phone);
+//        dest.writeString(password);
+//    }
 }

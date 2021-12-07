@@ -117,6 +117,7 @@
     <string name="vaccination_digital_certificate">Vaccination Digital Certificate</string>
     <string name="to_be_continued">To be continued</string>
     <string name="email_title">Email</string>
+    <string name="close">Close</string>
     <string-array name="Relationship">
         <item>Father</item>
         <item>Mother</item>
