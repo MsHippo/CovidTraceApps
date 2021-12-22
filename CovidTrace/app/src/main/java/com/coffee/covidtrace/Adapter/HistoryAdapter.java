@@ -1,5 +1,6 @@
 package com.coffee.covidtrace.Adapter;
 
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class HistoryAdapter extends ListAdapter<History, HistoryAdapter.HistoryV
     @Override
     public void onBindViewHolder(@NonNull HistoryViewHolder holder, int position) {
         History current = getItem(position);
-        holder.tv_check_in_out.setText(current.getDate());
+        holder.tv_time_record.setText(current.getDate());
         holder.tv_location_enter.setText(current.getLocation());
     }
 
@@ -66,10 +67,9 @@ public class HistoryAdapter extends ListAdapter<History, HistoryAdapter.HistoryV
 
     public static class HistoryViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView tv_check_in_out, tv_location_enter, tv_time_record;
+        TextView tv_location_enter, tv_time_record;
         public HistoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_check_in_out = itemView.findViewById(R.id.tv_check_in_out);
             tv_location_enter = itemView.findViewById(R.id.tv_location_enter);
             tv_time_record = itemView.findViewById(R.id.tv_date_time);
             imageView = itemView.findViewById(R.id.iv_location);

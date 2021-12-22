@@ -30,6 +30,9 @@ import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class RecordFragment extends Fragment {
 
     public RecordViewModel mViewModel;
@@ -147,14 +150,18 @@ public class RecordFragment extends Fragment {
                 // Database insert and update the recyclerview
                 // Scanned location name from QR code
                 String scan_location = result.getContents();
-                String current_date = java.time.LocalDate.now().toString();
+
+                //formatting the date and time
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                String current_date = now.format(format);
 
                 History history = new History(scan_location, current_date);
                 mViewModel.insert(history);
 
                 Intent intent = new Intent(getActivity(), SuccessCheckInActivity.class);
                 if (history!=null){
-                    intent.putExtra("SCAN_RESULTS", (Parcelable) history);
+                    intent.putExtra("SCAN_RESULTS", history);
                 }
 
                 startActivity(intent);
