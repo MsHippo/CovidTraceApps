@@ -7,23 +7,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.coffee.covidtrace.Data.History;
 import com.coffee.covidtrace.R;
 
 import org.w3c.dom.Text;
 
-public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
+public class HistoryAdapter extends ListAdapter<History, HistoryAdapter.HistoryViewHolder> {
 
-    String [] place_list, check_in_out;
+//    String [] place_list, check_in_out;
 
-    public HistoryAdapter(String [] place_list, String []check_in_out){
-        this.place_list = place_list;
-        this.check_in_out = check_in_out;
+//    public HistoryAdapter(String [] place_list, String []check_in_out){
+//        this.place_list = place_list;
+//        this.check_in_out = check_in_out;
+//    }
+    public HistoryAdapter(@NonNull DiffUtil.ItemCallback<History> diffCallback){
+        super(diffCallback);
     }
-    public HistoryAdapter(String [] place_list){
-        this.place_list = place_list;
-    }
+//    public HistoryAdapter(String [] place_list){
+//        this.place_list = place_list;
+//    }
 
     @NonNull
     @Override
@@ -33,15 +39,30 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public void onBindViewHolder(@NonNull HistoryViewHolder holder, int position) {
-        holder.tv_check_in_out.setText(check_in_out[position]);
-        holder.tv_location_enter.setText(place_list[position]);
+        History current = getItem(position);
+        holder.tv_check_in_out.setText(current.getDate());
+        holder.tv_location_enter.setText(current.getLocation());
     }
 
 
-    @Override
-    public int getItemCount() {
-        return place_list.length;
+    public static class HistoryDiff extends DiffUtil.ItemCallback<History> {
+
+        @Override
+        public boolean areItemsTheSame(@NonNull History oldItem, @NonNull History newItem) {
+            return oldItem == newItem;
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull History oldItem, @NonNull History newItem) {
+            return oldItem.getDate().equals(newItem.getDate()) &&
+                    oldItem.getLocation().equals(newItem.getLocation());
+        }
     }
+
+//    @Override
+//    public int getItemCount() {
+//        return place_list.length;
+//    }
 
     public static class HistoryViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;

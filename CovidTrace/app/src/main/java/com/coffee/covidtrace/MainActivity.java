@@ -267,10 +267,11 @@ public class MainActivity extends AppCompatActivity{
 
         @SuppressLint("NonConstantResourceId")
         public void MainFeatures(View view) {
-        Intent intent;
+        Intent intent = getIntent();
         switch (view.getId()) {
             case R.id.btn_covid_vaccination:
                 intent = new Intent(this, VaccinationActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
             case R.id.btn_report_case:

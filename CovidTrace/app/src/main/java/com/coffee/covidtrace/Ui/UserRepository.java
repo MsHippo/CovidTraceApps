@@ -14,7 +14,7 @@ public class UserRepository {
     String email, password;
 
     public UserRepository(Application application){
-        Database database = Database.getUserDatabase(application);
+        Database database = Database.getDatabase(application);
         userDao = database.userDao();
         userEntityLiveData = userDao.login(email, password);
     }

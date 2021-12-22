@@ -1,6 +1,7 @@
 package com.coffee.covidtrace.Ui.history;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -17,13 +18,18 @@ import android.view.ViewGroup;
 
 import com.coffee.covidtrace.Adapter.HistoryAdapter;
 import com.coffee.covidtrace.Adapter.NotesAdapter;
+import com.coffee.covidtrace.Data.History;
 import com.coffee.covidtrace.R;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 public class HistoryFragment extends Fragment {
 
     private HistoryViewModel mViewModel;
+    History history;
+    private final LinkedList<History> historyList = new LinkedList<>();
     String[] place = {
             "Lorong 8, Taman Rajang, Ali’s Kopitian",
             "Lorong 8, Taman Rajang, Ali’s Kopitian",
@@ -31,6 +37,8 @@ public class HistoryFragment extends Fragment {
             "Lot 9, Jalan Sultan Mohammad 4, Selat Utara"};
 
     String[] check_in_out = {"Check-in", "Check-out", "Check-in", "Check-out"};
+    final HistoryAdapter adapter = new HistoryAdapter(new HistoryAdapter.HistoryDiff());
+
 
     public static HistoryFragment newInstance() {
         return new HistoryFragment();
@@ -41,8 +49,21 @@ public class HistoryFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.history_fragment, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.history_recycler_view);
+
+//        final HistoryAdapter adapter = new HistoryAdapter(new HistoryAdapter.HistoryDiff());
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        recyclerView.setAdapter(new HistoryAdapter(place, check_in_out));
+        recyclerView.setAdapter(adapter);
+
+
+        // Store the scanner text to array list
+        int historyListSize = historyList.size();
+        // Add a new word to the wordList.
+        historyList.addLast(history);
+        recyclerView.getAdapter().notifyDataSetChanged();
+        // Scroll to the bottom.
+        recyclerView.smoothScrollToPosition(historyListSize);
+
         return view;
     }
 
@@ -51,6 +72,14 @@ public class HistoryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
         // TODO: Use the ViewModel
+
+        // Populate the recyclerview with list from database
+        mViewModel.getAllHistory().observe(this, new Observer<List<History>>() {
+            @Override
+            public void onChanged(List<History> historyList) {
+                adapter.submitList(historyList);
+            }
+        });
     }
 
 }

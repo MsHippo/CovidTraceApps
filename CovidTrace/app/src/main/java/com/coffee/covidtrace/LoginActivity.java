@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
                 }else{
                     //query
-                    database = Database.getUserDatabase(getApplicationContext());
+                    database = Database.getDatabase(getApplicationContext());
                     UserDao userDao = database.userDao();
                     new Thread(new Runnable() {
                         @Override

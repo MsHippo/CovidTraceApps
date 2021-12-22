@@ -48,7 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if (validateInput(userEntity)){
                     if (password.getText().toString().equals(Objects.requireNonNull(repass.getText()).toString())){
                         //insert
-                        Database database = Database.getUserDatabase(getApplicationContext());
+                        Database database = Database.getDatabase(getApplicationContext());
                         final UserDao userDao = database.userDao();
                         new Thread(new Runnable() {
                             @Override
