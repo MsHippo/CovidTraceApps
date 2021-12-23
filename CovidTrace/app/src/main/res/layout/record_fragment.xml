@@ -66,6 +66,7 @@
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
             <TextView
+                android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -73,6 +74,7 @@
                 android:textColor="@color/primaryTextColor" />
 
             <TextView
+                android:id="@+id/user_ic_passport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nric_passport_no"

@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.History;
@@ -41,6 +42,7 @@ public class RecordFragment extends Fragment {
     public CardView cv_scan;
     View recordFragment;
     private SharedViewModel sharedViewModel;
+    TextView user_name, user_ic_passport;
 
     private final ActivityResultLauncher<ScanOptions> fragmentLauncher = registerForActivityResult(new ScanContract(),
             result -> {
@@ -65,6 +67,17 @@ public class RecordFragment extends Fragment {
 
         //make the card view click to have scanning function
         cv_scan= recordFragment.findViewById(R.id.btn_user_check_in);
+        user_name = recordFragment.findViewById(R.id.user_name);
+        user_ic_passport = recordFragment.findViewById(R.id.user_ic_passport);
+
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
+        if (sharedViewModel.getCurrent_user().getValue()!=null) {
+            UserEntity userEntity = sharedViewModel.getCurrent_user().getValue();
+
+            user_name.setText(userEntity.getName());
+            user_ic_passport.setText(userEntity.getNric());
+        }
 //        cv_scan.setOnClickListener(v -> scanCustomScanner(recordFragment));
         cv_scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +96,8 @@ public class RecordFragment extends Fragment {
 
             }
         });
+
+
 
         return recordFragment;
     }
@@ -170,7 +185,11 @@ public class RecordFragment extends Fragment {
                     History history = new History(scan_location, current_date, user_id);
                     mViewModel.insert(history);
 
+                    user_name.setText(userEntity.getName());
+                    user_ic_passport.setText(userEntity.getNric());
+
                     Intent intent = new Intent(getActivity(), SuccessCheckInActivity.class);
+                    intent.putExtra("user", userEntity);
 
                     if (history!=null){
                         intent.putExtra("SCAN_RESULTS", history);
