@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@androidx.room.Database(entities = {UserEntity.class, History.class}, version = 2)
+@androidx.room.Database(entities = {UserEntity.class, History.class}, version = 3)
 
 public abstract class Database extends RoomDatabase{
 
@@ -45,9 +45,9 @@ public abstract class Database extends RoomDatabase{
                 dao.deleteAll();
 
                 // Seeding code
-                History history = new History("Ulu Sungai Merah","2021-12-01");
+                History history = new History("Ulu Sungai Merah","2021-12-01", 1);
                 dao.insert(history);
-                History history2 = new History("Jalan Fatimah","2021-12-01");
+                History history2 = new History("Jalan Fatimah","2021-12-01", 1);
                 dao.insert(history2);
             });
         }

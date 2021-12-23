@@ -276,26 +276,32 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.btn_report_case:
                 intent = new Intent(this, ReportCaseActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
             case R.id.btn_hotspot:
                 intent = new Intent(this, HotspotActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
             case R.id.btn_user_status:
                 intent = new Intent(this, HealthStartActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
             case R.id.btn_dependency:
                 intent = new Intent(this, DependencyAddingActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
             case R.id.faqs_card:
                 intent = new Intent(this, FAQActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
             case R.id.symptoms_card:
                 intent = new Intent(this, SymptomActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
             default:

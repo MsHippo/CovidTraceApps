@@ -24,7 +24,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.History;
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
+import com.coffee.covidtrace.ViewModel.SharedViewModel;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.ScanContract;
@@ -38,6 +40,7 @@ public class RecordFragment extends Fragment {
     public RecordViewModel mViewModel;
     public CardView cv_scan;
     View recordFragment;
+    private SharedViewModel sharedViewModel;
 
     private final ActivityResultLauncher<ScanOptions> fragmentLauncher = registerForActivityResult(new ScanContract(),
             result -> {
@@ -156,15 +159,27 @@ public class RecordFragment extends Fragment {
                 LocalDateTime now = LocalDateTime.now();
                 String current_date = now.format(format);
 
-                History history = new History(scan_location, current_date);
-                mViewModel.insert(history);
+                sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-                Intent intent = new Intent(getActivity(), SuccessCheckInActivity.class);
-                if (history!=null){
-                    intent.putExtra("SCAN_RESULTS", history);
+                if (sharedViewModel.getCurrent_user().getValue()!=null){
+                    UserEntity userEntity = sharedViewModel.getCurrent_user().getValue();
+                    Log.d("shared view model, Record fragment", userEntity.getName());
+
+                    int user_id = userEntity.getId();
+
+                    History history = new History(scan_location, current_date, user_id);
+                    mViewModel.insert(history);
+
+                    Intent intent = new Intent(getActivity(), SuccessCheckInActivity.class);
+
+                    if (history!=null){
+                        intent.putExtra("SCAN_RESULTS", history);
+                    }
+
+                    startActivity(intent);
                 }
 
-                startActivity(intent);
+
             }
 
 

@@ -8,12 +8,22 @@ import androidx.room.Query;
 
 import java.util.List;
 
+import kotlin.jvm.JvmOverloads;
+
 @Dao
 public interface HistoryDao {
 
     //Select all items
-    @Query("select * from history_table ORDER BY id DESC")
-    LiveData<List<History>> getAllHistory();
+    @JvmOverloads
+    @Query("SELECT * FROM history_table " +
+            "WHERE history_table.user_id == :id " +
+            "ORDER BY id DESC")
+    LiveData<List<History>> getAllHistory(int id);
+
+//    @Query("SELECT * FROM history_table" +
+//            " WHERE history_table.user_id == :id " +
+//            "ORDER BY id DESC")
+//    LiveData<History> getHistory(int id);
 
     @Query("DELETE FROM history_table")
     void deleteAll();
