@@ -15,12 +15,15 @@ import java.util.List;
 public class RecordViewModel extends AndroidViewModel {
     private HistoryRepository repository;
     private LiveData<List<History>> allHistory;
-//    UserEntity userEntity;
+    private LiveData<List<History>> lastHistory;
+
+    //    UserEntity userEntity;
     int user_id;
     public RecordViewModel(@NonNull Application application) {
         super(application);
         repository = new HistoryRepository(application);
         allHistory = repository.getAllHistory(user_id);
+        lastHistory = repository.getLatestHistory(user_id);
     }
 
     public void insert(History history) {
@@ -29,7 +32,11 @@ public class RecordViewModel extends AndroidViewModel {
     }
 
     // pass the allHistory list to the activity that invokes it
-    public LiveData<List<History>> getAllHistory() {
-        return allHistory;
+//    public LiveData<List<History>> getAllHistory() {
+//        return allHistory;
+//    }
+
+    public LiveData<List<History>> getLatestHistory(Integer id) {
+        return repository.getLatestHistory(id);
     }
 }

@@ -230,18 +230,35 @@
                         android:text="@string/example_place_name"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/tv_date_time"
+                        app:layout_constraintBottom_toTopOf="@+id/ly_date_time"
                         app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:id="@+id/tv_date_time"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ly_date_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginBottom="4dp"
-                        android:text="@string/example_date_time"
+                        android:orientation="horizontal"
                         app:layout_constraintBottom_toTopOf="@+id/btn_user_check_out"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent" >
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="@string/example_date"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="@string/example_time"
+                            />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
                     <Button
                         android:id="@+id/btn_user_check_out"

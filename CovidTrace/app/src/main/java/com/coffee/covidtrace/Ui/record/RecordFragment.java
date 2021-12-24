@@ -1,11 +1,14 @@
 package com.coffee.covidtrace.Ui.record;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -33,8 +36,12 @@ import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
+import java.util.List;
 
 public class RecordFragment extends Fragment {
 
@@ -42,7 +49,10 @@ public class RecordFragment extends Fragment {
     public CardView cv_scan;
     View recordFragment;
     private SharedViewModel sharedViewModel;
-    TextView user_name, user_ic_passport;
+    TextView user_name, user_ic_passport, tv_place_name, tv_date, tv_time;
+    Bundle bundle = new Bundle();
+    History history;
+    private final LinkedList<History> lastestHistory = new LinkedList<>();
 
     private final ActivityResultLauncher<ScanOptions> fragmentLauncher = registerForActivityResult(new ScanContract(),
             result -> {
@@ -69,6 +79,9 @@ public class RecordFragment extends Fragment {
         cv_scan= recordFragment.findViewById(R.id.btn_user_check_in);
         user_name = recordFragment.findViewById(R.id.user_name);
         user_ic_passport = recordFragment.findViewById(R.id.user_ic_passport);
+        tv_place_name = recordFragment.findViewById(R.id.tv_place_name);
+        tv_date = recordFragment.findViewById(R.id.tv_date);
+        tv_time = recordFragment.findViewById(R.id.tv_time);
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
@@ -77,7 +90,22 @@ public class RecordFragment extends Fragment {
 
             user_name.setText(userEntity.getName());
             user_ic_passport.setText(userEntity.getNric());
+
+            //get the latest result
+            mViewModel.getLatestHistory(userEntity.getId()).observe(this, new Observer<List<History>>() {
+                @Override
+                public void onChanged(List<History> historyList) {
+                    History history = historyList.get(0);
+                    Log.d(TAG, "onChanged: " + history.getLocation());
+                    tv_place_name.setText(history.getLocation());
+                    tv_date.setText(history.getDate());
+                    tv_time.setText(history.getTime());
+                }
+            });
         }
+
+        lastestHistory.addLast(history);
+
 //        cv_scan.setOnClickListener(v -> scanCustomScanner(recordFragment));
         cv_scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +124,7 @@ public class RecordFragment extends Fragment {
 
             }
         });
+
 
 
 
@@ -172,7 +201,19 @@ public class RecordFragment extends Fragment {
                 //formatting the date and time
                 DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
-                String current_date = now.format(format);
+                String current_date_time = now.format(format);
+
+                //formatting the date and time
+                DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                LocalDate dateNow = LocalDate.now();
+                String current_date = dateNow.format(dateFormat);
+
+
+                //formatting the date and time
+                DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
+                LocalTime timeNow = LocalTime.now();
+                String current_time = timeNow.format(timeFormat);
+
 
                 sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
@@ -182,11 +223,8 @@ public class RecordFragment extends Fragment {
 
                     int user_id = userEntity.getId();
 
-                    History history = new History(scan_location, current_date, user_id);
+                    History history = new History(scan_location, current_date, user_id, current_time);
                     mViewModel.insert(history);
-
-                    user_name.setText(userEntity.getName());
-                    user_ic_passport.setText(userEntity.getNric());
 
                     Intent intent = new Intent(getActivity(), SuccessCheckInActivity.class);
                     intent.putExtra("user", userEntity);

@@ -16,16 +16,18 @@ public class History implements Parcelable {
     public int id;
     private String location;
     private String date;
+    private String time;
     //adding to record user id
     private int user_id;
 
 
 
     // Constructor of History model - create the object and initialize the values
-    public History(String location, String date, int user_id) {
+    public History(String location, String date, int user_id, String time) {
         this.location = location;
         this.date = date;
         this.user_id = user_id;
+        this.time = time;
     }
 
     public History(FragmentActivity activity, Class<SuccessCheckInActivity> successCheckInActivityClass) {
@@ -36,6 +38,7 @@ public class History implements Parcelable {
         location = in.readString();
         date = in.readString();
         user_id = in.readInt();
+        time = in.readString();
     }
 
     public static final Creator<History> CREATOR = new Creator<History>() {
@@ -67,6 +70,10 @@ public class History implements Parcelable {
         return user_id;
     }
 
+    public String getTime() {
+        return time;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -78,5 +85,6 @@ public class History implements Parcelable {
         dest.writeString(location);
         dest.writeString(date);
         dest.writeInt(user_id);
+        dest.writeString(time);
     }
 }

@@ -25,6 +25,9 @@ public interface HistoryDao {
 //            "ORDER BY id DESC")
 //    LiveData<History> getHistory(int id);
 
+    @Query("SELECT * FROM history_table WHERE id = (SELECT MAX(id) FROM history_table) AND history_table.user_id == :id")
+    LiveData<List<History>> getLatestHistory(int id);
+
     @Query("DELETE FROM history_table")
     void deleteAll();
 

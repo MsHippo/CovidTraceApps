@@ -15,6 +15,7 @@ public class HistoryRepository {
 
     private HistoryDao mHistoryDao;
     private LiveData<List<History>> mAllHistory;
+    private LiveData<List<History>> mLatestHistory;
     private Database db;
 //    History history;
     int user_id;
@@ -24,10 +25,14 @@ public class HistoryRepository {
         db = Database.getDatabase(application);
         mHistoryDao = db.historyDao();
         mAllHistory = mHistoryDao.getAllHistory(user_id);
+        mLatestHistory = mHistoryDao.getLatestHistory(user_id);
     }
 
     public LiveData<List<History>> getAllHistory(int id) {
         return mHistoryDao.getAllHistory(id);
+    }
+    public LiveData<List<History>> getLatestHistory(int id) {
+        return mHistoryDao.getLatestHistory(id);
     }
 
     public void insert(History history) {
