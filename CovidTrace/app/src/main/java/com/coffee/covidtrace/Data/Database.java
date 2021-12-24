@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@androidx.room.Database(entities = {UserEntity.class, History.class}, version = 4)
+@androidx.room.Database(entities = {UserEntity.class, History.class}, version = 5)
 
 public abstract class Database extends RoomDatabase{
 

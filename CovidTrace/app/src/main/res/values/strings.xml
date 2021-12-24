@@ -120,6 +120,12 @@
     <string name="email_title">Email</string>
     <string name="close">Close</string>
     <string name="your_location">Your Location:</string>
+    <string name="unknown_status">Unknown status</string>
+    <string name="vaccination_status0">Haven\'t Vaccinated</string>
+    <string name="halfly_vaccinated">Halfly Vaccinated</string>
+    <string name="medium_symptom">Some symptoms, Medium risk</string>
+    <string name="high_symptom">Have symptoms, High risk</string>
+
     <string-array name="Relationship">
         <item>Father</item>
         <item>Mother</item>

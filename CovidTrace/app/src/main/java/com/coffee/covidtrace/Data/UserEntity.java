@@ -30,31 +30,40 @@ public class UserEntity implements Serializable{
     @ColumnInfo(name = "password")
     String password;
 
-    public UserEntity(Integer id, String email, String name,  String nric, String phone,  String password) {
+    @ColumnInfo(name = "risk status", defaultValue = "0")
+    int status;
+
+    @ColumnInfo(name = "vaccination", defaultValue = "0")
+    int vaccine;
+
+
+    public UserEntity(Integer id, String email, String name,  String nric, String phone,  String password, int status, int vaccine) {
         this.id = id;
         this.email = email;
         this.name = name;
         this.nric = nric;
         this.phone = phone;
         this.password = password;
+        this.status = status;
+        this.vaccine = vaccine;
     }
 
     public UserEntity(){
 
     }
 
-    protected UserEntity(Parcel in) {
-        if (in.readByte() == 0) {
-            id = null;
-        } else {
-            id = in.readInt();
-        }
-        email = in.readString();
-        name = in.readString();
-        nric = in.readString();
-        phone = in.readString();
-        password = in.readString();
-    }
+//    protected UserEntity(Parcel in) {
+//        if (in.readByte() == 0) {
+//            id = null;
+//        } else {
+//            id = in.readInt();
+//        }
+//        email = in.readString();
+//        name = in.readString();
+//        nric = in.readString();
+//        phone = in.readString();
+//        password = in.readString();
+//    }
 
 //    public static final Creator<UserEntity> CREATOR = new Creator<UserEntity>() {
 //        @Override
@@ -67,6 +76,8 @@ public class UserEntity implements Serializable{
 //            return new UserEntity[size];
 //        }
 //    };
+
+    //getter and setter
 
     public Integer getId() {
         return id;
@@ -116,7 +127,23 @@ public class UserEntity implements Serializable{
         this.password = password;
     }
 
-//    @Override
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getVaccine() {
+        return vaccine;
+    }
+
+    public void setVaccine(int vaccine) {
+        this.vaccine = vaccine;
+    }
+
+    //    @Override
 //    public int describeContents() {
 //        return 0;
 //    }

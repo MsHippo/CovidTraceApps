@@ -8,6 +8,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -49,10 +50,11 @@ public class RecordFragment extends Fragment {
     public CardView cv_scan;
     View recordFragment;
     private SharedViewModel sharedViewModel;
-    TextView user_name, user_ic_passport, tv_place_name, tv_date, tv_time;
+    TextView user_name, user_ic_passport, tv_place_name, tv_date, tv_time, tv_risk_status, tv_vaccination;
     Bundle bundle = new Bundle();
     History history;
     private final LinkedList<History> lastestHistory = new LinkedList<>();
+    CardView cv_risk_status_outer, cv_vaccination_outer, cv_history;
 
     private final ActivityResultLauncher<ScanOptions> fragmentLauncher = registerForActivityResult(new ScanContract(),
             result -> {
@@ -82,6 +84,11 @@ public class RecordFragment extends Fragment {
         tv_place_name = recordFragment.findViewById(R.id.tv_place_name);
         tv_date = recordFragment.findViewById(R.id.tv_date);
         tv_time = recordFragment.findViewById(R.id.tv_time);
+        cv_risk_status_outer = recordFragment.findViewById(R.id.cv_risk_status_outer);
+        cv_vaccination_outer = recordFragment.findViewById(R.id.cv_vaccination_outer);
+        tv_risk_status = recordFragment.findViewById(R.id.tv_risk_status);
+        tv_vaccination = recordFragment.findViewById(R.id.tv_vaccination);
+        cv_history = recordFragment.findViewById(R.id.cv_history);
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
@@ -91,17 +98,62 @@ public class RecordFragment extends Fragment {
             user_name.setText(userEntity.getName());
             user_ic_passport.setText(userEntity.getNric());
 
-            //get the latest result
-            mViewModel.getLatestHistory(userEntity.getId()).observe(this, new Observer<List<History>>() {
-                @Override
-                public void onChanged(List<History> historyList) {
-                    History history = historyList.get(0);
-                    Log.d(TAG, "onChanged: " + history.getLocation());
-                    tv_place_name.setText(history.getLocation());
-                    tv_date.setText(history.getDate());
-                    tv_time.setText(history.getTime());
-                }
-            });
+//            Log.d(TAG, "onChanged: " + history.getLocation());
+
+
+                //get the latest result
+                mViewModel.getLatestHistory(userEntity.getId()).observe(this, new Observer<List<History>>() {
+                    @Override
+                    public void onChanged(List<History> historyList) {
+
+                        //make sure that the history list is not empty
+                        if(!historyList.isEmpty()){
+                            history = historyList.get(0);
+                            Log.d(TAG, "onChanged: " + history.getLocation());
+
+                            tv_place_name.setText(history.getLocation());
+                            tv_date.setText(history.getDate());
+                            tv_time.setText(history.getTime());
+
+                            cv_history.setVisibility(View.VISIBLE);
+                        }
+                    }
+                });
+
+            if (userEntity.getStatus() == 0){
+                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkGrey));
+                cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.red177));
+
+                tv_risk_status.setText(R.string.unknown_status);
+                tv_vaccination.setText(R.string.vaccination_status0);
+                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.darkGrey));
+                tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
+
+            } else if (userEntity.getStatus() == 1){
+                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.skyBlue));
+                cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+
+                tv_risk_status.setText(R.string.no_symptom_low_risk);
+                tv_vaccination.setText(R.string.halfly_vaccinated);
+                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.skyBlue));
+                tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+
+            } else if (userEntity.getStatus() == 2){
+                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+                cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.grassGreen));
+
+                tv_risk_status.setText(R.string.medium_symptom);
+                tv_vaccination.setText(R.string.fully_vaccinated);
+                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+                tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.grassGreen));
+
+            }else{
+                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.red177));
+
+                tv_risk_status.setText(R.string.high_symptom);
+                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
+
+            }
         }
 
         lastestHistory.addLast(history);
