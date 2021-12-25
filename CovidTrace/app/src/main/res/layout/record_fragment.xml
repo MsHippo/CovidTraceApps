@@ -242,8 +242,9 @@
                         android:id="@+id/ly_date_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:orientation="horizontal"
-                        app:layout_constraintBottom_toTopOf="@+id/btn_user_check_out"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
                         <TextView
@@ -264,15 +265,15 @@
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                    <Button
-                        android:id="@+id/btn_user_check_out"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="@string/check_out"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_user_check_out"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="24dp"-->
+<!--                        android:layout_marginBottom="8dp"-->
+<!--                        android:text="@string/check_out"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent" />-->
 
                     <ImageView
                         android:layout_width="80dp"

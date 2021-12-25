@@ -17,7 +17,6 @@ public class HistoryViewModel extends AndroidViewModel {
     // TODO: Implement the ViewModel
     private HistoryRepository repository;
     private LiveData<List<History>> allHistory;
-    private LiveData<List<History>> lastHistory;
 //    History history;
     int user_id ;
 

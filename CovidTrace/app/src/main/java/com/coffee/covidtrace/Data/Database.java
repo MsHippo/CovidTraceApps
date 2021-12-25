@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@androidx.room.Database(entities = {UserEntity.class, History.class}, version = 5)
+@androidx.room.Database(entities = {UserEntity.class, History.class, ThingsAnnouncement.class}, version = 6)
 
 public abstract class Database extends RoomDatabase{
 
@@ -34,6 +34,7 @@ public abstract class Database extends RoomDatabase{
 
     public abstract UserDao userDao();
     public abstract HistoryDao historyDao();
+    public abstract ThingsAnnouncementDao thingsAnnouncementDao();
 
     private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
         @Override
