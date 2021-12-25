@@ -13,6 +13,7 @@ import androidx.room.PrimaryKey;
 import com.coffee.covidtrace.Ui.record.SuccessCheckInActivity;
 
 import java.sql.Blob;
+import java.sql.Date;
 
 @Entity(tableName = "thingToDo_table")
 public class ThingsAnnouncement implements Parcelable {
@@ -26,10 +27,10 @@ public class ThingsAnnouncement implements Parcelable {
     @ColumnInfo(name = "name_authorities")
     private String name_authorities;
 
-    @ColumnInfo(name = "date")
+    @ColumnInfo(name = "date", defaultValue = "CURRENT_DATE")
     private String date;
 
-    @ColumnInfo(name = "time")
+    @ColumnInfo(name = "time", defaultValue = "CURRENT_TIME")
     private String time;
 
     @ColumnInfo(name = "tx_anouncement")

@@ -49,6 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="20dp"
+                    android:visibility="gone"
                     android:text="@string/demo_context"
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="12sp"
@@ -70,6 +71,7 @@
                     android:layout_height="200dp"
                     android:src="@drawable/example_things"
                     android:padding="20dp"
+                    android:visibility="gone"
                     app:layout_constraintTop_toBottomOf="@+id/authorities_content"/>
                 <TextView
                     android:id="@+id/post_date"

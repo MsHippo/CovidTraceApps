@@ -28,7 +28,7 @@ import java.util.Arrays;
 public class NotesAdapter extends ListAdapter<ThingsAnnouncement, NotesAdapter.NotesViewHolder> {
 
     String [] name_list;
-    Activity activity;
+//    Activity activity;
 //    DiffUtil.ItemCallback<ThingsAnnouncement> diffCallback;
 
 //    public NotesAdapter(String [] name_list){
@@ -55,12 +55,25 @@ public class NotesAdapter extends ListAdapter<ThingsAnnouncement, NotesAdapter.N
                 .into(holder.authorities_logo); // destination path
 
         holder.authorities_name.setText(current.getName_authorities());
-        holder.authorities_content.setText(current.getTx_anouncement());
+        if (current.getTx_anouncement() != null){
+            holder.authorities_content.setVisibility(View.VISIBLE);
+            holder.authorities_content.setText(current.getTx_anouncement());
+        }
+
         holder.post_date.setText(current.getDate());
         holder.post_time.setText(current.getTime());
 
+        if (current.getPic_awareness()!=null){
+            holder.pic_awareness.setVisibility(View.VISIBLE);
+            Glide.with(holder.itemView.getContext())
+                    .load(current.getPic_awareness()) // set the img Url
+                    .apply(new RequestOptions().transform(new CenterCrop(), new RoundedCorners(16)))
+                    .into(holder.pic_awareness); // destination path
+        }
+
+
 //        final NotesImgAdapter adapter = new NotesImgAdapter(new NotesImgAdapter.NotesImgDiff());
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(activity, 2);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(holder.nested_rv.getContext(), 2);
 //        holder.nested_rv.setLayoutManager(gridLayoutManager);
 //        holder.nested_rv.setAdapter(adapter);
 
