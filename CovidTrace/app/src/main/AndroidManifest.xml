@@ -19,17 +19,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
+            android:name=".Ui.home.fragment.PicExpandActivity"
+            android:exported="true" />
+        <activity
             android:name=".Ui.SymptomActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Ui.notification.NotificationDetailActivity"
             android:exported="true"
-            android:parentActivityName=".Ui.notification.NotificationActivity"/>
+            android:parentActivityName=".Ui.notification.NotificationActivity" />
         <activity
             android:name=".Ui.notification.NotificationActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FAQActivity"
             android:exported="true"
@@ -37,7 +40,7 @@
         <activity
             android:name=".GettingStartActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Ui.hotspot.HotSpotResultActivity"
             android:exported="true"
@@ -123,9 +126,10 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
+            android:value="@string/google_maps_key" />
 
-        <service android:name=".Ui.hotspot.FetchAddressIntentService"
+        <service
+            android:name=".Ui.hotspot.FetchAddressIntentService"
             tools:ignore="Instantiatable" />
     </application>
 

@@ -111,14 +111,14 @@ public class ThingsAnnouncement implements Parcelable {
         this.pic_awareness = pic_awareness;
     }
 
-    @Ignore
-    public ThingsAnnouncement(byte[] pic_authorities, String name_authorities, String date, String time, String tx_anouncement) {
-        this.pic_authorities = pic_authorities;
-        this.name_authorities = name_authorities;
-        this.date = date;
-        this.time = time;
-        this.tx_anouncement = tx_anouncement;
-    }
+//    @Ignore
+//    public ThingsAnnouncement(byte[] pic_authorities, String name_authorities, String date, String time, String tx_anouncement) {
+//        this.pic_authorities = pic_authorities;
+//        this.name_authorities = name_authorities;
+//        this.date = date;
+//        this.time = time;
+//        this.tx_anouncement = tx_anouncement;
+//    }
     //parcelable
 
     public ThingsAnnouncement(FragmentActivity activity, Class<SuccessCheckInActivity> successCheckInActivityClass) {

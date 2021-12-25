@@ -3,6 +3,7 @@ package com.coffee.covidtrace.Ui.home.fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.animation.Animator;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.coffee.covidtrace.Adapter.HistoryAdapter;
 import com.coffee.covidtrace.Adapter.NotesAdapter;
@@ -34,8 +36,9 @@ public class ImpNotesFragment extends Fragment {
     private final LinkedList<ThingsAnnouncement> notesList = new LinkedList<>();
 
     ThingsAnnouncement thingsAnnouncement;
+    RecyclerView recyclerView;
 
-//    String[] names = {"kkm", "pkm", "myHealth"};
+    //    String[] names = {"kkm", "pkm", "myHealth"};
     public static ImpNotesFragment newInstance() {
         return new ImpNotesFragment();
     }
@@ -45,7 +48,8 @@ public class ImpNotesFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.imp_notes_fragment, container, false);
 
-        RecyclerView recyclerView = view.findViewById(R.id.notes_recycler_view);
+        recyclerView = view.findViewById(R.id.notes_recycler_view);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recyclerView.setAdapter(adapter);
 
