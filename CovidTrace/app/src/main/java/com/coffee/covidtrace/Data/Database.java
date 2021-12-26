@@ -14,8 +14,10 @@ import java.util.concurrent.Executors;
 @androidx.room.Database(entities = {
         UserEntity.class,
         History.class,
-        ThingsAnnouncement.class},
-        version = 7)
+        ThingsAnnouncement.class,
+        HealthAssessment.class},
+        version = 8,
+        exportSchema = false)
 
 public abstract class Database extends RoomDatabase{
 
@@ -39,8 +41,9 @@ public abstract class Database extends RoomDatabase{
     public abstract UserDao userDao();
     public abstract HistoryDao historyDao();
     public abstract ThingsAnnouncementDao thingsAnnouncementDao();
+    public abstract HealthAssessmentDao healthAssessmentDao();
 
-    private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
+    private static final RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
@@ -49,11 +52,17 @@ public abstract class Database extends RoomDatabase{
                 HistoryDao dao = database.historyDao();
                 dao.deleteAll();
 
+                HealthAssessmentDao healthAssessmentDao = database.healthAssessmentDao();
+                HealthAssessment healthAssessment = new HealthAssessment("Abc", "abc", "Yes/Ya", "No/Tidak","D");
+                HealthAssessment healthAssessment1 = new HealthAssessment("Abc", "abc", "Yes/Ya", "No/Tidak","D");
+                healthAssessmentDao.insert(healthAssessment);
+                healthAssessmentDao.insert(healthAssessment1);
+
                 // Seeding code
-                History history = new History("Ulu Sungai Merah","2021-12-01", 1, "00:/00:/00");
-                dao.insert(history);
-                History history2 = new History("Jalan Fatimah","2021-12-01", 1, "00:/00:/00");
-                dao.insert(history2);
+//                History history = new History("Ulu Sungai Merah","2021-12-01", 1, "00:/00:/00");
+//                dao.insert(history);
+//                History history2 = new History("Jalan Fatimah","2021-12-01", 1, "00:/00:/00");
+//                dao.insert(history2);
             });
         }
     };

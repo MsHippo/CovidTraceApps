@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
 import com.coffee.covidtrace.Ui.record.SuccessCheckInActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -63,6 +64,8 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
     Location currentLocation;
     private static final int REQUEST_CODE = 101;
     private ResultReceiver resultReceiver;
+    UserEntity currentUser;
+
 
     private long UPDATE_INTERVAL = 10 * 1000;  /* 10 secs */
     private long FASTEST_INTERVAL = 2000; /* 2 sec */
@@ -82,6 +85,7 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
         txtTitleLocation = findViewById(R.id.txt_title_location);
         progressBar = findViewById(R.id.progress_bar);
 
+        currentUser = (UserEntity) getIntent().getSerializableExtra("user");
 
         toolbar.setTitle("COVID-19 Hotspot Tracker");
         setSupportActionBar(toolbar);
@@ -91,7 +95,7 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
 
         // Enable the Up button
         assert ab != null;
-        ab.setDisplayHomeAsUpEnabled(true);
+//        ab.setDisplayHomeAsUpEnabled(true);
 
         initGoogleMap(savedInstanceState);
 

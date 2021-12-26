@@ -125,6 +125,10 @@
     <string name="halfly_vaccinated">Halfly Vaccinated</string>
     <string name="medium_symptom">Some symptoms, Medium risk</string>
     <string name="high_symptom">Have symptoms, High risk</string>
+    <string name="question_no">no/total</string>
+    <string name="submission_test">Are you sure you want to submit your test?</string>
+    <string name="sub_cancel">Cancel</string>
+    <string name="sub_confirm">Submit</string>
 
     <string-array name="Relationship">
         <item>Father</item>

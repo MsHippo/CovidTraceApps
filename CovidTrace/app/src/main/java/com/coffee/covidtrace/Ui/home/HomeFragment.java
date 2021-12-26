@@ -111,18 +111,18 @@ public class HomeFragment extends Fragment {
 
     }
 
-    @SuppressLint("SetTextI18n")
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState != null) {
-            savedInstanceState = getArguments();
-            assert savedInstanceState != null;
-            currentUser = (UserEntity) savedInstanceState.getSerializable("user");
-            tx_hello_user.setText("Hello, " + currentUser.getName());
-        } else {
-//            randomGoodDeed = viewModel.generateRandomGoodDeed();
-        }
-    }
+//    @SuppressLint("SetTextI18n")
+//    @Override
+//    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        if (savedInstanceState != null) {
+//            savedInstanceState = getArguments();
+//            assert savedInstanceState != null;
+//            currentUser = (UserEntity) savedInstanceState.getSerializable("user");
+//            tx_hello_user.setText("Hello, " + currentUser.getName());
+//        } else {
+////            randomGoodDeed = viewModel.generateRandomGoodDeed();
+//        }
+//    }
 }

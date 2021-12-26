@@ -39,11 +39,12 @@
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_dependency_adding.xml" value="0.264" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_faqactivity.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_getting_start.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_health_question.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_health_question.xml" value="0.264" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_health_start.xml" value="0.2" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_hot_spot_result.xml" value="0.2" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_hotspot.xml" value="0.264" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_image_expand.xml" value="0.1" />
+        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_loading_dialog.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_notification.xml" value="0.18432971014492755" />
@@ -52,6 +53,7 @@
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_question.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_report_case.xml" value="0.264" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_submit.xml" value="0.2" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_success_check_in.xml" value="0.2" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_symptom.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/activity_vaccination.xml" value="0.264" />
@@ -72,7 +74,7 @@
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/fragment_profile.xml" value="0.18885869565217392" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/fragment_record.xml" value="0.18885869565217392" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/fragment_statistic.xml" value="0.18885869565217392" />
-        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/health_assessment_questions.xml" value="0.176" />
+        <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/health_assessment_questions.xml" value="0.2" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/history_fragment.xml" value="0.176" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/history_item.xml" value="0.264" />
         <entry key="..\:/Users/heihe/Documents/bachelor swe - year4/sem1/SWE401-Embedded Programming/assignment/CovidTraceApps/CovidTrace/app/src/main/res/layout/home_fragment.xml" value="0.2" />
