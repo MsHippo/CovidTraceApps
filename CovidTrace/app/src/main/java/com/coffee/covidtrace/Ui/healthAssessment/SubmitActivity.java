@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.coffee.covidtrace.Data.Database;
 import com.coffee.covidtrace.Data.UserDao;
 import com.coffee.covidtrace.Data.UserEntity;
+import com.coffee.covidtrace.MainActivity;
 import com.coffee.covidtrace.R;
+import com.coffee.covidtrace.Ui.home.HomeFragment;
 
 public class SubmitActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -65,13 +67,13 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
 
         switch (v.getId()) {
             case R.id.btn_cancel:
-                intent = new Intent(this, HealthStartActivity.class);
+                intent = new Intent(this, MainActivity.class);
                 intent.putExtra("user", currentUser);
                 Toast.makeText(SubmitActivity.this, "Cancelled submission", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
                 break;
             case R.id.btn_submit:
-                intent = new Intent(this, HealthStartActivity.class);
+                intent = new Intent(this, MainActivity.class);
                 if (counter == 0){
                     submitViewModel.insert(low, currentUser.getId());
                 } else if (counter >= 2){
