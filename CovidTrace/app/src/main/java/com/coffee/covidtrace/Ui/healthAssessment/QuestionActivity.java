@@ -141,6 +141,7 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
                 Log.d(TAG, "showNextQuestion: Total: " + questionCountTotal);
                 Log.d(TAG, "showNextQuestion: Every: " + questionCounter);
 
+//                questionCounter = currentQuestion.getQuestion_id();
 //        if have questions to answer
                 if (questionCountTotal == 0) {
                     Toast.makeText(
@@ -154,7 +155,7 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
                 currentQuestion = assessmentList.get(questionCounter);
 
                 tvQuestion.setText(currentQuestion.getQuestion());
-                tvQuestionCount.setText("Question " + (questionCounter + 1));
+                tvQuestionCount.setText("Question " + (currentQuestion.getQuestion_id()));
                 tvQuestionContent.setText(currentQuestion.getQuestion_content());
 
                 rb1.setText(currentQuestion.getOption1());

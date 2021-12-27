@@ -12,7 +12,7 @@ import java.util.List;
 public interface HealthAssessmentDao {
 
     @Query("SELECT * FROM health_assessment_table " +
-            "ORDER BY question_id DESC")
+            "ORDER BY question_id ASC")
     LiveData<List<HealthAssessment>> getAllAssessment();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
