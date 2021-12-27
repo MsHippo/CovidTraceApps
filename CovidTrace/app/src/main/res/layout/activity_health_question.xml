@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_centerHorizontal="true"
@@ -48,54 +48,55 @@
             android:id="@+id/questions_options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:cardElevation="10dp">
+            android:layout_gravity="center">
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:padding="20dp"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/question_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/secondaryTextColor"
                     android:text="@string/sample_question"
                     android:padding="10dp"/>
                 <TextView
                     android:id="@+id/question_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="20dp"
+                    android:padding="15sp"
                     android:text="@string/demo_context"/>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
             app:cardBackgroundColor="@color/primaryColor"
-            app:cardElevation="10dp"
             android:layout_gravity="center">
             <RadioGroup
                 android:id="@+id/radioGroup_option"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp">
+                android:layout_gravity="center">
                 <RadioButton
                     android:id="@+id/radio_button_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/label_1"
                     android:textColor="@color/primaryTextColor"
-                    android:textSize="12sp"/>
+                    android:textSize="18sp"/>
                 <RadioButton
                     android:id="@+id/radio_button_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/label_2"
                     android:textColor="@color/primaryTextColor"
-                    android:textSize="12sp"/>
+                    android:textSize="18sp"/>
             </RadioGroup>
         </androidx.cardview.widget.CardView>
     </androidx.appcompat.widget.LinearLayoutCompat>

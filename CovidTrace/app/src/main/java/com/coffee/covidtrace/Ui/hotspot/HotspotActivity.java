@@ -137,12 +137,18 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
                     }
                     assert addressList != null;
                     Address address = addressList.get(0);
+
+                    txtTitleLocation.setVisibility(View.VISIBLE);
+                    txtUserCurrentLocation.setVisibility(View.VISIBLE);
+                    txtUserCurrentLocation.setText(address.getAddressLine(0));
+
                     goToLocation(address.getLatitude(), address.getLongitude(), location);
 //                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
 //                    googleMap.addMarker(new MarkerOptions()
 //                            .position(latLng).title(location)
 //                            .draggable(false).visible(true));
 //                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+
                 }
                 return false;
             }
@@ -255,6 +261,7 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
     }
 
     private void goToLocation(double latitude, double longitude, String location) {
+        googleMap.clear();
         LatLng latLng = new LatLng(latitude, longitude);
         MarkerOptions markerOptions = new MarkerOptions()
                 .position(latLng).title(location)
