@@ -9,6 +9,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -54,6 +55,7 @@ public class RecordFragment extends Fragment {
     Bundle bundle = new Bundle();
     History history;
     private final LinkedList<History> lastestHistory = new LinkedList<>();
+    Integer status;
     CardView cv_risk_status_outer, cv_vaccination_outer, cv_history;
 
     private final ActivityResultLauncher<ScanOptions> fragmentLauncher = registerForActivityResult(new ScanContract(),
@@ -120,40 +122,61 @@ public class RecordFragment extends Fragment {
                     }
                 });
 
-            if (userEntity.getStatus() == 0){
-                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkGrey));
-                cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.red177));
+                //get live data of the user risk status
+                mViewModel.getUserStatus(userEntity.getId()).observe(this, new Observer<Integer>() {
+                    @Override
+                    public void onChanged(Integer integer) {
+                        status = integer;
+                        Log.d(TAG, "onCreateView: status " + status);
+                        if (status == 0){
+                            cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkGrey));
 
-                tv_risk_status.setText(R.string.unknown_status);
-                tv_vaccination.setText(R.string.vaccination_status0);
-                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.darkGrey));
-                tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
+                            tv_risk_status.setText(R.string.unknown_status);
+                            tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.darkGrey));
 
-            } else if (userEntity.getStatus() == 1){
-                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.skyBlue));
-                cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+                        } else if (status == 1){
+                            cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.skyBlue));
 
-                tv_risk_status.setText(R.string.no_symptom_low_risk);
-                tv_vaccination.setText(R.string.halfly_vaccinated);
-                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.skyBlue));
-                tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+                            tv_risk_status.setText(R.string.no_symptom_low_risk);
+                            tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.skyBlue));
 
-            } else if (userEntity.getStatus() == 2){
-                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
-                cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.grassGreen));
+                        } else if (status == 2){
+                            cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
 
-                tv_risk_status.setText(R.string.medium_symptom);
-                tv_vaccination.setText(R.string.fully_vaccinated);
-                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
-                tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.grassGreen));
+                            tv_risk_status.setText(R.string.medium_symptom);
+                            tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
 
-            }else{
-                cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.red177));
+                        }else{
+                            cv_risk_status_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.red177));
 
-                tv_risk_status.setText(R.string.high_symptom);
-                tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
+                            tv_risk_status.setText(R.string.high_symptom);
+                            tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
 
-            }
+                        }
+
+                        if (userEntity.getVaccine() == 0){
+                            cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.red177));
+
+                            tv_vaccination.setText(R.string.vaccination_status0);
+                            tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
+
+                        } else if (userEntity.getVaccine() == 1){
+                            cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+
+                            tv_vaccination.setText(R.string.halfly_vaccinated);
+                            tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
+
+                        } else if (userEntity.getVaccine() == 2){
+                            cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.grassGreen));
+
+                            tv_vaccination.setText(R.string.fully_vaccinated);
+                            tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.grassGreen));
+
+                        }
+                    }
+                });
+
+
         }
 
         lastestHistory.addLast(history);

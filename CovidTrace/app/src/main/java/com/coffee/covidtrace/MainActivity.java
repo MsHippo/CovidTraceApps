@@ -21,6 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
@@ -344,6 +345,7 @@ public class MainActivity extends AppCompatActivity{
 //                this.finish();
 //                break;
             case R.id.refresh:
+                this.recreate();
                 Toast.makeText(this, "Refresh Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.notifications:

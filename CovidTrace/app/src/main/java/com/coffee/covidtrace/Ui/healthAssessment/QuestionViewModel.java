@@ -7,6 +7,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.coffee.covidtrace.Data.HealthAssessment;
+import com.coffee.covidtrace.Data.History;
+import com.coffee.covidtrace.Data.UserDao;
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.Repository.HealthAssessmentRepository;
 
 import java.util.List;
@@ -25,4 +28,6 @@ public class QuestionViewModel extends AndroidViewModel {
     public LiveData<List<HealthAssessment>>getAllAssessment(){
         return allAssessment;
     }
+
+
 }

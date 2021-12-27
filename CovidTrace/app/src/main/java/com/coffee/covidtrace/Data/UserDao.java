@@ -21,5 +21,10 @@ public interface UserDao {
         return mUserEntity;
     };
 
+    @Query("SELECT risk_status FROM users WHERE id=(:user_id)")
+    LiveData<Integer> getUserStatus(int user_id);
+
+    @Query("UPDATE users SET risk_status = (:risk_status) WHERE id =(:user_id)")
+    void updateRiskStatus(int risk_status, int user_id);
 
 }

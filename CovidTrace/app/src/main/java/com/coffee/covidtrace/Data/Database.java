@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
         History.class,
         ThingsAnnouncement.class,
         HealthAssessment.class},
-        version = 8,
+        version = 9,
         exportSchema = false)
 
 public abstract class Database extends RoomDatabase{
@@ -33,6 +33,7 @@ public abstract class Database extends RoomDatabase{
             database = Room.databaseBuilder(context, Database.class, dbName)
                     .fallbackToDestructiveMigration()
                     .addCallback(sRoomDatabaseCallback)
+                    .allowMainThreadQueries()
                     .build();
         }
         return database;

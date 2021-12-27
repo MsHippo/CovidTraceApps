@@ -30,7 +30,7 @@ public class UserEntity implements Serializable{
     @ColumnInfo(name = "password")
     String password;
 
-    @ColumnInfo(name = "risk status", defaultValue = "0")
+    @ColumnInfo(name = "risk_status", defaultValue = "0")
     int status;
 
     @ColumnInfo(name = "vaccination", defaultValue = "0")

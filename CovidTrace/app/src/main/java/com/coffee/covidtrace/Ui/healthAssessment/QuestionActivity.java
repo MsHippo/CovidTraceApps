@@ -208,6 +208,7 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
         }else if (rb2.isChecked()) {
             Log.d(TAG, "Selected Yes");
             counter ++;
+            Log.d(TAG, "Counter: " + counter);
         }
     }
 }
