@@ -20,7 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
         Intent intent;
         switch (view.getId()) {
             case R.id.btn_sign_up:
-                intent = new Intent(this, AuthenticationActivity.class);
+                intent = new Intent(this, LoginActivity.class);
 //                intent.putExtra();
                 startActivity(intent);
                 break;
