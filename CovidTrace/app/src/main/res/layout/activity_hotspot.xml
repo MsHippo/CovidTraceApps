@@ -45,7 +45,8 @@
                 android:id="@+id/area_searching"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="10dp">
                 <!--                <EditText-->
                 <!--                    android:id="@+id/editText"-->
                 <!--                    android:layout_height="wrap_content"-->
@@ -59,52 +60,55 @@
                 <!--                    android:onClick="onMapSearch"-->
                 <!--                    android:background="@drawable/ic_search"/>-->
 
-                <!--                <SearchView-->
-                <!--                    android:id="@+id/search_location"-->
-                <!--                    android:layout_width="280dp"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:iconifiedByDefault="false"-->
-                <!--                    android:queryHint="Search Here" />-->
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/outlined_tf_location"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="match_parent"
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_location"
+                    android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="120dp"
-                    android:hint="@string/search_location_here"
-                    android:onClick=""
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp"
-                    app:startIconDrawable="@drawable/ic_search"
-                    tools:ignore="OnClick">
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_search"
+                    android:elevation="5dp"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search Location Here" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tf_location_search"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/outlined_tf_location"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="20dp"-->
+                <!--                    android:layout_marginTop="20dp"-->
+                <!--                    android:layout_marginEnd="120dp"-->
+                <!--                    android:hint="@string/search_location_here"-->
+                <!--                    android:onClick=""-->
+                <!--                    app:boxCornerRadiusBottomEnd="10dp"-->
+                <!--                    app:boxCornerRadiusBottomStart="10dp"-->
+                <!--                    app:boxCornerRadiusTopEnd="10dp"-->
+                <!--                    app:boxCornerRadiusTopStart="10dp"-->
+                <!--                    app:startIconDrawable="@drawable/ic_search"-->
+                <!--                    tools:ignore="OnClick">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/tf_location_search"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content" />-->
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                <Button-->
+                <!--                    android:layout_width="35dp"-->
+                <!--                    android:layout_height="35dp"-->
+                <!--                    android:layout_marginStart="-110dp"-->
+                <!--                    android:layout_marginTop="20dp"-->
+                <!--                    android:layout_marginEnd="10dp"-->
+                <!--                    android:background="@drawable/ic_search"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:onClick="searchHotspotArea"-->
+                <!--                    tools:ignore="OnClick,SpeakableTextPresentCheck" />-->
 
                 <Button
+                    android:id="@+id/btn_auto_focus"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginStart="-110dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/ic_search"
-                    android:gravity="center"
-                    android:onClick="searchHotspotArea"
-                    tools:ignore="OnClick,SpeakableTextPresentCheck" />
-
-                <Button
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/ic_my_location"
                     tools:ignore="SpeakableTextPresentCheck" />
 
@@ -121,6 +125,8 @@
                 android:id="@+id/area_location"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:layout_below="@+id/area_searching"
                 app:cardElevation="@null">
 
@@ -130,18 +136,18 @@
                 <!--                    android:layout_width="match_parent"-->
                 <!--                    android:layout_height="match_parent"-->
                 <!--                    android:layout_margin="20dp"/>-->
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="40dp"
-                    android:background="@drawable/map" />
-                <!--                <com.google.android.gms.maps.MapView xmlns:map="http://schemas.android.com/apk/res-auto"-->
-                <!--                    android:id="@+id/map"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="match_parent"-->
-                <!--                    android:layout_marginStart="20dp"-->
-                <!--                    android:layout_marginEnd="20dp" />-->
+                <!--                <View-->
+                <!--                    android:layout_width="100dp"-->
+                <!--                    android:layout_height="100dp"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:layout_margin="40dp"-->
+                <!--                    android:background="@drawable/map" />-->
+                <com.google.android.gms.maps.MapView
+                        xmlns:map="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
                 <!--
                 map:mapType="0" Specifies a change to the initial map type
                 map:zOrderOnTop="true"  Control whether the map view's surface is placed on top of its window
@@ -168,6 +174,32 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/primaryColor"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_title_location"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryColor"
+                    android:text="@string/your_location"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/txt_user_current_location"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondaryTextColor"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="300dp"

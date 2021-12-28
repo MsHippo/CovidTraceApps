@@ -12,12 +12,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.coffee.covidtrace.Adapter.HistoryAdapter;
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
 import com.coffee.covidtrace.Ui.ReportCaseActivity;
 
 public class HealthStartActivity extends AppCompatActivity {
 
     Button btn_start_health_assessment;
+    UserEntity currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +36,16 @@ public class HealthStartActivity extends AppCompatActivity {
 
         // Enable the Up button
         assert ab != null;
-        ab.setDisplayHomeAsUpEnabled(true);
+//        ab.setDisplayHomeAsUpEnabled(true);
+
+        currentUser = (UserEntity) getIntent().getSerializableExtra("user");
 
         btn_start_health_assessment = findViewById(R.id.btn_start_health_assessment);
         btn_start_health_assessment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HealthStartActivity.this, QuestionActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
             }
         });

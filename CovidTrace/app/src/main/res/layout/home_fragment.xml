@@ -8,7 +8,6 @@
     android:background="@drawable/gradient_dark_blue_yellow"
     tools:context=".Ui.home.HomeFragment">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,6 +21,16 @@
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             android:orientation="vertical">
+            <TextView
+                android:id="@+id/tx_hello_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username_title"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/primaryTextColor"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -174,7 +183,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:minHeight="400dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/ui_bg">
 

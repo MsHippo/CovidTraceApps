@@ -92,11 +92,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:src="@drawable/ic_arrow_downward" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ct_reg_notif"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:gravity="center">
 
                     <ImageView
@@ -134,12 +137,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:src="@drawable/ic_arrow_downward" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/reg_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -159,11 +165,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:src="@drawable/ic_arrow_downward" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ct_reg_notif2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:gravity="center">
 
                     <ImageView
@@ -201,11 +210,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:src="@drawable/ic_arrow_downward" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ct_reg_notif_1_suc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:gravity="center">
 
                     <ImageView
@@ -244,12 +256,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:src="@drawable/ic_arrow_downward" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ct_conf_app"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -265,15 +280,18 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <ImageView
-                    android:id="@+id/proceed_complete"
+                    android:id="@+id/proceed_complete_to_dose2"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_arrow_downward" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ct_reg_notif3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_marginBottom="50dp">
                     <ImageView
                         android:id="@+id/iv_second_dose"

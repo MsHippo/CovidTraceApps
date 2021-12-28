@@ -68,7 +68,8 @@
     <string name="check_in">Check-in</string>
     <string name="last_check_in">Last Check-in</string>
     <string name="example_place_name">Ali\'s Kopitian Taman Rajang</string>
-    <string name="example_date_time">Jan 1, 2021; 00:00:00am</string>
+    <string name="example_date">Jan 1, 2021</string>
+    <string name="example_time">00:00:00am</string>
     <string name="check_out">Check-out</string>
     <string name="covid_vaccine_status">Covid-19 Vaccination Status</string>
     <string name="fully_vaccinated">Fully Vaccinated</string>
@@ -116,6 +117,19 @@
     <string name="sign_up_underline"><u>Sign Up</u></string>
     <string name="vaccination_digital_certificate">Vaccination Digital Certificate</string>
     <string name="to_be_continued">To be continued</string>
+    <string name="email_title">Email</string>
+    <string name="close">Close</string>
+    <string name="your_location">Your Location:</string>
+    <string name="unknown_status">Unknown status</string>
+    <string name="vaccination_status0">Haven\'t Vaccinated</string>
+    <string name="halfly_vaccinated">Halfly Vaccinated</string>
+    <string name="medium_symptom">Some symptoms, Medium risk</string>
+    <string name="high_symptom">Have symptoms, High risk</string>
+    <string name="question_no">no/total</string>
+    <string name="submission_test">Are you sure you want to submit your test?</string>
+    <string name="sub_cancel">Cancel</string>
+    <string name="sub_confirm">Submit</string>
+
     <string-array name="Relationship">
         <item>Father</item>
         <item>Mother</item>
