@@ -27,4 +27,6 @@ public interface UserDao {
     @Query("UPDATE users SET risk_status = (:risk_status) WHERE id =(:user_id)")
     void updateRiskStatus(int risk_status, int user_id);
 
+    @Query("SELECT vaccination FROM users WHERE id=(:user_id)")
+    LiveData<Integer> getUserVaccine(int user_id);
 }

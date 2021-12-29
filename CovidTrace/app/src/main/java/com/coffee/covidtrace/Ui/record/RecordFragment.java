@@ -55,7 +55,7 @@ public class RecordFragment extends Fragment {
     Bundle bundle = new Bundle();
     History history;
     private final LinkedList<History> lastestHistory = new LinkedList<>();
-    Integer status;
+    Integer status, vaccine;
     CardView cv_risk_status_outer, cv_vaccination_outer, cv_history;
 
     private final ActivityResultLauncher<ScanOptions> fragmentLauncher = registerForActivityResult(new ScanContract(),
@@ -153,20 +153,27 @@ public class RecordFragment extends Fragment {
                             tv_risk_status.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
 
                         }
+                    }
+                });
 
-                        if (userEntity.getVaccine() == 0){
+                mViewModel.getUserVaccine(userEntity.getId()).observe(this, new Observer<Integer>() {
+                    @Override
+                    public void onChanged(Integer integer) {
+                        vaccine = integer;
+                        Log.d(TAG, "onCreateView: vaccine " + vaccine);
+                        if (vaccine == 0){
                             cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.red177));
 
                             tv_vaccination.setText(R.string.vaccination_status0);
                             tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.red177));
 
-                        } else if (userEntity.getVaccine() == 1){
+                        } else if (vaccine == 1){
                             cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
 
                             tv_vaccination.setText(R.string.halfly_vaccinated);
                             tv_vaccination.setTextColor(ContextCompat.getColor(getContext(), R.color.darkYellow));
 
-                        } else if (userEntity.getVaccine() == 2){
+                        } else if (vaccine == 2){
                             cv_vaccination_outer.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.grassGreen));
 
                             tv_vaccination.setText(R.string.fully_vaccinated);

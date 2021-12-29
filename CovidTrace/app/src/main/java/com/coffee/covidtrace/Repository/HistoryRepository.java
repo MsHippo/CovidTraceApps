@@ -7,7 +7,6 @@ import androidx.lifecycle.LiveData;
 import com.coffee.covidtrace.Data.Database;
 import com.coffee.covidtrace.Data.History;
 import com.coffee.covidtrace.Data.HistoryDao;
-import com.coffee.covidtrace.Data.UserEntity;
 
 import java.util.List;
 

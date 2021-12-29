@@ -7,8 +7,6 @@ import androidx.lifecycle.LiveData;
 import com.coffee.covidtrace.Data.Database;
 import com.coffee.covidtrace.Data.HealthAssessment;
 import com.coffee.covidtrace.Data.HealthAssessmentDao;
-import com.coffee.covidtrace.Data.ThingsAnnouncement;
-import com.coffee.covidtrace.Data.ThingsAnnouncementDao;
 
 import java.util.List;
 

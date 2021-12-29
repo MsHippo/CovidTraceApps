@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import com.coffee.covidtrace.Data.Database;
-import com.coffee.covidtrace.Data.History;
 import com.coffee.covidtrace.Data.ThingsAnnouncement;
 import com.coffee.covidtrace.Data.ThingsAnnouncementDao;
 

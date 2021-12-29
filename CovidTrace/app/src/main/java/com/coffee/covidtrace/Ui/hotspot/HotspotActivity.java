@@ -1,5 +1,6 @@
 package com.coffee.covidtrace.Ui.hotspot;
 
+import static android.content.ContentValues.TAG;
 import static com.coffee.covidtrace.Constants.MAPVIEW_BUNDLE_KEY;
 
 import androidx.annotation.NonNull;
@@ -7,7 +8,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -20,6 +25,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.ResultReceiver;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -27,6 +33,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.coffee.covidtrace.Data.History;
+import com.coffee.covidtrace.Data.HotSpot;
 import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
 import com.coffee.covidtrace.Ui.record.SuccessCheckInActivity;
@@ -46,6 +54,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
@@ -58,19 +67,21 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
     private GoogleMap googleMap;
     private Button btn_auto_focus;
     private FusedLocationProviderClient mlocationClient;
-    private TextView txtUserCurrentLocation;
+    private TextView txtUserCurrentLocation, tv_case_no, tv_cone_area;
     private TextView txtTitleLocation;
+    private CardView cv_cone_area, cv_cases_no;
     private ProgressBar progressBar;
     Location currentLocation;
     private static final int REQUEST_CODE = 101;
     private ResultReceiver resultReceiver;
     UserEntity currentUser;
-
+    private HotspotViewModel hotspotViewModel;
+    HotSpot hotSpot;
 
     private long UPDATE_INTERVAL = 10 * 1000;  /* 10 secs */
     private long FASTEST_INTERVAL = 2000; /* 2 sec */
 
-    @SuppressLint("VisibleForTests")
+    @SuppressLint({"VisibleForTests"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,8 +95,14 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
         txtUserCurrentLocation = findViewById(R.id.txt_user_current_location);
         txtTitleLocation = findViewById(R.id.txt_title_location);
         progressBar = findViewById(R.id.progress_bar);
+        tv_case_no = findViewById(R.id.tv_case_no);
+        cv_cone_area = findViewById(R.id.cv_cone_area);
+        tv_cone_area = findViewById(R.id.tv_cone_area);
+        cv_cases_no = findViewById(R.id.cv_cases_no);
 
         currentUser = (UserEntity) getIntent().getSerializableExtra("user");
+        hotspotViewModel = new ViewModelProvider(this)
+                .get(HotspotViewModel.class);
 
         toolbar.setTitle("COVID-19 Hotspot Tracker");
         setSupportActionBar(toolbar);
@@ -121,7 +138,6 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
             }
         });
 
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -131,7 +147,7 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
                 if (location != null || !location.equals("")) {
                     Geocoder geocoder = new Geocoder(HotspotActivity.this);
                     try {
-                        addressList = geocoder.getFromLocationName(location, 1);
+                        addressList = geocoder.getFromLocationName(location, 10);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -142,7 +158,9 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
                     txtUserCurrentLocation.setVisibility(View.VISIBLE);
                     txtUserCurrentLocation.setText(address.getAddressLine(0));
 
+                    Log.d(TAG, "Search view: latitude, longitude" + address.getLatitude() + " " + address.getLongitude());
                     goToLocation(address.getLatitude(), address.getLongitude(), location);
+//                    getCurrentLoc();
 //                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
 //                    googleMap.addMarker(new MarkerOptions()
 //                            .position(latLng).title(location)
@@ -208,8 +226,8 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
                 if (location!=null){
                     currentLocation = location;
                     Toast.makeText(getApplicationContext(), currentLocation.getLatitude()
-                            + "" + currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
-
+                            + " " + currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "onSuccess: latitude, longitude" + currentLocation.getLatitude() + " " + currentLocation.getLongitude());
                     mMapView.getMapAsync(new OnMapReadyCallback() {
                         @Override
                         public void onMapReady(@NonNull GoogleMap googleMap) {
@@ -262,13 +280,46 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
 
     private void goToLocation(double latitude, double longitude, String location) {
         googleMap.clear();
+//        progressBar.setVisibility(View.VISIBLE);
+        Log.d(TAG, "goToLocation: latitude longitude " + latitude + " " + longitude );
+        Log.d(TAG, "goToLocation: abs latitude longitude " + Math.round(latitude) + " " + Math.round(longitude) );
+        hotspotViewModel.getmAllHotspot(Math.round(latitude), Math.round(longitude)).observe(this, new Observer<List<HotSpot>>() {
+            @SuppressLint({"ResourceAsColor", "SetTextI18n"})
+            @Override
+            public void onChanged(List<HotSpot> hotSpots) {
+                cv_cases_no.setVisibility(View.VISIBLE);
+                cv_cone_area.setVisibility(View.VISIBLE);
+                if (!hotSpots.isEmpty()){
+                    progressBar.setVisibility(View.GONE);
+                    hotSpot = hotSpots.get(0);
+                    tv_case_no.setText(getResources().getString(R.string.number_case_warning_front) + " " + hotSpot.getCases() + " " +getResources().getString(R.string.number_case_warning_back));
+                    Log.d(TAG, "onChanged: text" + getResources().getString(R.string.number_case_warning_front));
+                    if (hotSpot.getCases() >= 15){
+                        cv_cone_area.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.red177));
+                        tv_cone_area.setText(R.string.text_of_red_area);
+                    }else if (hotSpot.getCases() >= 10){
+                        cv_cone_area.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.darkYellow));
+                        tv_cone_area.setText(R.string.text_of_yellow_area);
+                    }else if (hotSpot.getCases() < 10){
+                        cv_cone_area.setCardBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.grassGreen));
+                        tv_cone_area.setText(R.string.text_of_green_area);
+                    }
+                }else{
+                    progressBar.setVisibility(View.GONE);
+                    tv_case_no.setText("No data for the current region. Please come back later. Thanks");
+                    cv_cone_area.setCardBackgroundColor(R.color.darkGrey);
+                    tv_cone_area.setText(getResources().getString(R.string.text_of_unknown_area));
+                }
+
+            }
+        });
         LatLng latLng = new LatLng(latitude, longitude);
         MarkerOptions markerOptions = new MarkerOptions()
                 .position(latLng).title(location)
                 .draggable(false).visible(true);
 
 //        googleMap.addMarker(new MarkerOptions());
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 45));
         googleMap.addMarker(markerOptions);
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
@@ -287,11 +338,11 @@ public class HotspotActivity extends AppCompatActivity implements OnMapReadyCall
         mMapView.getMapAsync(this);
     }
 
-    public void searchHotspotArea(View view) {
-        Intent intent = new Intent(this, HotSpotResultActivity.class);
-//        intent.putExtra("LOCATION_RESULTS", String.valueOf(location));
-        startActivity(intent);
-    }
+//    public void searchHotspotArea(View view) {
+//        Intent intent = new Intent(this, HotSpotResultActivity.class);
+////        intent.putExtra("LOCATION_RESULTS", String.valueOf(location));
+//        startActivity(intent);
+//    }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {

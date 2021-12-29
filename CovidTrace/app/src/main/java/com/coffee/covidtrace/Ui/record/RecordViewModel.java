@@ -21,6 +21,7 @@ public class RecordViewModel extends AndroidViewModel {
     private LiveData<List<History>> allHistory;
     private LiveData<List<History>> lastHistory;
     private LiveData<Integer>status;
+    private LiveData<Integer>vaccine;
 
     //    UserEntity userEntity;
     int user_id;
@@ -30,6 +31,7 @@ public class RecordViewModel extends AndroidViewModel {
         allHistory = repository.getAllHistory(user_id);
         lastHistory = repository.getLatestHistory(user_id);
         status = userDao.getUserStatus(user_id);
+        vaccine = userDao.getUserVaccine(user_id);
     }
 
     public void insert(History history) {
@@ -42,6 +44,10 @@ public class RecordViewModel extends AndroidViewModel {
 
     public LiveData<Integer> getUserStatus(Integer id) {
         return userDao.getUserStatus(id);
+    }
+
+    public LiveData<Integer> getUserVaccine(Integer id) {
+        return userDao.getUserVaccine(id);
     }
 
     // pass the allHistory list to the activity that invokes it
