@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTrace">
         <activity
+            android:name=".FindAccount"
+            android:exported="false" />
+        <activity
             android:name=".Ui.healthAssessment.SubmitActivity"
             android:exported="true" />
         <activity

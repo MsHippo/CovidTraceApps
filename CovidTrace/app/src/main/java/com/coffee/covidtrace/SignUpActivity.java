@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    TextInputEditText email, name, nric, phone, password, repass;
+    TextInputEditText email, name, nric, phone, password, repass, question, answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,8 @@ public class SignUpActivity extends AppCompatActivity {
         phone = findViewById(R.id.signup_phone);
         password = findViewById(R.id.singup_password);
         repass = findViewById(R.id.signup_repass);
+        question = findViewById(R.id.signup_question);
+        answer = findViewById(R.id.signup_answer);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -45,11 +47,15 @@ public class SignUpActivity extends AppCompatActivity {
                 userEntity.setNric(nric.getText().toString());
                 userEntity.setPhone(phone.getText().toString());
                 userEntity.setPassword(password.getText().toString());
+                userEntity.setQuestion(question.getText().toString());
+                userEntity.setAnswer(answer.getText().toString());
                 if (validateInput(userEntity)){
                     if (password.getText().toString().equals(Objects.requireNonNull(repass.getText()).toString())){
                         //insert
                         Database database = Database.getDatabase(getApplicationContext());
                         final UserDao userDao = database.userDao();
+                        UserEntity userEntity1 = userDao.uniqueEmail(email.getText().toString());
+                        if (userEntity1 == null){
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
@@ -59,16 +65,20 @@ public class SignUpActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         Toast.makeText(getApplicationContext(),"User Registered", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), AuthenticationActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 //                                      intent.putExtra();
                                         startActivity(intent);
                                     }
                                 });
                             }
                         }).start();
+                        }else {
+                            Toast.makeText(getApplicationContext(),"Email has been used", Toast.LENGTH_SHORT).show();
+                            }
                     }else{
                         Toast.makeText(getApplicationContext(),"Password not match", Toast.LENGTH_SHORT).show();
-                    } } else{
+                    }
+                } else{
                     Toast.makeText(getApplicationContext(),"Please fill all fields", Toast.LENGTH_SHORT).show();
                 }
                 break;
@@ -84,7 +94,9 @@ public class SignUpActivity extends AppCompatActivity {
         if (userEntity.getEmail().isEmpty() ||
             userEntity.getName().isEmpty() ||
             userEntity.getNric().isEmpty() ||
-            userEntity.getPassword().isEmpty()){
+            userEntity.getPassword().isEmpty() ||
+            userEntity.getQuestion().isEmpty() ||
+            userEntity.getAnswer().isEmpty()){
             return false;
         }
         return true;

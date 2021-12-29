@@ -29,4 +29,19 @@ public interface UserDao {
 
     @Query("SELECT vaccination FROM users WHERE id=(:user_id)")
     LiveData<Integer> getUserVaccine(int user_id);
+
+    @Query("SELECT * FROM users WHERE email = (:user_email)")
+    UserEntity findAccount(String user_email);
+
+    @Query("SELECT * FROM users WHERE email=(:email) and answer = (:user_answer)")
+    UserEntity authentication(String email, String user_answer);
+
+    @Query("SELECT question FROM users WHERE email=(:email)")
+    String findQuestion(String email);
+
+    @Query("UPDATE users SET password = (:password) WHERE email =(:email)")
+    void updatePassword(String password, String email);
+
+    @Query("SELECT * FROM users WHERE email=(:email)")
+    UserEntity uniqueEmail(String email);
 }

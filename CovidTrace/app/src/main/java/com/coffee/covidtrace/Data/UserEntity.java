@@ -36,8 +36,15 @@ public class UserEntity implements Serializable{
     @ColumnInfo(name = "vaccination", defaultValue = "0")
     int vaccine;
 
+    @ColumnInfo(name = "question")
+    String question;
 
-    public UserEntity(Integer id, String email, String name,  String nric, String phone,  String password, int status, int vaccine) {
+    @ColumnInfo(name = "answer")
+    String answer;
+
+
+
+    public UserEntity(Integer id, String email, String name,  String nric, String phone,  String password, int status, int vaccine, String question, String answer) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -46,6 +53,8 @@ public class UserEntity implements Serializable{
         this.password = password;
         this.status = status;
         this.vaccine = vaccine;
+        this.question = question;
+        this.answer = answer;
     }
 
     public UserEntity(){
@@ -141,6 +150,22 @@ public class UserEntity implements Serializable{
 
     public void setVaccine(int vaccine) {
         this.vaccine = vaccine;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
     //    @Override
