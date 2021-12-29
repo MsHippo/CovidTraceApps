@@ -16,8 +16,9 @@ import java.util.concurrent.Executors;
         History.class,
         ThingsAnnouncement.class,
         HealthAssessment.class,
-        HotSpot.class},
-        version = 11,
+        HotSpot.class,
+        ReportCase.class},
+        version = 12,
         exportSchema = false)
 
 public abstract class Database extends RoomDatabase{
@@ -45,6 +46,7 @@ public abstract class Database extends RoomDatabase{
     public abstract ThingsAnnouncementDao thingsAnnouncementDao();
     public abstract HealthAssessmentDao healthAssessmentDao();
     public abstract HotSpotDao hotSpotDao();
+    public abstract ReportCaseDao reportCaseDao();
 
     private static final RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
         @Override

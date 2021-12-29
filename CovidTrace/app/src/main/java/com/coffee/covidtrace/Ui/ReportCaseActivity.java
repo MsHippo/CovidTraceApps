@@ -5,20 +5,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 
+import com.coffee.covidtrace.Data.ReportCase;
 import com.coffee.covidtrace.R;
+import com.coffee.covidtrace.Repository.ReportCaseRepository;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class ReportCaseActivity extends AppCompatActivity {
 
     private Button btnPickDate;
     private TextInputEditText txShowDateButton;
+    private static final int GALLERY_REQUEST_CODE = 100;
+    private static final int CAMERA_REQUEST_CODE = 200;
+    private ImageView selectedImageView;
+    private EditText titleEditText;
+    TextInputEditText new_case_title;
+    ReportCase reportCase;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +54,12 @@ public class ReportCaseActivity extends AppCompatActivity {
 
         // Enable the Up button
         assert ab != null;
-        ab.setDisplayHomeAsUpEnabled(true);
+//        ab.setDisplayHomeAsUpEnabled(true);
 
         btnPickDate = findViewById(R.id.btn_pick_date);
         txShowDateButton = findViewById(R.id.tx_show_date);
+        new_case_title = findViewById(R.id.new_case_title);
+        selectedImageView = findViewById(R.id.new_selected_image);
 
         // now create instance of the material date picker
         // builder make sure to add the "datePicker" which
@@ -80,5 +101,51 @@ public class ReportCaseActivity extends AppCompatActivity {
                     // is the selected date preview from the
                     // dialog
                 });
+    }
+
+    public void openGallery(View view) {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), GALLERY_REQUEST_CODE);
+    }
+
+    public void openCamera(View view) {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
+        }
+    }
+
+    public void cancel(View view) {
+        finish();
+    }
+
+    public void save(View view) {
+        Bitmap image = ((BitmapDrawable)selectedImageView.getDrawable()).getBitmap();
+        reportCase = new ReportCase(new_case_title.getText().toString(), image, txShowDateButton.getText().toString(), 1);
+        new ReportCaseRepository(getApplication()).insert(reportCase);
+        finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && requestCode == GALLERY_REQUEST_CODE) {
+            try {
+                Uri selectedImage = data.getData();
+                InputStream imageStream = getContentResolver().openInputStream(selectedImage);
+                selectedImageView.setImageBitmap(BitmapFactory.decodeStream(imageStream));
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+        }
+
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            selectedImageView.setImageBitmap(imageBitmap);
+        }
     }
 }

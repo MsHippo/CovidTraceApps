@@ -31,6 +31,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.UserEntity;
+import com.coffee.covidtrace.Ui.ReportCaseMainActivity;
 import com.coffee.covidtrace.Ui.dashboard.StatisticFragment;
 import com.coffee.covidtrace.Ui.dependency.DependencyAddingActivity;
 import com.coffee.covidtrace.Ui.SymptomActivity;
@@ -276,7 +277,7 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(intent);
                 break;
             case R.id.btn_report_case:
-                intent = new Intent(this, ReportCaseActivity.class);
+                intent = new Intent(this, ReportCaseMainActivity.class);
                 intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
