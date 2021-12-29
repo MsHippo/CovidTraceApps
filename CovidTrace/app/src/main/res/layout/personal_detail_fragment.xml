@@ -21,7 +21,7 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/prifile_email"
+                android:id="@+id/profile_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -79,36 +79,12 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="240dp"
-            android:layout_marginRight="50dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="State"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/profile_state"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="State content"
-                android:textColor="#000000"
-                android:textSize="18dp" />
-
-        </RelativeLayout>
-
         <ImageView
             android:id="@+id/profile_qrcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="250dp"
             android:layout_marginBottom="100dp"
             android:src="@drawable/qrcode" />
     </RelativeLayout>

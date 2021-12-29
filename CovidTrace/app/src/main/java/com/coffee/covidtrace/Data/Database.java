@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
         History.class,
         ThingsAnnouncement.class,
         HealthAssessment.class},
-        version = 9,
+        version = 10,
         exportSchema = false)
 
 public abstract class Database extends RoomDatabase{
