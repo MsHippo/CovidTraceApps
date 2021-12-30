@@ -98,19 +98,20 @@
         android:text="@string/upload" />
 
     <Button
-        android:id="@+id/btn_open_img_pdf"
+        android:id="@+id/btn_open_camera"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_upload_img_pdf"
-        android:layout_marginStart="16dp"
         android:onClick="openCamera"
+        android:layout_marginStart="16dp"
         android:text="@string/open_camera" />
     <ImageView
         android:id="@+id/new_selected_image"
         android:src="@drawable/placeholder"
         android:layout_width="match_parent"
-        android:layout_below="@+id/btn_open_img_pdf"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/btn_open_camera"
         android:layout_height="150dp" />
 
     <androidx.appcompat.widget.LinearLayoutCompat

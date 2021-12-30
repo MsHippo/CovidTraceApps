@@ -13,11 +13,13 @@ import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.GridView;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 
 import com.coffee.covidtrace.Adapter.HistoryAdapter;
 import com.coffee.covidtrace.Adapter.ReportAdapter;
 import com.coffee.covidtrace.Data.History;
 import com.coffee.covidtrace.Data.ReportCase;
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
 import com.coffee.covidtrace.Ui.history.HistoryViewModel;
 
@@ -31,14 +33,19 @@ public class ReportCaseMainActivity extends AppCompatActivity {
     ReportCase reportCase;
     final ReportAdapter adapter = new ReportAdapter(new ReportAdapter.ReportDiff());
     ReportCaseViewModel mViewModel;
+    TextView activity_main_empty_view;
+    UserEntity currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_case_main);
         gridView = findViewById(R.id.activity_main_grid_view);
+        activity_main_empty_view = findViewById(R.id.activity_main_empty_view);
         mViewModel = new ViewModelProvider(this)
                 .get(ReportCaseViewModel.class);
+
+        currentUser = (UserEntity) getIntent().getSerializableExtra("user");
 
         gridView.setLayoutManager(new GridLayoutManager(this, 2));
         gridView.setAdapter(adapter);
@@ -53,17 +60,27 @@ public class ReportCaseMainActivity extends AppCompatActivity {
         gridView.smoothScrollToPosition(reportListSize);
 
         // Populate the recyclerview with list from database
-        mViewModel.getAllCases(1).observe(this, new Observer<List<ReportCase>>() {
+        mViewModel.getAllCases(currentUser.getId()).observe(this, new Observer<List<ReportCase>>() {
             @Override
             public void onChanged(List<ReportCase> reportCasesList) {
-                adapter.submitList(reportCasesList);
+                if (reportCasesList.isEmpty()){
+                    gridView.setVisibility(View.GONE);
+                    activity_main_empty_view.setVisibility(View.VISIBLE);
+                }
+                else{
+                        gridView.setVisibility(View.VISIBLE);
+                        activity_main_empty_view.setVisibility(View.GONE);
+                        adapter.submitList(reportCasesList);
+                }
+
             }
         });
     }
 
 
-    public void addNewMemory(View view) {
+    public void addNewReport(View view) {
         Intent intent = new Intent(this, ReportCaseActivity.class);
+        intent.putExtra("user", currentUser);
         startActivity(intent);
     }
 }

@@ -7,6 +7,7 @@ import android.graphics.Matrix;
 import android.text.Editable;
 import android.util.Base64;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -24,7 +25,8 @@ public class ReportCase {
     public String image;
     public String date;
     public int user_id;
-//    int status;
+    @ColumnInfo(name = "status", defaultValue = "0")
+    int status;
 
     public static final int COL_ID = 0;
     public static final int COL_TITLE = 1;
@@ -70,6 +72,14 @@ public class ReportCase {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     private static String bitmapToString(Bitmap bitmap) {

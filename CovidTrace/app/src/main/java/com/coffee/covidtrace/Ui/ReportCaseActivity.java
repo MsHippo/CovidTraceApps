@@ -16,8 +16,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.ReportCase;
+import com.coffee.covidtrace.Data.UserEntity;
 import com.coffee.covidtrace.R;
 import com.coffee.covidtrace.Repository.ReportCaseRepository;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -30,14 +32,16 @@ import java.io.InputStream;
 
 public class ReportCaseActivity extends AppCompatActivity {
 
-    private Button btnPickDate;
+    private Button btnPickDate, btn_open_camera;
     private TextInputEditText txShowDateButton;
     private static final int GALLERY_REQUEST_CODE = 100;
-    private static final int CAMERA_REQUEST_CODE = 200;
+    private static final int CAMERA_REQUEST_CODE = 1;
     private ImageView selectedImageView;
     private EditText titleEditText;
     TextInputEditText new_case_title;
     ReportCase reportCase;
+    UserEntity currentUser;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +64,9 @@ public class ReportCaseActivity extends AppCompatActivity {
         txShowDateButton = findViewById(R.id.tx_show_date);
         new_case_title = findViewById(R.id.new_case_title);
         selectedImageView = findViewById(R.id.new_selected_image);
+        btn_open_camera  =findViewById(R.id.btn_open_camera);
 
+        currentUser = (UserEntity) getIntent().getSerializableExtra("user");
         // now create instance of the material date picker
         // builder make sure to add the "datePicker" which
         // is normal material date picker which is the first
@@ -101,6 +107,18 @@ public class ReportCaseActivity extends AppCompatActivity {
                     // is the selected date preview from the
                     // dialog
                 });
+//        btn_open_camera.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    Intent intent = new Intent();
+//                    intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+//                    startActivity(intent);
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
     }
 
     public void openGallery(View view) {
@@ -114,6 +132,12 @@ public class ReportCaseActivity extends AppCompatActivity {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
+        }else
+        {
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Reopen camera open.",
+                    Toast.LENGTH_LONG).show();
         }
     }
 
@@ -123,9 +147,19 @@ public class ReportCaseActivity extends AppCompatActivity {
 
     public void save(View view) {
         Bitmap image = ((BitmapDrawable)selectedImageView.getDrawable()).getBitmap();
-        reportCase = new ReportCase(new_case_title.getText().toString(), image, txShowDateButton.getText().toString(), 1);
-        new ReportCaseRepository(getApplication()).insert(reportCase);
-        finish();
+        reportCase = new ReportCase(new_case_title.getText().toString(), image, txShowDateButton.getText().toString(), currentUser.getId());
+        if (!new_case_title.getText().toString().equals("") && !txShowDateButton.getText().toString().equals("") && image!=null)
+        {
+            new ReportCaseRepository(getApplication()).insert(reportCase);
+            finish();
+
+        } else
+        {
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Please enter the information required",
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
