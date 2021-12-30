@@ -135,7 +135,7 @@
     <string name="submission_test">Are you sure you want to submit your test?</string>
     <string name="sub_cancel">Cancel</string>
     <string name="sub_confirm">Submit</string>
-    <string name="activity_main_empty_view_text">Add Report</string>
+    <string name="activity_main_empty_view_text">Add Report Cases</string>
 
     <string-array name="Relationship">
         <item>Father</item>
