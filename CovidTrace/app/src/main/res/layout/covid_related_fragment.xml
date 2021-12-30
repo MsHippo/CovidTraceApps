@@ -5,11 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_whole_risk_status"
+        android:id="@+id/pcv_risk_status_outer"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
         app:cardBackgroundColor="@color/skyBlue"
         app:cardCornerRadius="15dp">
 
@@ -39,6 +39,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
+                    android:id="@+id/ptv_risk_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -65,13 +66,12 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_whole_vaccine_status"
+        android:id="@+id/pcv_vaccination_outer"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_below="@+id/cv_whole_risk_status"
         app:cardBackgroundColor="@color/grassGreen"
         app:cardCornerRadius="15dp">
 
@@ -101,6 +101,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
+                    android:id="@+id/ptv_vaccination"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -130,7 +131,7 @@
         android:id="@+id/tv_vaccination_digital_cert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cv_whole_vaccine_status"
+        android:layout_marginTop="300dp"
         android:gravity="center"
         android:text="@string/vaccination_digital_certificate"/>
     <ImageView
