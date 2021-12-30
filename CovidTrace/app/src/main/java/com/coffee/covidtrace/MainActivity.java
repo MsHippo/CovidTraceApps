@@ -20,6 +20,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
@@ -302,8 +303,10 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(intent);
                 break;
             case R.id.symptoms_card:
-                intent = new Intent(this, SymptomActivity.class);
-                intent.putExtra("user", currentUser);
+//                intent = new Intent(this, SymptomActivity.class);
+//                intent.putExtra("user", currentUser);
+                Uri uri = Uri.parse("https://covid-19.moh.gov.my");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;
             default:

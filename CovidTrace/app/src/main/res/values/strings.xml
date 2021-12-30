@@ -13,8 +13,8 @@
     <string name="faqs_brief">Check how to prevent infection and to slow transmission of COVID-19</string>
     <string name="faqs_image">faqs image</string>
     <string name="symptom_image">Symptom image</string>
-    <string name="symptoms_brief">The COVID-19 virus affects different people in different ways.</string>
-    <string name="symptoms">Symptoms</string>
+    <string name="symptoms_brief">The COVID-19 virus affects different people in different ways. Click here to know more from <b><u>Kementerian Kesihatan Malaysia.</u></b></string>
+    <string name="symptoms">Covid-19 Information</string>
     <string name="dependency">Dependency</string>
     <string name="covid_hotspot">Covid Hotspot</string>
     <string name="covid_19_status">Personal COVID-19 Status</string>
