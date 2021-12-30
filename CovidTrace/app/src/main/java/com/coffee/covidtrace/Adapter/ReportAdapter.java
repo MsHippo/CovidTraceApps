@@ -27,7 +27,7 @@ public class ReportAdapter extends ListAdapter<ReportCase, ReportAdapter.RecordV
     public ReportAdapter(@NonNull DiffUtil.ItemCallback<ReportCase> diffCallback){
         super(diffCallback);
     }
-    
+
     @NonNull
     @Override
     public RecordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
