@@ -5,6 +5,8 @@ import android.os.Parcelable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.Insert;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
@@ -57,6 +59,7 @@ public class UserEntity implements Serializable{
         this.answer = answer;
     }
 
+    @Ignore
     public UserEntity(){
 
     }

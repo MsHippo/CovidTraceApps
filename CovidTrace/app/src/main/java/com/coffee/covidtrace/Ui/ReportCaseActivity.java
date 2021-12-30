@@ -48,7 +48,7 @@ public class ReportCaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_case);
 
-        // my_child_toolbar is defined in the layout file
+        // toolbar is defined in the layout file
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Report Rule-Breaking Case");
         setSupportActionBar(toolbar);

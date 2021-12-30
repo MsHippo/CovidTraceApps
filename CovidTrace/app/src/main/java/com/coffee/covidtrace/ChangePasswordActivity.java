@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.Database;
 import com.coffee.covidtrace.Data.UserDao;
-import com.coffee.covidtrace.Data.UserEntity;
 
 import java.util.Objects;
 
@@ -22,7 +21,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
     Button btn_save;
     EditText password, repassword;
     Database database;
-    UserEntity currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

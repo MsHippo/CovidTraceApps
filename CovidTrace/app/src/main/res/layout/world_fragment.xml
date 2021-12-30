@@ -5,9 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
-            android:layout_height="310dp"
+            android:layout_height="490dp"
             android:layout_centerHorizontal="true"
             app:columnCount="2">
 
@@ -15,19 +19,20 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="150dp"
                 android:layout_height="140dp"
-                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
                 android:background="@android:color/white"
                 app:cardCornerRadius="10dp"
                 tools:ignore="UsingOnClickInXml">
 
                 <TextView
+                    android:id="@+id/tvworld_DailyConfirmedCase"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:gravity="center"
                     android:text="1000"
                     android:textColor="#B13F3D"
-                    android:textSize="20sp" />
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="120dp"
@@ -37,26 +42,27 @@
                     android:gravity="center"
                     android:text="Confirmed Case Daily"
                     android:textColor="#B13F3D"
-                    android:textSize="15sp" />
+                    android:textSize="15dp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="5dp"
                 android:layout_width="150dp"
                 android:layout_height="140dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
                 android:background="@android:color/white"
                 app:cardCornerRadius="10dp"
                 tools:ignore="UsingOnClickInXml">
 
                 <TextView
+                    android:id="@+id/tvworld_TotalConfirmedCase"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:gravity="center"
                     android:text="3000,000"
                     android:textColor="#5C9E31"
-                    android:textSize="20sp" />
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="120dp"
@@ -64,9 +70,9 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
                     android:gravity="center"
-                    android:text="Recovered Case"
+                    android:text="Confirmed Case Total"
                     android:textColor="#5C9E31"
-                    android:textSize="15sp" />
+                    android:textSize="15dp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -79,13 +85,14 @@
                 tools:ignore="UsingOnClickInXml">
 
                 <TextView
+                    android:id="@+id/tvworld_DailyDeathCase"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:gravity="center"
                     android:text="1500,000"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="120dp"
@@ -95,26 +102,99 @@
                     android:gravity="center"
                     android:text="Death Case Daily"
                     android:textColor="#000000"
-                    android:textSize="15sp" />
+                    android:textSize="15dp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
                 android:layout_height="140dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@android:color/white"
                 app:cardCornerRadius="10dp"
                 tools:ignore="UsingOnClickInXml">
 
                 <TextView
+                    android:id="@+id/tvworld_TotalDeathCase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="50th"
+                    android:textColor="#012260"
+                    android:textSize="20dp" />
+
+                <TextView
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
                     android:gravity="center"
-                    android:text="Click for More Ranking"
+                    android:text="Death Case Total"
                     android:textColor="#012260"
-                    android:textSize="20sp" />
+                    android:textSize="15dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="10dp"
+                tools:ignore="UsingOnClickInXml">
+
+                <TextView
+                    android:id="@+id/tvworld_DailyrecoveredCase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="50th"
+                    android:textColor="#FFAAAB"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="Recovered Case Daily"
+                    android:textColor="#FFAAAB"
+                    android:textSize="15dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="10dp"
+                tools:ignore="UsingOnClickInXml">
+
+                <TextView
+                    android:id="@+id/tvworld_TotalRecoveredCase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="50th"
+                    android:textColor="#BBAAEE"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="Recovered Case Total"
+                    android:textColor="#BBAAEE"
+                    android:textSize="15dp" />
 
             </androidx.cardview.widget.CardView>
         </androidx.gridlayout.widget.GridLayout>
@@ -122,37 +202,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="500dp"
             android:text="Updated at "
-            android:layout_marginStart="80dp"/>
+            android:layout_marginLeft="80dp"/>
 
         <TextView
+            android:id="@+id/world_datetime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
-            android:text="20 October 2021"
-            android:layout_marginStart="155dp"/>
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="500dp"
+            android:text="20 October 2021 12:00pm" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
-            android:text=","
-            android:layout_marginStart="260dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
-            android:text="12:00pm"
-            android:layout_marginStart="270dp"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
-            android:src="@drawable/pic3" />
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

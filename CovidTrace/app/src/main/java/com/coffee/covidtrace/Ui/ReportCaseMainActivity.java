@@ -1,6 +1,8 @@
 package com.coffee.covidtrace.Ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -47,6 +49,19 @@ public class ReportCaseMainActivity extends AppCompatActivity {
 
         currentUser = (UserEntity) getIntent().getSerializableExtra("user");
 
+        // toolbar is defined in the layout file
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Report Rule-Breaking Case");
+        setSupportActionBar(toolbar);
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+
+        // Enable the Up button
+        assert ab != null;
+//        ab.setDisplayHomeAsUpEnabled(true);
+
+        //make the recycler view in grid layout
         gridView.setLayoutManager(new GridLayoutManager(this, 2));
         gridView.setAdapter(adapter);
 //        gridView.setEmptyView(findViewById(R.id.activity_main_empty_view));

@@ -8,11 +8,4 @@
         android:title="@string/refresh"
         android:contentDescription="@string/description_refresh"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/notifications"
-        android:icon="@drawable/ic_notifications"
-        android:title="@string/notifications"
-        android:contentDescription="@string/description_notifications"
-        app:showAsAction="ifRoom" />
 </menu>
