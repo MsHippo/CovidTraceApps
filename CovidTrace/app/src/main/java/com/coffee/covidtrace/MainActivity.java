@@ -40,7 +40,6 @@ import com.coffee.covidtrace.Ui.home.HomeFragment;
 import com.coffee.covidtrace.Ui.home.HomeFragmentDirections;
 import com.coffee.covidtrace.Ui.hotspot.HotspotActivity;
 import com.coffee.covidtrace.Ui.ReportCaseActivity;
-import com.coffee.covidtrace.Ui.notification.NotificationActivity;
 import com.coffee.covidtrace.Ui.profile.ProfileFragment;
 import com.coffee.covidtrace.Ui.record.RecordFragment;
 import com.coffee.covidtrace.Ui.vaccination.VaccinationActivity;
@@ -347,11 +346,6 @@ public class MainActivity extends AppCompatActivity{
             case R.id.refresh:
                 this.recreate();
                 Toast.makeText(this, "Refresh Clicked", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.notifications:
-//                Toast.makeText(this, "Notifications Clicked", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this, NotificationActivity.class);
-                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -12,10 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.coffee.covidtrace.Data.Database;
-import com.coffee.covidtrace.Data.NotificationDao;
-import com.coffee.covidtrace.Data.NotificationEntity;
 import com.coffee.covidtrace.Data.UserDao;
-import com.coffee.covidtrace.Data.UserEntity;
 
 import java.util.Objects;
 
@@ -53,20 +50,14 @@ public class ChangePasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //insert notification
-                NotificationEntity notificationEntity = new NotificationEntity();
-                notificationEntity.setDetail("Password Changed");
-
                 if (password.getText().toString().equals(Objects.requireNonNull(repassword.getText()).toString())){
                     database = Database.getDatabase(getApplicationContext());
                     UserDao userDao = database.userDao();
-                    NotificationDao notificationDao = database.notificationDao();
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
                             String newPass = password.getText().toString();
                             userDao.updatePassword(newPass, email_txt);
-                            notificationDao.insert(notificationEntity);
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
