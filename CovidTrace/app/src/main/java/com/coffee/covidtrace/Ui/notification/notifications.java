@@ -1,4 +1,4 @@
-package com.coffee.covidtrace;
+package com.coffee.covidtrace.Ui.notification;
 
 public class notifications {
 
@@ -8,7 +8,6 @@ public class notifications {
         this.notifi_name = notifi_name;
         this.notifi_detail = notifi_detail;
     }
-
 
 
     public String getnotifi_name() {

@@ -13,10 +13,11 @@ import java.util.concurrent.Executors;
 
 @androidx.room.Database(entities = {
         UserEntity.class,
+        NotificationEntity.class,
         History.class,
         ThingsAnnouncement.class,
         HealthAssessment.class},
-        version = 10,
+        version = 12,
         exportSchema = false)
 
 public abstract class Database extends RoomDatabase{
@@ -40,6 +41,7 @@ public abstract class Database extends RoomDatabase{
     }
 
     public abstract UserDao userDao();
+    public abstract NotificationDao notificationDao();
     public abstract HistoryDao historyDao();
     public abstract ThingsAnnouncementDao thingsAnnouncementDao();
     public abstract HealthAssessmentDao healthAssessmentDao();
