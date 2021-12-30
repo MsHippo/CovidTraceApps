@@ -37,4 +37,6 @@ public class HomeSelectionPageAdapter extends FragmentStateAdapter {
     public int getItemCount() {
         return titles.length;
     }
+
+
 }

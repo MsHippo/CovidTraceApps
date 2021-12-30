@@ -199,43 +199,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/btn_covid_vaccination"
-                        android:layout_width="wrap_content"
-                        android:layout_height="102dp"
-                        android:layout_margin="10dp"
-                        android:background="@android:color/white"
-                        android:onClick="MainFeatures"
-                        app:cardCornerRadius="10dp"
-                        tools:ignore="UsingOnClickInXml">
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
-                                android:layout_marginTop="10dp"
-                                android:rotation="180"
-                                android:src="@drawable/vaccine_syringe" />
-
-                            <TextView
-                                android:layout_width="80dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:text="@string/covid_19_vaccination"
-                                android:textAlignment="center"
-                                android:textSize="10sp"
-                                tools:ignore="SmallSp" />
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-                    </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/btn_hotspot"
@@ -271,39 +234,6 @@
                         </androidx.appcompat.widget.LinearLayoutCompat>
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/btn_dependency"
-                        android:layout_width="wrap_content"
-                        android:layout_height="102dp"
-                        android:layout_margin="10dp"
-                        android:background="@android:color/white"
-                        android:onClick="MainFeatures"
-                        app:cardCornerRadius="10dp"
-                        tools:ignore="UsingOnClickInXml">
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="10dp"
-                                android:src="@drawable/whole_family" />
-
-                            <TextView
-                                android:layout_width="80dp"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="@string/dependency"
-                                android:textAlignment="center"
-                                android:textSize="10sp"
-                                tools:ignore="SmallSp" />
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-                    </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/btn_user_status"

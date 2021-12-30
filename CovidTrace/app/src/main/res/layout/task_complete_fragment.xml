@@ -3,13 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Ui.home.fragment.TaskCompleteFragment"
     android:background="@drawable/square_transp_bg">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/th_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="50dp"/>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/th_recycler_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:paddingBottom="50dp"/>-->
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tv_instruction"
+                android:layout_width="250sp"
+                android:layout_height="wrap_content"
+                android:text="@string/th_to_do"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"/>
+            <Button
+                android:id="@+id/btn_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/go" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
 </FrameLayout>

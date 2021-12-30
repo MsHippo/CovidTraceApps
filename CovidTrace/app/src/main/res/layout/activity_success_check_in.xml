@@ -313,6 +313,7 @@
                 android:textColor="@color/primaryTextColor"
                 android:textAlignment="center"/>
             <TextView
+                android:id="@+id/tv_risk_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/risk_status"
@@ -343,6 +344,7 @@
                 android:textColor="@color/primaryTextColor"
                 android:textAlignment="center"/>
             <TextView
+                android:id="@+id/tv_vaccine_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/fully_vaccinated"

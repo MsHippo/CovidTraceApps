@@ -65,6 +65,7 @@
     <string name="open_camera">Open Camera</string>
     <string name="evidence">Evidence (photos)</string>
     <string name="th_to_do_desc">Changed location?</string>
+    <string name="th_to_do">Times to update your status</string>
     <string name="go">Go</string>
     <string name="check_in">Check-in</string>
     <string name="last_check_in">Last Check-in</string>

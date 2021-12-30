@@ -271,11 +271,11 @@ public class MainActivity extends AppCompatActivity{
         public void MainFeatures(View view) {
         Intent intent = getIntent();
         switch (view.getId()) {
-            case R.id.btn_covid_vaccination:
-                intent = new Intent(this, VaccinationActivity.class);
-                intent.putExtra("user", currentUser);
-                startActivity(intent);
-                break;
+//            case R.id.btn_covid_vaccination:
+//                intent = new Intent(this, VaccinationActivity.class);
+//                intent.putExtra("user", currentUser);
+//                startActivity(intent);
+//                break;
             case R.id.btn_report_case:
                 intent = new Intent(this, ReportCaseMainActivity.class);
                 intent.putExtra("user", currentUser);
@@ -291,11 +291,11 @@ public class MainActivity extends AppCompatActivity{
                 intent.putExtra("user", currentUser);
                 startActivity(intent);
                 break;
-            case R.id.btn_dependency:
-                intent = new Intent(this, DependencyAddingActivity.class);
-                intent.putExtra("user", currentUser);
-                startActivity(intent);
-                break;
+//            case R.id.btn_dependency:
+//                intent = new Intent(this, DependencyAddingActivity.class);
+//                intent.putExtra("user", currentUser);
+//                startActivity(intent);
+//                break;
             case R.id.faqs_card:
                 intent = new Intent(this, FAQActivity.class);
                 intent.putExtra("user", currentUser);
